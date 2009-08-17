@@ -1,0 +1,6 @@
+= MAST TODO LIST
+
+* Use Clio instead of GetOptLong.
+* Directories all have same checksum. Fix.
+* Add an easy was to exlcude directories from list.
+

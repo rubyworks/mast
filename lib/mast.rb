@@ -1,0 +1,1 @@
+require 'mast/manifest'

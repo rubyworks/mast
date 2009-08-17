@@ -1,0 +1,55 @@
+= Mast
+
+* http://proutils.rubyforge.org
+* http://protuils.rubyforge.org/mast
+
+
+== DESCRIPTION
+
+Mast is a commandline utility for generating MANIFEST lists and optionally checksums.
+It can be useful in conjunction with packaging tools (such as Box), or as a stand-alone
+tool for monitoring file changes.
+
+
+== FEATURES/ISSUES
+
+* Self-referential header makes updating manifests easy.
+* Checksum lists can highlight changes to current files.
+
+
+== RELEASE NOTES
+
+Please see RELEASE file.
+
+
+== SYNOPSIS
+
+Usage is fairly straight forward.
+
+  $ mast **/*
+
+
+== HOW TO INSTALL
+
+To install with RubyGems simply open a console and type:
+
+  gem install mast
+
+Local installation requires Setup.rb (gem install setup),
+then download the tarball package and type:
+
+  tar -xvzf mast-1.0.0.tgz
+  cd mast-1.0.0.tgz
+  sudo setup.rb all
+
+Windows users use 'ruby setup.rb all'.
+
+
+== LICENSE
+
+Copyright (c) 2009 Thomas Sawyer <transfire@gmail.com>
+
+This program is ditributed unser the terms of the GPL license.
+
+See COPYING file for details.
+
