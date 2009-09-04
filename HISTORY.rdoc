@@ -4,6 +4,8 @@
 
 This is the initial release of Mast.
 
+Changes:
+
 * 1 Major Enhancement
 
     * Happy Birthday!

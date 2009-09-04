@@ -19,7 +19,7 @@ tool for monitoring file changes.
 
 == RELEASE NOTES
 
-Please see RELEASE file.
+Please see the HISTORY.rdoc file.
 
 
 == SYNOPSIS
@@ -27,6 +27,8 @@ Please see RELEASE file.
 Usage is fairly straight forward.
 
   $ mast **/*
+
+Please see the TUTORIAL file for further details.
 
 
 == HOW TO INSTALL
