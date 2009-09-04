@@ -1,10 +1,9 @@
-Mast Tutorial
-=============
+= Mast Tutorial
 
 Mast is a convenient commandline tool for generating manifest and file hash lists.
 It makes the process very simple, and even allows manifests to be updated
 without repeating inclusion/exclusion criteria by storing the command parameters
-in a comment line at the top of the generated output.</p>
+in a comment line at the top of the generated output.
 
 Lets try a simple example. Lets say we have the following folder structure:
 
