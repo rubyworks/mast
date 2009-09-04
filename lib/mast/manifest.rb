@@ -514,7 +514,7 @@ module Mast
       #if file = locate(filename)
         File.open(file) do |f|
           s = f.readline
-          if s =~ /^#!\s*(.*?)\n/
+          if s =~ /^#!mast\s*(.*?)\n/
             r = $1
           end
         end
