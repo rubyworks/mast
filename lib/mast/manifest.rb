@@ -17,7 +17,7 @@ module Mast
   # TODO: Consider adding @include options rather then scanning entire directory.
   # But this can't be done unless we can write a routine that can look at @include
   # and reduce it to non-overlapping matches. Eg. [doc, doc/rdoc] should reduce
-  # to just [doc]. Otherwise we will get duplicate entries, b/c the #output 
+  # to just [doc]. Otherwise we will get duplicate entries, b/c the #output
   # method is written for speed and low memory footprint. This might mean @include
   # can't use file globs.
   #
@@ -50,7 +50,7 @@ module Mast
     def self.open(file=nil, options={})
       unless file
         file = Dir.glob(filename, File::FNM_CASEFOLD).first
-        raise LoadError, "Manifest file is required." unless file
+        raise NoManifestError, "Manifest file is required." unless file
       end
       options[:file] = file
       new(options)
@@ -132,7 +132,7 @@ module Mast
 
     #
     def file
-      @file ||= Dir[File.join(directory, DEFAULT_FILE)].first || 'MANIFEST'
+      @file ||= Dir.glob(File.join(directory, DEFAULT_FILE), File::FNM_CASEFOLD).first || 'MANIFEST'
     end
 
     #
