@@ -1,6 +1,6 @@
 ---
 testrb:
-  service  : TestUnit
+  service  : testrb
   tests    : ~
   exclude  : ~
   loadpath : ~
