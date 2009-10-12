@@ -1,0 +1,17 @@
+--- !ruby/object:RDoc::RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Metaclass extensions for core File class.
+constants: []
+
+full_name: File
+includes: []
+
+instance_methods: []
+
+name: File
+superclass: Object

@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Files found in file system, but not listed in the manifest file.
+full_name: Mast::Manifest#whatsnew
+is_singleton: false
+name: whatsnew
+params: ()
+visibility: public

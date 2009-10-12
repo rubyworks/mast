@@ -1,0 +1,18 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: " Possible file name (was for Fileable?).\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: def self.filename
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  DEFAULT_FILE\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: end
+full_name: Mast::Manifest::open
+is_singleton: true
+name: open
+params: (file=nil, options={})
+visibility: public

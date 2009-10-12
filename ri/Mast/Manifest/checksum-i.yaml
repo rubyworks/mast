@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Produce hexdigest/cheksum for a file. Default digest type is sha1.
+full_name: Mast::Manifest#checksum
+is_singleton: false
+name: checksum
+params: (file, digest=nil)
+visibility: private

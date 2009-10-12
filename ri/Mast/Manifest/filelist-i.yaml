@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: List of files as given in MANIFEST file.
+full_name: Mast::Manifest#filelist
+is_singleton: false
+name: filelist
+params: ()
+visibility: public

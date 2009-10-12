@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: List files in manifest file.
+full_name: Mast::Cli#list
+is_singleton: false
+name: list
+params: ()
+visibility: public

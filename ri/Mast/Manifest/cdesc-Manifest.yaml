@@ -1,0 +1,190 @@
+--- !ruby/object:RDoc::RI::ClassDescription 
+attributes: 
+- !ruby/object:RDoc::RI::Attribute 
+  comment: 
+  - !ruby/struct:RDoc::Markup::Flow::P 
+    body: Do not exclude standard exclusions.
+  name: all
+  rw: RW
+- !ruby/object:RDoc::RI::Attribute 
+  comment: 
+  - !ruby/struct:RDoc::Markup::Flow::P 
+    body: Encryption type
+  name: digest
+  rw: RW
+- !ruby/object:RDoc::RI::Attribute 
+  comment: 
+  - !ruby/struct:RDoc::Markup::Flow::P 
+    body: Directory of manifest.
+  name: directory
+  rw: RW
+- !ruby/object:RDoc::RI::Attribute 
+  comment: 
+  - !ruby/struct:RDoc::Markup::Flow::P 
+    body: What files to exclude.
+  name: exclude
+  rw: RW
+- !ruby/object:RDoc::RI::Attribute 
+  comment: 
+  - !ruby/struct:RDoc::Markup::Flow::P 
+    body: File used to store manifest/digest file.
+  name: file
+  rw: RW
+- !ruby/object:RDoc::RI::Attribute 
+  comment: 
+  - !ruby/struct:RDoc::Markup::Flow::P 
+    body: Layout of digest -- 'csf' or 'sfv'. Default is 'csf'.
+  name: format
+  rw: RW
+- !ruby/object:RDoc::RI::Attribute 
+  comment: 
+  - !ruby/struct:RDoc::Markup::Flow::P 
+    body: Special files to ignore.
+  name: ignore
+  rw: RW
+- !ruby/object:RDoc::RI::Attribute 
+  comment: 
+  - !ruby/struct:RDoc::Markup::Flow::P 
+    body: What files to include. Defaults to ['*']. Note that Mast automatically recurses through directory entries, so using '*<b>/</b>' would simply be a waste of of processing cycles.
+  name: include
+  rw: RW
+class_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: new
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: open
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Manifest stores a list of package files, and optionally checksums.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: The class can be used to create and compare package manifests and digests.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "TODO: Integrate file signing and general manifest better (?)"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "TODO: Digester is in sign.rb too. Dry-up?"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "TODO: The #diff method is shelling out; this needs to be internalized."
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "TODO: Consider adding @include options rather then scanning entire directory. But this can't be done unless we can write a routine that can look at @include and reduce it to non-overlapping matches. Eg. [doc, doc/rdoc] should reduce to just [doc]. Otherwise we will get duplicate entries, b/c the #output method is written for speed and low memory footprint. This might mean @include can't use file globs."
+- !ruby/struct:RDoc::Markup::Flow::RULE 
+  width: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Manifest stores a list of package files, and optionally checksums.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: The class can be used to create and compare package manifests and digests.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "TODO: Integrate file signing and general manifest better (?)"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "TODO: Digester is in sign.rb too. Dry-up?"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "TODO: The #diff method is shelling out; this needs to be internalized."
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "TODO: Consider adding @include options rather then scanning entire directory. But this can't be done unless we can write a routine that can look at @include and reduce it to non-overlapping matches. Eg. [doc, doc/rdoc] should reduce to just [doc]. Otherwise we will get duplicate entries, b/c the #output method is written for speed and low memory footprint. This might mean @include can't use file globs."
+constants: 
+- !ruby/object:RDoc::RI::Constant 
+  comment: 
+  - !ruby/struct:RDoc::Markup::Flow::P 
+    body: By default mast will exclude any pathname matching 'CVS', '_darcs', '.git*' or '.config'.
+  name: DEFAULT_EXCLUDE
+  value: "%w{CVS _darcs .git* .config}"
+- !ruby/object:RDoc::RI::Constant 
+  comment: []
+
+  name: DEFAULT_FILE
+  value: "'{manifest,digest}{,.txt,.list}'"
+- !ruby/object:RDoc::RI::Constant 
+  comment: 
+  - !ruby/struct:RDoc::Markup::Flow::P 
+    body: By default, mast will ignore any file with a name matching '.svn' or '*~', ie. ending with a tilde.
+  name: DEFAULT_IGNORE
+  value: "%w{*~ .svn}"
+- !ruby/object:RDoc::RI::Constant 
+  comment: 
+  - !ruby/struct:RDoc::Markup::Flow::P 
+    body: No Manifest File Error.
+  name: NoManifestError
+  value: Class.new(LoadError)
+- !ruby/object:RDoc::RI::Constant 
+  comment: 
+  - !ruby/struct:RDoc::Markup::Flow::P 
+    body: Manifest file overwrite error.
+  name: OverwriteError
+  value: Class.new(Exception)
+full_name: Mast::Manifest
+includes: []
+
+instance_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: change_options
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: chart
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: checksum
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: clean
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: cleanlist
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: create_temporary_manifest
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: diff
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: digester
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: exclusions
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: file
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: filechart
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: filelist
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: filename
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: files
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: generate
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: ignores
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: include=
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: inclusions
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: list
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: list_without_folders
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: listing
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: output
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: parse_directory
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: parse_file
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: parse_topline
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: read?
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: read_topline
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: rec_output
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: save
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: showlist
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: to_s
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: topline_string
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: update
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: verify
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: whatsnew
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: whatsold
+name: Manifest
+superclass: Object

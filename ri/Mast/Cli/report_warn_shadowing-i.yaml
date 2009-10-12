@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Warn that a manifest already exist higher in this hierarchy.
+full_name: Mast::Cli#report_warn_shadowing
+is_singleton: false
+name: report_warn_shadowing
+params: (manifest)
+visibility: private

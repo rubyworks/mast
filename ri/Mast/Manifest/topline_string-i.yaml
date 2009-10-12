@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Create topline of MANIFEST file.
+full_name: Mast::Manifest#topline_string
+is_singleton: false
+name: topline_string
+params: (update=false)
+visibility: private

@@ -1,0 +1,11 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: []
+
+full_name: Mast::Manifest#parse_directory
+is_singleton: false
+name: parse_directory
+params: ()
+visibility: private

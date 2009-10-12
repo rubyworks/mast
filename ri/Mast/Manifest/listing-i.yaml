@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Produce textual listing less the manifest file.
+full_name: Mast::Manifest#listing
+is_singleton: false
+name: listing
+params: ()
+visibility: public

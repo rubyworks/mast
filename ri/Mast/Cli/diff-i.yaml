@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Show diff comparison between listed and actual.
+full_name: Mast::Cli#diff
+is_singleton: false
+name: diff
+params: ()
+visibility: public
