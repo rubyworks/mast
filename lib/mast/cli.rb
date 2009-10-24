@@ -18,18 +18,20 @@
 #  Commands:
 #    -c --create         Generate a new manifest. (default)
 #    -u --update         Update an existing manifest.
-#    -l --list           List the files give in the manifest file. (Use -f to specify an alternate file.)
+#    -l --list           List the files given in the manifest file. (Use -f to specify an alternate file.)
 #    -s --show           Show all files that would appear in the manifest file if it were updated.
 #    -d --diff           Diff manifest file against actual.
 #    -n --new            List existant files that are not given in the manifest.
 #    -o --old            List files given in the manifest but are non-existent.
 #       --clean          Remove non-manifest files. (Will ask for confirmation first.)
-#    -v --verify         (TODO) Verify that a manifest matches actual.
+#    -v --verify         Verify that a manifest matches actual.
 #    -h --help           Display this help message.
 #
 #  Options:
 #    -a --all            Include all files. This deactivates deafult exclusions
 #                        so it is possible to make complete list of all contents.
+#       --dir            When creating a list include directory paths; by default
+#                        only files are listed.
 #    -f --file PATH      Path to manifest file. When using update command, if not
 #                        given then the file matching 'MANIFEST', case-insensitive
 #                        and with an optional '.txt' extension, will be looked for
@@ -40,7 +42,7 @@
 #    -x --exclude PATH   Exclude a file or dir from the manifest matching against
 #                        full pathname. You can use --exclude repeatedly.
 #       --ignore PATH    Exclude a file or dir from the manifest matching against 
-#                        an extires basename. You can use --ignore repeatedly.
+#                        an entries basename. You can use --ignore repeatedly.
 #    -q --quiet          Suppress extraneous output.
 
 require 'mast'
@@ -70,6 +72,8 @@ module Mast
     attr_accessor :include
     attr_accessor :exclude
     attr_accessor :all
+    attr_accessor :dir
+    attr_accessor :show
 
     #
     def initialize
@@ -83,8 +87,18 @@ module Mast
       @command = []
     end
 
-    # Run command.
+    #
     def run
+      begin
+        run_command
+      rescue => err
+        raise err if $DEBUG
+        report err
+      end
+    end
+
+    # Run command.
+    def run_command
       optparse
       if @command.size > 1
         raise ArgumentError, "Please issue only one command."
@@ -94,7 +108,7 @@ module Mast
       when :create   then generate
       when :update   then update
       when :list     then list
-      when :show     then show
+      #when :show     then show
       when :diff     then diff
       when :new      then new
       when :old      then old
@@ -113,15 +127,16 @@ module Mast
         [ '--digest' , '-g', GetoptLong::REQUIRED_ARGUMENT ],
         [ '--exclude', '-x', GetoptLong::REQUIRED_ARGUMENT ],
         #[ '--include', '-i', GetoptLong::REQUIRED_ARGUMENT ],
-        [ '--ignore',        GetoptLong::REQUIRED_ARGUMENT ],
+        [ '--ignore' , '-i', GetoptLong::REQUIRED_ARGUMENT ],
         [ '--all'    , '-a', GetoptLong::NO_ARGUMENT ],
+        [ '--dir'    ,       GetoptLong::NO_ARGUMENT ],
+        [ '--show'   , '-s', GetoptLong::NO_ARGUMENT ],
         [ '--quiet'  , '-q', GetoptLong::NO_ARGUMENT ],
         # commands
         [ '--help'   , '-h', GetoptLong::NO_ARGUMENT ],
         [ '--create' , '-c', GetoptLong::NO_ARGUMENT ],
         [ '--update' , '-u', GetoptLong::NO_ARGUMENT ],
         [ '--list'   , '-l', GetoptLong::NO_ARGUMENT ],
-        [ '--show'   , '-s', GetoptLong::NO_ARGUMENT ],
         [ '--diff'   , '-d', GetoptLong::NO_ARGUMENT ],
         [ '--new'    , '-n', GetoptLong::NO_ARGUMENT ],
         [ '--old'    , '-o', GetoptLong::NO_ARGUMENT ],
@@ -139,8 +154,8 @@ module Mast
           @command << :update
         when '--list'
           @command << :list
-        when '--show'
-          @command << :show
+        #when '--show'
+        #  @command << :show
         when '--diff'
           @command << :diff
         when '--new'
@@ -162,6 +177,10 @@ module Mast
         #  @include << val
         #when '--ignore'
         #  @ignore << val
+        when '--show'
+          @show = true
+        when '--dir'
+          @dir = true
         when '--all'
           @all = true
         when '--quiet'
@@ -213,10 +232,10 @@ module Mast
       puts manifest.filelist
     end
 
-    # List files in manifest file.
-    def show
-      puts manifest.showlist
-    end
+    #
+    #def show
+    #  puts manifest.showlist
+    #end
 
     # Show diff comparison between listed and actual.
     def diff
@@ -282,7 +301,7 @@ module Mast
 
     # Options for Manifest class taken from commandline arguments.
     def manifest_options
-      { :file=>file, :digest=>digest, :exclude=>exclude, :ignore=>ignore, :all=>all, :include=>include }
+      { :file=>file, :digest=>digest, :exclude=>exclude, :ignore=>ignore, :all=>all, :dir=>dir, :include=>include, :show=>show }
     end
 
     # Quiet opertation?
@@ -302,19 +321,24 @@ module Mast
       ask("The above files will be removed. Continue?", "yN")
     end
 
+    #
+    def report(message)
+      $stderr << "#{message}\n" unless quiet?
+    end
+
     # Report manifest created.
     def report_created(file)
       file = File.basename(file)
-      puts "#{file} created." unless quiet?
+      report "#{file} created."
     end
 
     # Report manifest updated.
     def report_updated(file)
       if file
         file = File.basename(file)
-        puts "#{file} updated." unless quiet?
+        report "#{file} updated."
       else
-        puts "Manifest file doesn't exit."
+        report "Manifest file doesn't exit."
       end
     end
 
@@ -341,7 +365,7 @@ module Mast
       puts list.join("\n")
     end
 
-    # Report missing manifest file.
+    #
     def report_whatsold(list)
       puts list.join("\n")
     end
@@ -361,30 +385,30 @@ module Mast
 
     # Report missing manifest file.
     def report_manifest_missing
-      puts "No manifest file."
+      report "No manifest file."
     end
 
     # Report action cancelled.
     def report_cancelled(action)
-      puts "#{action} cancelled."
+      report "#{action} cancelled."
     end
 
     # Report manifest overwrite.
     def report_overwrite(manifest)
-      puts "#{manifest.filename} already exists."
+      report "#{manifest.filename} already exists."
     end
 
     # Warn that a manifest already exist higher in this hierarchy.
     def report_warn_shadowing(manifest)
-      puts "Shadowing #{manifest.file}."
+      report "Shadowing #{manifest.file}."
     end
 
     #
     def report_verify(check)
       if check
-        puts "Manifest if good."
+        report "Manifest if good."
       else
-        puts "Manifest if bad!"
+        report "Manifest if bad!"
       end
     end
   end

@@ -68,6 +68,13 @@ module Mast
     # Do not exclude standard exclusions.
     attr_accessor :all
 
+    # Include directories.
+    attr_accessor :dir
+
+    # Show as if another manifest (eg. use files options).
+    # TODO: Change name?
+    attr_accessor :show
+
     # What files to include. Defaults to ['*'].
     # Note that Mast automatically recurses through
     # directory entries, so using '**/*' would simply
@@ -89,6 +96,12 @@ module Mast
     #
     alias_method :all?, :all
 
+    #
+    alias_method :dir?, :dir
+
+    #
+    alias_method :show?, :show
+
     # New Manifest object.
     #
     def initialize(options={})
@@ -97,6 +110,8 @@ module Mast
       @ignore    = []
       @format    = 'csf'
       @all       = false
+      @dir       = false
+      @show      = false
       @digest    = nil
       @directory = Dir.pwd
 
@@ -151,6 +166,7 @@ module Mast
 
     # Generate manifest.
     def generate(out=$stdout)
+      parse_topline unless read? if show?
       out << topline_string
       output(out)
     end
@@ -210,8 +226,12 @@ module Mast
     # Clean non-manifest files.
     def clean
       cfiles, cdirs = cleanlist.partition{ |f| !File.directory?(f) }
-      FileUtils.rm(cfiles)
-      FileUtils.rmdir(cdirs)
+      if cfiles.empty? && cdirs.empty?
+        $stderr < "No difference between list and actual.\n"
+      else
+        FileUtils.rm(cfiles)
+        FileUtils.rmdir(cdirs)
+      end
     end
 
     # List of current files.
@@ -236,13 +256,16 @@ module Mast
 
     #
     def cleanlist
+      showlist - filelist
+    end
+
+    # Files not listed in manifest.
+    def unlisted
       list = []
       Dir.chdir(directory) do
-        keep = Dir.glob('*').select{|f| File.directory?(f)} # keep top-level directories?
-        keep << filename # keep manifest file
-        list = Dir.glob('**/*') - (filelist + keep)
+        list = Dir.glob('**/*')
       end
-      list
+      list - filelist
     end
 
     #
@@ -293,11 +316,14 @@ module Mast
       files = files.reject{ |f| ignores.any?{ |i| File.fnmatch(i, File.basename(f)) } }
       files = files.sort
       files.each do |file|
-        sum = checksum(file,digest)
-        sum = sum + ' ' if sum
-        out << "#{sum}#{file}"
-        out << "\n" unless Array === out
-        if File.directory?(file)
+        is_dir = File.directory?(file)
+        if !is_dir || (is_dir && dir?)
+          sum = checksum(file,digest)
+          sum = sum + ' ' if sum
+          out << "#{sum}#{file}"
+          out << "\n" unless Array === out
+        end
+        if is_dir
           rec_output(File.join(file,'*'), out)
         end
       end
