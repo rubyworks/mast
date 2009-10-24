@@ -79,61 +79,63 @@
           
           <li class="method"><a href="#M000000">::run</a></li>
           
-          <li class="method"><a href="#M000028">#clean</a></li>
+          <li class="method"><a href="#M000027">#clean</a></li>
           
           <li class="method"><a href="#M000039">#confirm_clean</a></li>
           
-          <li class="method"><a href="#M000040">#confirm_clobber</a></li>
+          <li class="method"><a href="#M000042">#confirm_clobber</a></li>
           
           <li class="method"><a href="#M000020">#diff</a></li>
           
-          <li class="method"><a href="#M000013">#generate</a></li>
+          <li class="method"><a href="#M000015">#generate</a></li>
           
-          <li class="method"><a href="#M000033">#help</a></li>
+          <li class="method"><a href="#M000031">#help</a></li>
           
-          <li class="method"><a href="#M000017">#list</a></li>
+          <li class="method"><a href="#M000019">#list</a></li>
           
-          <li class="method"><a href="#M000034">#manifest</a></li>
+          <li class="method"><a href="#M000032">#manifest</a></li>
           
-          <li class="method"><a href="#M000035">#manifest_options</a></li>
+          <li class="method"><a href="#M000036">#manifest_options</a></li>
           
           <li class="method"><a href="#M000025">#new</a></li>
           
-          <li class="method"><a href="#M000021">#old</a></li>
+          <li class="method"><a href="#M000024">#old</a></li>
           
-          <li class="method"><a href="#M000004">#optparse</a></li>
+          <li class="method"><a href="#M000005">#optparse</a></li>
           
-          <li class="method"><a href="#M000036">#quiet?</a></li>
+          <li class="method"><a href="#M000038">#quiet?</a></li>
           
-          <li class="method"><a href="#M000052">#report_cancelled</a></li>
+          <li class="method"><a href="#M000043">#report</a></li>
           
-          <li class="method"><a href="#M000041">#report_created</a></li>
+          <li class="method"><a href="#M000055">#report_cancelled</a></li>
           
-          <li class="method"><a href="#M000045">#report_difference</a></li>
+          <li class="method"><a href="#M000044">#report_created</a></li>
           
-          <li class="method"><a href="#M000048">#report_help</a></li>
+          <li class="method"><a href="#M000047">#report_difference</a></li>
           
-          <li class="method"><a href="#M000050">#report_manifest_missing</a></li>
+          <li class="method"><a href="#M000050">#report_help</a></li>
           
-          <li class="method"><a href="#M000053">#report_overwrite</a></li>
+          <li class="method"><a href="#M000054">#report_manifest_missing</a></li>
           
-          <li class="method"><a href="#M000043">#report_updated</a></li>
+          <li class="method"><a href="#M000056">#report_overwrite</a></li>
           
-          <li class="method"><a href="#M000055">#report_verify</a></li>
+          <li class="method"><a href="#M000046">#report_updated</a></li>
           
-          <li class="method"><a href="#M000054">#report_warn_shadowing</a></li>
+          <li class="method"><a href="#M000059">#report_verify</a></li>
           
-          <li class="method"><a href="#M000046">#report_whatsnew</a></li>
+          <li class="method"><a href="#M000058">#report_warn_shadowing</a></li>
           
-          <li class="method"><a href="#M000047">#report_whatsold</a></li>
+          <li class="method"><a href="#M000048">#report_whatsnew</a></li>
+          
+          <li class="method"><a href="#M000049">#report_whatsold</a></li>
           
           <li class="method"><a href="#M000002">#run</a></li>
           
-          <li class="method"><a href="#M000019">#show</a></li>
+          <li class="method"><a href="#M000003">#run_command</a></li>
           
-          <li class="method"><a href="#M000016">#up</a></li>
+          <li class="method"><a href="#M000018">#up</a></li>
           
-          <li class="method"><a href="#M000014">#update</a></li>
+          <li class="method"><a href="#M000016">#update</a></li>
           
           <li class="method"><a href="#M000026">#verify</a></li>
           
@@ -157,8 +159,6 @@
           <li class="file"><a href="../LICENSE.html">LICENSE</a></li>
         
           <li class="file"><a href="../README_rdoc.html">README.rdoc</a></li>
-        
-          <li class="file"><a href="../TUTORIAL_rdoc.html">TUTORIAL.rdoc</a></li>
         
         </ul>
       </div>
@@ -352,6 +352,40 @@
         </div>
       </div>
       
+      <div id="dir-attribute-method" class="method-detail">
+        <a name="dir"></a>
+        
+        <a name="dir="></a>
+        
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">dir</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p class="missing-docs">(Not documented)</p>
+        
+        </div>
+      </div>
+      
+      <div id="show-attribute-method" class="method-detail">
+        <a name="show"></a>
+        
+        <a name="show="></a>
+        
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">show</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p class="missing-docs">(Not documented)</p>
+        
+        </div>
+      </div>
+      
     </div>
     
 
@@ -381,7 +415,7 @@
           <div class="method-source-code"
             id="new-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/mast/cli.rb, line 75</span>
+<span class="ruby-comment cmt"># File lib/mast/cli.rb, line 79</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>
       <span class="ruby-ivar">@quiet</span>   = <span class="ruby-keyword kw">false</span>
       <span class="ruby-ivar">@all</span>     = <span class="ruby-keyword kw">false</span>
@@ -420,7 +454,7 @@
           <div class="method-source-code"
             id="run-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/mast/cli.rb, line 60</span>
+<span class="ruby-comment cmt"># File lib/mast/cli.rb, line 62</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">run</span>
       <span class="ruby-identifier">new</span>.<span class="ruby-identifier">run</span>
     <span class="ruby-keyword kw">end</span></pre>
@@ -439,7 +473,7 @@
 
     
       <div id="clean-method" class="method-detail ">
-        <a name="M000028"></a>
+        <a name="M000027"></a>
 
         <div class="method-heading">
         
@@ -460,7 +494,7 @@ Clean (or clobber if you prefer) non-manifest files.
           <div class="method-source-code"
             id="clean-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/mast/cli.rb, line 251</span>
+<span class="ruby-comment cmt"># File lib/mast/cli.rb, line 270</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">clean</span>
       <span class="ruby-identifier">answer</span> = <span class="ruby-identifier">confirm_clean</span>(<span class="ruby-identifier">manifest</span>.<span class="ruby-identifier">cleanlist</span>)
       <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">answer</span>.<span class="ruby-identifier">downcase</span>
@@ -501,7 +535,7 @@ Show diff comparison between listed and actual.
           <div class="method-source-code"
             id="diff-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/mast/cli.rb, line 222</span>
+<span class="ruby-comment cmt"># File lib/mast/cli.rb, line 241</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">diff</span>
       <span class="ruby-identifier">result</span> = <span class="ruby-identifier">manifest</span>.<span class="ruby-identifier">diff</span>
       <span class="ruby-identifier">report_difference</span>(<span class="ruby-identifier">result</span>)
@@ -515,7 +549,7 @@ Show diff comparison between listed and actual.
 
     
       <div id="generate-method" class="method-detail ">
-        <a name="M000013"></a>
+        <a name="M000015"></a>
 
         <div class="method-heading">
         
@@ -536,7 +570,7 @@ Default command &#8212; output manifest.
           <div class="method-source-code"
             id="generate-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/mast/cli.rb, line 189</span>
+<span class="ruby-comment cmt"># File lib/mast/cli.rb, line 208</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">generate</span>
       <span class="ruby-comment cmt">#if file</span>
       <span class="ruby-comment cmt">#  update</span>
@@ -553,7 +587,7 @@ Default command &#8212; output manifest.
 
     
       <div id="help-method" class="method-detail ">
-        <a name="M000033"></a>
+        <a name="M000031"></a>
 
         <div class="method-heading">
         
@@ -574,7 +608,7 @@ Display command help information.
           <div class="method-source-code"
             id="help-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/mast/cli.rb, line 263</span>
+<span class="ruby-comment cmt"># File lib/mast/cli.rb, line 282</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">help</span>
       <span class="ruby-identifier">report_help</span>
     <span class="ruby-keyword kw">end</span></pre>
@@ -587,7 +621,7 @@ Display command help information.
 
     
       <div id="list-method" class="method-detail ">
-        <a name="M000017"></a>
+        <a name="M000019"></a>
 
         <div class="method-heading">
         
@@ -608,7 +642,7 @@ List files in manifest file.
           <div class="method-source-code"
             id="list-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/mast/cli.rb, line 212</span>
+<span class="ruby-comment cmt"># File lib/mast/cli.rb, line 231</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">list</span>
       <span class="ruby-identifier">puts</span> <span class="ruby-identifier">manifest</span>.<span class="ruby-identifier">filelist</span>
     <span class="ruby-keyword kw">end</span></pre>
@@ -642,7 +676,7 @@ Files found, but not listed in manifest.
           <div class="method-source-code"
             id="new-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/mast/cli.rb, line 236</span>
+<span class="ruby-comment cmt"># File lib/mast/cli.rb, line 255</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">new</span>
       <span class="ruby-identifier">list</span> = <span class="ruby-identifier">manifest</span>.<span class="ruby-identifier">whatsnew</span>
       <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">list</span>.<span class="ruby-identifier">empty?</span>
@@ -658,7 +692,7 @@ Files found, but not listed in manifest.
 
     
       <div id="old-method" class="method-detail ">
-        <a name="M000021"></a>
+        <a name="M000024"></a>
 
         <div class="method-heading">
         
@@ -679,7 +713,7 @@ Files listed in manifest, but not found.
           <div class="method-source-code"
             id="old-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/mast/cli.rb, line 228</span>
+<span class="ruby-comment cmt"># File lib/mast/cli.rb, line 247</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">old</span>
       <span class="ruby-identifier">list</span> = <span class="ruby-identifier">manifest</span>.<span class="ruby-identifier">whatsold</span>
       <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">list</span>.<span class="ruby-identifier">empty?</span>
@@ -695,7 +729,7 @@ Files listed in manifest, but not found.
 
     
       <div id="optparse-method" class="method-detail ">
-        <a name="M000004"></a>
+        <a name="M000005"></a>
 
         <div class="method-heading">
         
@@ -716,7 +750,7 @@ Parse command line options.
           <div class="method-source-code"
             id="optparse-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/mast/cli.rb, line 109</span>
+<span class="ruby-comment cmt"># File lib/mast/cli.rb, line 123</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">optparse</span>
       <span class="ruby-identifier">opts</span> = <span class="ruby-constant">GetoptLong</span>.<span class="ruby-identifier">new</span>(
         <span class="ruby-comment cmt"># options</span>
@@ -724,15 +758,16 @@ Parse command line options.
         [ <span class="ruby-value str">'--digest'</span> , <span class="ruby-value str">'-g'</span>, <span class="ruby-constant">GetoptLong</span><span class="ruby-operator">::</span><span class="ruby-constant">REQUIRED_ARGUMENT</span> ],
         [ <span class="ruby-value str">'--exclude'</span>, <span class="ruby-value str">'-x'</span>, <span class="ruby-constant">GetoptLong</span><span class="ruby-operator">::</span><span class="ruby-constant">REQUIRED_ARGUMENT</span> ],
         <span class="ruby-comment cmt">#[ '--include', '-i', GetoptLong::REQUIRED_ARGUMENT ],</span>
-        [ <span class="ruby-value str">'--ignore'</span>,        <span class="ruby-constant">GetoptLong</span><span class="ruby-operator">::</span><span class="ruby-constant">REQUIRED_ARGUMENT</span> ],
+        [ <span class="ruby-value str">'--ignore'</span> , <span class="ruby-value str">'-i'</span>, <span class="ruby-constant">GetoptLong</span><span class="ruby-operator">::</span><span class="ruby-constant">REQUIRED_ARGUMENT</span> ],
         [ <span class="ruby-value str">'--all'</span>    , <span class="ruby-value str">'-a'</span>, <span class="ruby-constant">GetoptLong</span><span class="ruby-operator">::</span><span class="ruby-constant">NO_ARGUMENT</span> ],
+        [ <span class="ruby-value str">'--dir'</span>    ,       <span class="ruby-constant">GetoptLong</span><span class="ruby-operator">::</span><span class="ruby-constant">NO_ARGUMENT</span> ],
+        [ <span class="ruby-value str">'--show'</span>   , <span class="ruby-value str">'-s'</span>, <span class="ruby-constant">GetoptLong</span><span class="ruby-operator">::</span><span class="ruby-constant">NO_ARGUMENT</span> ],
         [ <span class="ruby-value str">'--quiet'</span>  , <span class="ruby-value str">'-q'</span>, <span class="ruby-constant">GetoptLong</span><span class="ruby-operator">::</span><span class="ruby-constant">NO_ARGUMENT</span> ],
         <span class="ruby-comment cmt"># commands</span>
         [ <span class="ruby-value str">'--help'</span>   , <span class="ruby-value str">'-h'</span>, <span class="ruby-constant">GetoptLong</span><span class="ruby-operator">::</span><span class="ruby-constant">NO_ARGUMENT</span> ],
         [ <span class="ruby-value str">'--create'</span> , <span class="ruby-value str">'-c'</span>, <span class="ruby-constant">GetoptLong</span><span class="ruby-operator">::</span><span class="ruby-constant">NO_ARGUMENT</span> ],
         [ <span class="ruby-value str">'--update'</span> , <span class="ruby-value str">'-u'</span>, <span class="ruby-constant">GetoptLong</span><span class="ruby-operator">::</span><span class="ruby-constant">NO_ARGUMENT</span> ],
         [ <span class="ruby-value str">'--list'</span>   , <span class="ruby-value str">'-l'</span>, <span class="ruby-constant">GetoptLong</span><span class="ruby-operator">::</span><span class="ruby-constant">NO_ARGUMENT</span> ],
-        [ <span class="ruby-value str">'--show'</span>   , <span class="ruby-value str">'-s'</span>, <span class="ruby-constant">GetoptLong</span><span class="ruby-operator">::</span><span class="ruby-constant">NO_ARGUMENT</span> ],
         [ <span class="ruby-value str">'--diff'</span>   , <span class="ruby-value str">'-d'</span>, <span class="ruby-constant">GetoptLong</span><span class="ruby-operator">::</span><span class="ruby-constant">NO_ARGUMENT</span> ],
         [ <span class="ruby-value str">'--new'</span>    , <span class="ruby-value str">'-n'</span>, <span class="ruby-constant">GetoptLong</span><span class="ruby-operator">::</span><span class="ruby-constant">NO_ARGUMENT</span> ],
         [ <span class="ruby-value str">'--old'</span>    , <span class="ruby-value str">'-o'</span>, <span class="ruby-constant">GetoptLong</span><span class="ruby-operator">::</span><span class="ruby-constant">NO_ARGUMENT</span> ],
@@ -750,8 +785,8 @@ Parse command line options.
           <span class="ruby-ivar">@command</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">:update</span>
         <span class="ruby-keyword kw">when</span> <span class="ruby-value str">'--list'</span>
           <span class="ruby-ivar">@command</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">:list</span>
-        <span class="ruby-keyword kw">when</span> <span class="ruby-value str">'--show'</span>
-          <span class="ruby-ivar">@command</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">:show</span>
+        <span class="ruby-comment cmt">#when '--show'</span>
+        <span class="ruby-comment cmt">#  @command &lt;&lt; :show</span>
         <span class="ruby-keyword kw">when</span> <span class="ruby-value str">'--diff'</span>
           <span class="ruby-ivar">@command</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">:diff</span>
         <span class="ruby-keyword kw">when</span> <span class="ruby-value str">'--new'</span>
@@ -773,6 +808,10 @@ Parse command line options.
         <span class="ruby-comment cmt">#  @include &lt;&lt; val</span>
         <span class="ruby-comment cmt">#when '--ignore'</span>
         <span class="ruby-comment cmt">#  @ignore &lt;&lt; val</span>
+        <span class="ruby-keyword kw">when</span> <span class="ruby-value str">'--show'</span>
+          <span class="ruby-ivar">@show</span> = <span class="ruby-keyword kw">true</span>
+        <span class="ruby-keyword kw">when</span> <span class="ruby-value str">'--dir'</span>
+          <span class="ruby-ivar">@dir</span> = <span class="ruby-keyword kw">true</span>
         <span class="ruby-keyword kw">when</span> <span class="ruby-value str">'--all'</span>
           <span class="ruby-ivar">@all</span> = <span class="ruby-keyword kw">true</span>
         <span class="ruby-keyword kw">when</span> <span class="ruby-value str">'--quiet'</span>
@@ -813,6 +852,43 @@ Parse command line options.
 
         <div class="method-description">
           
+          
+          
+
+          
+          <div class="method-source-code"
+            id="run-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mast/cli.rb, line 91</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">run</span>
+      <span class="ruby-keyword kw">begin</span>
+        <span class="ruby-identifier">run_command</span>
+      <span class="ruby-keyword kw">rescue</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">err</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-identifier">err</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">$DEBUG</span>
+        <span class="ruby-identifier">report</span> <span class="ruby-identifier">err</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="run-command-method" class="method-detail ">
+        <a name="M000003"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">run_command</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
           <p>
 Run command.
 </p>
@@ -820,10 +896,10 @@ Run command.
 
           
           <div class="method-source-code"
-            id="run-source">
+            id="run-command-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/mast/cli.rb, line 87</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">run</span>
+<span class="ruby-comment cmt"># File lib/mast/cli.rb, line 101</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">run_command</span>
       <span class="ruby-identifier">optparse</span>
       <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@command</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>
         <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-value str">&quot;Please issue only one command.&quot;</span>
@@ -833,7 +909,7 @@ Run command.
       <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:create</span>   <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">generate</span>
       <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:update</span>   <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">update</span>
       <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:list</span>     <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">list</span>
-      <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:show</span>     <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">show</span>
+      <span class="ruby-comment cmt">#when :show     then show</span>
       <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:diff</span>     <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">diff</span>
       <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:new</span>      <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">new</span>
       <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:old</span>      <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">old</span>
@@ -851,42 +927,8 @@ Run command.
       </div>
 
     
-      <div id="show-method" class="method-detail ">
-        <a name="M000019"></a>
-
-        <div class="method-heading">
-        
-          <span class="method-name">show</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        
-        </div>
-
-        <div class="method-description">
-          
-          <p>
-List files in manifest file.
-</p>
-          
-
-          
-          <div class="method-source-code"
-            id="show-source">
-<pre>
-<span class="ruby-comment cmt"># File lib/mast/cli.rb, line 217</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">show</span>
-      <span class="ruby-identifier">puts</span> <span class="ruby-identifier">manifest</span>.<span class="ruby-identifier">showlist</span>
-    <span class="ruby-keyword kw">end</span></pre>
-          </div>
-          
-        </div>
-
-        
-      </div>
-
-    
       <div id="up-method" class="method-detail method-alias">
-        <a name="M000016"></a>
+        <a name="M000018"></a>
 
         <div class="method-heading">
         
@@ -899,7 +941,7 @@ List files in manifest file.
         <div class="method-description">
           
           <p>
-Alias for <a href="Cli.html#M000014">update</a>
+Alias for <a href="Cli.html#M000016">update</a>
 </p>
           
 
@@ -911,7 +953,7 @@ Alias for <a href="Cli.html#M000014">update</a>
 
     
       <div id="update-method" class="method-detail ">
-        <a name="M000014"></a>
+        <a name="M000016"></a>
 
         <div class="method-heading">
         
@@ -932,7 +974,7 @@ Update a MANIFEST file for this package.
           <div class="method-source-code"
             id="update-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/mast/cli.rb, line 199</span>
+<span class="ruby-comment cmt"># File lib/mast/cli.rb, line 218</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">update</span>
       <span class="ruby-keyword kw">begin</span>
         <span class="ruby-identifier">file</span> = <span class="ruby-identifier">manifest</span>.<span class="ruby-identifier">update</span>
@@ -948,7 +990,7 @@ Update a MANIFEST file for this package.
 
         
         <div class="aliases">
-          Also aliased as: <a href="Cli.html#M000016">up</a>
+          Also aliased as: <a href="Cli.html#M000018">up</a>
         </div>
         
       </div>
@@ -974,7 +1016,7 @@ Update a MANIFEST file for this package.
           <div class="method-source-code"
             id="verify-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/mast/cli.rb, line 244</span>
+<span class="ruby-comment cmt"># File lib/mast/cli.rb, line 263</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">verify</span>
       <span class="ruby-identifier">check</span> = <span class="ruby-identifier">manifest</span>.<span class="ruby-identifier">verify</span>
       <span class="ruby-identifier">report_verify</span>(<span class="ruby-identifier">check</span>)
@@ -1016,7 +1058,7 @@ Get confirmation for clean.
           <div class="method-source-code"
             id="confirm-clean-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/mast/cli.rb, line 294</span>
+<span class="ruby-comment cmt"># File lib/mast/cli.rb, line 313</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">confirm_clean</span>(<span class="ruby-identifier">list</span>)
       <span class="ruby-identifier">puts</span> <span class="ruby-identifier">list</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot;\n&quot;</span>)
       <span class="ruby-identifier">ask</span>(<span class="ruby-value str">&quot;The above files will be removed. Continue?&quot;</span>, <span class="ruby-value str">&quot;yN&quot;</span>)
@@ -1030,7 +1072,7 @@ Get confirmation for clean.
 
     
       <div id="confirm-clobber-method" class="method-detail ">
-        <a name="M000040"></a>
+        <a name="M000042"></a>
 
         <div class="method-heading">
         
@@ -1051,7 +1093,7 @@ Get confirmation for clobber.
           <div class="method-source-code"
             id="confirm-clobber-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/mast/cli.rb, line 300</span>
+<span class="ruby-comment cmt"># File lib/mast/cli.rb, line 319</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">confirm_clobber</span>(<span class="ruby-identifier">list</span>)
       <span class="ruby-identifier">puts</span> <span class="ruby-identifier">list</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot;\n&quot;</span>)
       <span class="ruby-identifier">ask</span>(<span class="ruby-value str">&quot;The above files will be removed. Continue?&quot;</span>, <span class="ruby-value str">&quot;yN&quot;</span>)
@@ -1065,7 +1107,7 @@ Get confirmation for clobber.
 
     
       <div id="manifest-method" class="method-detail ">
-        <a name="M000034"></a>
+        <a name="M000032"></a>
 
         <div class="method-heading">
         
@@ -1084,7 +1126,7 @@ Get confirmation for clobber.
           <div class="method-source-code"
             id="manifest-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/mast/cli.rb, line 270</span>
+<span class="ruby-comment cmt"># File lib/mast/cli.rb, line 289</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">manifest</span>
       <span class="ruby-ivar">@manifest</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Manifest</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">manifest_options</span>)
       <span class="ruby-comment cmt">#@manifest ||= (</span>
@@ -1106,7 +1148,7 @@ Get confirmation for clobber.
 
     
       <div id="manifest-options-method" class="method-detail ">
-        <a name="M000035"></a>
+        <a name="M000036"></a>
 
         <div class="method-heading">
         
@@ -1128,9 +1170,9 @@ commandline arguments.
           <div class="method-source-code"
             id="manifest-options-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/mast/cli.rb, line 284</span>
+<span class="ruby-comment cmt"># File lib/mast/cli.rb, line 303</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">manifest_options</span>
-      { <span class="ruby-identifier">:file=</span><span class="ruby-operator">&gt;</span><span class="ruby-identifier">file</span>, <span class="ruby-identifier">:digest=</span><span class="ruby-operator">&gt;</span><span class="ruby-identifier">digest</span>, <span class="ruby-identifier">:exclude=</span><span class="ruby-operator">&gt;</span><span class="ruby-identifier">exclude</span>, <span class="ruby-identifier">:ignore=</span><span class="ruby-operator">&gt;</span><span class="ruby-identifier">ignore</span>, <span class="ruby-identifier">:all=</span><span class="ruby-operator">&gt;</span><span class="ruby-identifier">all</span>, <span class="ruby-identifier">:include=</span><span class="ruby-operator">&gt;</span><span class="ruby-identifier">include</span> }
+      { <span class="ruby-identifier">:file=</span><span class="ruby-operator">&gt;</span><span class="ruby-identifier">file</span>, <span class="ruby-identifier">:digest=</span><span class="ruby-operator">&gt;</span><span class="ruby-identifier">digest</span>, <span class="ruby-identifier">:exclude=</span><span class="ruby-operator">&gt;</span><span class="ruby-identifier">exclude</span>, <span class="ruby-identifier">:ignore=</span><span class="ruby-operator">&gt;</span><span class="ruby-identifier">ignore</span>, <span class="ruby-identifier">:all=</span><span class="ruby-operator">&gt;</span><span class="ruby-identifier">all</span>, <span class="ruby-identifier">:dir=</span><span class="ruby-operator">&gt;</span><span class="ruby-identifier">dir</span>, <span class="ruby-identifier">:include=</span><span class="ruby-operator">&gt;</span><span class="ruby-identifier">include</span>, <span class="ruby-identifier">:show=</span><span class="ruby-operator">&gt;</span><span class="ruby-identifier">show</span> }
     <span class="ruby-keyword kw">end</span></pre>
           </div>
           
@@ -1141,7 +1183,7 @@ commandline arguments.
 
     
       <div id="quiet--method" class="method-detail ">
-        <a name="M000036"></a>
+        <a name="M000038"></a>
 
         <div class="method-heading">
         
@@ -1162,7 +1204,7 @@ Quiet opertation?
           <div class="method-source-code"
             id="quiet--source">
 <pre>
-<span class="ruby-comment cmt"># File lib/mast/cli.rb, line 289</span>
+<span class="ruby-comment cmt"># File lib/mast/cli.rb, line 308</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">quiet?</span>
       <span class="ruby-ivar">@quiet</span>
     <span class="ruby-keyword kw">end</span></pre>
@@ -1174,8 +1216,40 @@ Quiet opertation?
       </div>
 
     
+      <div id="report-method" class="method-detail ">
+        <a name="M000043"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">report</span><span
+            class="method-args">(message)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="report-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mast/cli.rb, line 325</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">report</span>(<span class="ruby-identifier">message</span>)
+      <span class="ruby-identifier">$stderr</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;#{message}\n&quot;</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">quiet?</span>
+    <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
       <div id="report-cancelled-method" class="method-detail ">
-        <a name="M000052"></a>
+        <a name="M000055"></a>
 
         <div class="method-heading">
         
@@ -1196,9 +1270,9 @@ Report action cancelled.
           <div class="method-source-code"
             id="report-cancelled-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/mast/cli.rb, line 368</span>
+<span class="ruby-comment cmt"># File lib/mast/cli.rb, line 392</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">report_cancelled</span>(<span class="ruby-identifier">action</span>)
-      <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;#{action} cancelled.&quot;</span>
+      <span class="ruby-identifier">report</span> <span class="ruby-node">&quot;#{action} cancelled.&quot;</span>
     <span class="ruby-keyword kw">end</span></pre>
           </div>
           
@@ -1209,7 +1283,7 @@ Report action cancelled.
 
     
       <div id="report-created-method" class="method-detail ">
-        <a name="M000041"></a>
+        <a name="M000044"></a>
 
         <div class="method-heading">
         
@@ -1230,10 +1304,10 @@ Report manifest created.
           <div class="method-source-code"
             id="report-created-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/mast/cli.rb, line 306</span>
+<span class="ruby-comment cmt"># File lib/mast/cli.rb, line 330</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">report_created</span>(<span class="ruby-identifier">file</span>)
       <span class="ruby-identifier">file</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">file</span>)
-      <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;#{file} created.&quot;</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">quiet?</span>
+      <span class="ruby-identifier">report</span> <span class="ruby-node">&quot;#{file} created.&quot;</span>
     <span class="ruby-keyword kw">end</span></pre>
           </div>
           
@@ -1244,7 +1318,7 @@ Report manifest created.
 
     
       <div id="report-difference-method" class="method-detail ">
-        <a name="M000045"></a>
+        <a name="M000047"></a>
 
         <div class="method-heading">
         
@@ -1265,7 +1339,7 @@ Display diff between file and actual.
           <div class="method-source-code"
             id="report-difference-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/mast/cli.rb, line 325</span>
+<span class="ruby-comment cmt"># File lib/mast/cli.rb, line 349</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">report_difference</span>(<span class="ruby-identifier">result</span>)
       <span class="ruby-identifier">output</span> = <span class="ruby-keyword kw">nil</span>
       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">pass</span> = <span class="ruby-identifier">result</span>.<span class="ruby-identifier">empty?</span>
@@ -1288,7 +1362,7 @@ Display diff between file and actual.
 
     
       <div id="report-help-method" class="method-detail ">
-        <a name="M000048"></a>
+        <a name="M000050"></a>
 
         <div class="method-heading">
         
@@ -1309,7 +1383,7 @@ Show help.
           <div class="method-source-code"
             id="report-help-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/mast/cli.rb, line 350</span>
+<span class="ruby-comment cmt"># File lib/mast/cli.rb, line 374</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">report_help</span>
       <span class="ruby-identifier">doc</span> = <span class="ruby-keyword kw">false</span>
       <span class="ruby-constant">File</span>.<span class="ruby-identifier">readlines</span>(<span class="ruby-keyword kw">__FILE__</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
@@ -1330,7 +1404,7 @@ Show help.
 
     
       <div id="report-manifest-missing-method" class="method-detail ">
-        <a name="M000050"></a>
+        <a name="M000054"></a>
 
         <div class="method-heading">
         
@@ -1351,9 +1425,9 @@ Report missing manifest file.
           <div class="method-source-code"
             id="report-manifest-missing-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/mast/cli.rb, line 363</span>
+<span class="ruby-comment cmt"># File lib/mast/cli.rb, line 387</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">report_manifest_missing</span>
-      <span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;No manifest file.&quot;</span>
+      <span class="ruby-identifier">report</span> <span class="ruby-value str">&quot;No manifest file.&quot;</span>
     <span class="ruby-keyword kw">end</span></pre>
           </div>
           
@@ -1364,7 +1438,7 @@ Report missing manifest file.
 
     
       <div id="report-overwrite-method" class="method-detail ">
-        <a name="M000053"></a>
+        <a name="M000056"></a>
 
         <div class="method-heading">
         
@@ -1385,9 +1459,9 @@ Report manifest overwrite.
           <div class="method-source-code"
             id="report-overwrite-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/mast/cli.rb, line 373</span>
+<span class="ruby-comment cmt"># File lib/mast/cli.rb, line 397</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">report_overwrite</span>(<span class="ruby-identifier">manifest</span>)
-      <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;#{manifest.filename} already exists.&quot;</span>
+      <span class="ruby-identifier">report</span> <span class="ruby-node">&quot;#{manifest.filename} already exists.&quot;</span>
     <span class="ruby-keyword kw">end</span></pre>
           </div>
           
@@ -1398,7 +1472,7 @@ Report manifest overwrite.
 
     
       <div id="report-updated-method" class="method-detail ">
-        <a name="M000043"></a>
+        <a name="M000046"></a>
 
         <div class="method-heading">
         
@@ -1419,13 +1493,13 @@ Report manifest updated.
           <div class="method-source-code"
             id="report-updated-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/mast/cli.rb, line 312</span>
+<span class="ruby-comment cmt"># File lib/mast/cli.rb, line 336</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">report_updated</span>(<span class="ruby-identifier">file</span>)
       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">file</span>
         <span class="ruby-identifier">file</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">file</span>)
-        <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;#{file} updated.&quot;</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">quiet?</span>
+        <span class="ruby-identifier">report</span> <span class="ruby-node">&quot;#{file} updated.&quot;</span>
       <span class="ruby-keyword kw">else</span>
-        <span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;Manifest file doesn't exit.&quot;</span>
+        <span class="ruby-identifier">report</span> <span class="ruby-value str">&quot;Manifest file doesn't exit.&quot;</span>
       <span class="ruby-keyword kw">end</span>
     <span class="ruby-keyword kw">end</span></pre>
           </div>
@@ -1437,7 +1511,7 @@ Report manifest updated.
 
     
       <div id="report-verify-method" class="method-detail ">
-        <a name="M000055"></a>
+        <a name="M000059"></a>
 
         <div class="method-heading">
         
@@ -1456,12 +1530,12 @@ Report manifest updated.
           <div class="method-source-code"
             id="report-verify-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/mast/cli.rb, line 383</span>
+<span class="ruby-comment cmt"># File lib/mast/cli.rb, line 407</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">report_verify</span>(<span class="ruby-identifier">check</span>)
       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">check</span>
-        <span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;Manifest if good.&quot;</span>
+        <span class="ruby-identifier">report</span> <span class="ruby-value str">&quot;Manifest if good.&quot;</span>
       <span class="ruby-keyword kw">else</span>
-        <span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;Manifest if bad!&quot;</span>
+        <span class="ruby-identifier">report</span> <span class="ruby-value str">&quot;Manifest if bad!&quot;</span>
       <span class="ruby-keyword kw">end</span>
     <span class="ruby-keyword kw">end</span></pre>
           </div>
@@ -1473,7 +1547,7 @@ Report manifest updated.
 
     
       <div id="report-warn-shadowing-method" class="method-detail ">
-        <a name="M000054"></a>
+        <a name="M000058"></a>
 
         <div class="method-heading">
         
@@ -1494,9 +1568,9 @@ Warn that a manifest already exist higher in this hierarchy.
           <div class="method-source-code"
             id="report-warn-shadowing-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/mast/cli.rb, line 378</span>
+<span class="ruby-comment cmt"># File lib/mast/cli.rb, line 402</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">report_warn_shadowing</span>(<span class="ruby-identifier">manifest</span>)
-      <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Shadowing #{manifest.file}.&quot;</span>
+      <span class="ruby-identifier">report</span> <span class="ruby-node">&quot;Shadowing #{manifest.file}.&quot;</span>
     <span class="ruby-keyword kw">end</span></pre>
           </div>
           
@@ -1507,7 +1581,7 @@ Warn that a manifest already exist higher in this hierarchy.
 
     
       <div id="report-whatsnew-method" class="method-detail ">
-        <a name="M000046"></a>
+        <a name="M000048"></a>
 
         <div class="method-heading">
         
@@ -1528,7 +1602,7 @@ Report missing manifest file.
           <div class="method-source-code"
             id="report-whatsnew-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/mast/cli.rb, line 340</span>
+<span class="ruby-comment cmt"># File lib/mast/cli.rb, line 364</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">report_whatsnew</span>(<span class="ruby-identifier">list</span>)
       <span class="ruby-identifier">puts</span> <span class="ruby-identifier">list</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot;\n&quot;</span>)
     <span class="ruby-keyword kw">end</span></pre>
@@ -1541,7 +1615,7 @@ Report missing manifest file.
 
     
       <div id="report-whatsold-method" class="method-detail ">
-        <a name="M000047"></a>
+        <a name="M000049"></a>
 
         <div class="method-heading">
         
@@ -1553,16 +1627,14 @@ Report missing manifest file.
 
         <div class="method-description">
           
-          <p>
-Report missing manifest file.
-</p>
+          
           
 
           
           <div class="method-source-code"
             id="report-whatsold-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/mast/cli.rb, line 345</span>
+<span class="ruby-comment cmt"># File lib/mast/cli.rb, line 369</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">report_whatsold</span>(<span class="ruby-identifier">list</span>)
       <span class="ruby-identifier">puts</span> <span class="ruby-identifier">list</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot;\n&quot;</span>)
     <span class="ruby-keyword kw">end</span></pre>

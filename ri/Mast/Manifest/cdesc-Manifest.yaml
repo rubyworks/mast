@@ -15,6 +15,12 @@ attributes:
 - !ruby/object:RDoc::RI::Attribute 
   comment: 
   - !ruby/struct:RDoc::Markup::Flow::P 
+    body: Include directories.
+  name: dir
+  rw: RW
+- !ruby/object:RDoc::RI::Attribute 
+  comment: 
+  - !ruby/struct:RDoc::Markup::Flow::P 
     body: Directory of manifest.
   name: directory
   rw: RW
@@ -47,6 +53,12 @@ attributes:
   - !ruby/struct:RDoc::Markup::Flow::P 
     body: What files to include. Defaults to ['*']. Note that Mast automatically recurses through directory entries, so using '*<b>/</b>' would simply be a waste of of processing cycles.
   name: include
+  rw: RW
+- !ruby/object:RDoc::RI::Attribute 
+  comment: 
+  - !ruby/struct:RDoc::Markup::Flow::P 
+    body: "Show as if another manifest (eg. use files options). TODO: Change name?"
+  name: show
   rw: RW
 class_methods: 
 - !ruby/object:RDoc::RI::MethodSummary 
@@ -178,6 +190,8 @@ instance_methods:
   name: to_s
 - !ruby/object:RDoc::RI::MethodSummary 
   name: topline_string
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: unlisted
 - !ruby/object:RDoc::RI::MethodSummary 
   name: update
 - !ruby/object:RDoc::RI::MethodSummary 

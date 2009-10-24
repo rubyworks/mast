@@ -4,9 +4,9 @@ aliases: []
 block_params: 
 comment: 
 - !ruby/struct:RDoc::Markup::Flow::P 
-  body: List files in manifest file.
-full_name: Mast::Cli#show
+  body: Files not listed in manifest.
+full_name: Mast::Manifest#unlisted
 is_singleton: false
-name: show
+name: unlisted
 params: ()
 visibility: public

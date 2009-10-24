@@ -4,8 +4,8 @@ aliases: []
 block_params: 
 comment: []
 
-full_name: Mast::Cli#run
+full_name: Mast::Cli#report
 is_singleton: false
-name: run
-params: ()
-visibility: public
+name: report
+params: (message)
+visibility: private
