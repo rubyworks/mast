@@ -1,5 +1,5 @@
 ---
-email:
+announce:
   service : Email
   file    : ~
   subject : ~

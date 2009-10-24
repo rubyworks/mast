@@ -1,8 +1,0 @@
----
-box:
-  service: Box
-  types  : [ tar, gem ]
-  include: ~
-  ignore : ~
-  exclude: [doc, log, pkg, reap, work]
-
