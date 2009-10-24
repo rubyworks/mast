@@ -19,7 +19,6 @@
 #    -c --create         Generate a new manifest. (default)
 #    -u --update         Update an existing manifest.
 #    -l --list           List the files given in the manifest file. (Use -f to specify an alternate file.)
-#    -s --show           Show all files that would appear in the manifest file if it were updated.
 #    -d --diff           Diff manifest file against actual.
 #    -n --new            List existant files that are not given in the manifest.
 #    -o --old            List files given in the manifest but are non-existent.
@@ -32,6 +31,7 @@
 #                        so it is possible to make complete list of all contents.
 #       --dir            When creating a list include directory paths; by default
 #                        only files are listed.
+#    -s --show           Show files using the options from the manifest file.
 #    -f --file PATH      Path to manifest file. When using update command, if not
 #                        given then the file matching 'MANIFEST', case-insensitive
 #                        and with an optional '.txt' extension, will be looked for

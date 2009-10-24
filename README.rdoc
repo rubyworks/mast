@@ -47,11 +47,11 @@ then download the tarball package and type:
 Windows users use 'ruby setup.rb all'.
 
 
-== LICENSE
+== COPYRIGHT
 
 Copyright (c) 2009 Thomas Sawyer <transfire@gmail.com>
 
-This program is ditributed unser the terms of the GPL license.
+This program is ditributed unser the terms of the MIT license.
 
-See COPYING file for details.
+See LICENSE or COPYING file for details.
 
