@@ -38,10 +38,12 @@
 
 <div class="nav tinted">
   <div class="menu page">
-    <a href="rdoc/index.html">API Documents</a> &nbsp;&nbsp;
+    <a href="http://wiki.github.com/proutils/mast/">Documentation</a> &nbsp;&nbsp;
+    <a href="rdoc/index.html">API</a> &nbsp;&nbsp;
     <!-- <a href="qedoc/index.html">QEDocs</a> &nbsp;&nbsp; -->
-    <a href="http://googlegroups.com/group/proutils">Mailing List</a> &nbsp;&nbsp;
-    <a href="http://github.com/proutils/mast">Source Code</a> &nbsp;&nbsp;
+    <a href="http://googlegroups.com/group/proutils">Forum</a> &nbsp;&nbsp;
+    <a href="http://github.com/proutils/mast/issues">Suggestion/Issue</a> &nbsp;&nbsp;
+    <a href="http://github.com/proutils/mast">Development</a> &nbsp;&nbsp;
   </div>
 </div>
 
@@ -56,7 +58,7 @@
   <div class="page">
 
   <p>Mast is a commandline utility for working with MANIFEST and DIGEST lists.
-  Mast can be usedto list, create or update recursive directory listings, or compare
+  Mast can be used to list, create or update recursive directory listings, or compare
   manifests to actual directory contents. It can be useful in conjunction with
   packaging tools (such as <a href="http://proutils.github.com/box">Box</a>), or
   as a stand-alone tool for monitoring file changes.</p>
@@ -99,7 +101,7 @@
                         md5, sha1, sha128, sha256, or sha512.
     -x --exclude PATH   Exclude a file or dir from the manifest matching against
                         full pathname. You can use --exclude repeatedly.
-       --ignore PATH    Exclude a file or dir from the manifest matching against
+    -i --ignore PATH    Exclude a file or dir from the manifest matching against
                         an entries basename. You can use --ignore repeatedly.
     -q --quiet          Suppress extraneous output.
   </pre>
@@ -172,9 +174,9 @@
   <p>As you can see from the commandline help, <code>mast</code> has a number of additional
   commands and options. Try them out.</p>
 
-  <p>Be cautious with the <code>--clean</code> command. This mode of operation will delete any files
-  in your directory, not listed in the manifest. It will ask for confirmation before proceeding however,
-  so don't be too worried.</p>
+  <p><b>IMPORTANT!</b> Be cautious with the <code>--clean</code> command. This mode of operation will
+  delete any files in your directory not listed in the manifest. It will ask for confirmation before
+  proceeding however, so don't be <i>too</i> worried.</p>
 
   </div>
 </div>

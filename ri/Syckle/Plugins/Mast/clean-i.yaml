@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "Remove MANIFEST. TODO: Currently a noop. Not sure removing manfest is a good idea."
+full_name: Syckle::Plugins::Mast#clean
+is_singleton: false
+name: clean
+params: ()
+visibility: public
