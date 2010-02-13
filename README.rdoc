@@ -1,4 +1,10 @@
 = Mast
+         ___
+  .-----'---'-.
+  |           |
+  |           |
+  |           |
+  '-----------'
 
 * home: http://proutils.github.com/mast/
 * work: http://github.com/proutils/mast/
