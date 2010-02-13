@@ -20,9 +20,9 @@ module Syckle::Plugins
     end
 
     # autorun if log/notes exists
-    autorun do |project|
-      project.root.glob('MANIFEST{,.txt}').first
-    end
+    #autorun do |project|
+    #  project.root.glob('MANIFEST{,.txt}').first
+    #end
 
     # Default MANIFEST filename.
     DEFAULT_FILENAME = 'MANIFEST'
@@ -87,7 +87,7 @@ module Syckle::Plugins
 
     #
     def file
-      Project.root.glob("MANIFEST{,.txt}").first
+      project.root.glob("MANIFEST{,.txt}").first
     end
 
     #
