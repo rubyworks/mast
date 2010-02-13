@@ -41,7 +41,7 @@
 #                        md5, sha1, sha128, sha256, or sha512.
 #    -x --exclude PATH   Exclude a file or dir from the manifest matching against
 #                        full pathname. You can use --exclude repeatedly.
-#       --ignore PATH    Exclude a file or dir from the manifest matching against 
+#    -i --ignore PATH    Exclude a file or dir from the manifest matching against 
 #                        an entries basename. You can use --ignore repeatedly.
 #    -q --quiet          Suppress extraneous output.
 

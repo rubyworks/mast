@@ -1,35 +1,31 @@
 = Mast
 
-* home:   http://proutils.github.com/mast
-* source: http://github.com/proutils/mast
-
+* home: http://proutils.github.com/mast/
+* work: http://github.com/proutils/mast/
+* wiki: http://wiki.github.com/proutils/mast/
 
 == DESCRIPTION
 
-Mast is a commandline utility for generating MANIFEST lists and optionally checksums.
-It can be useful in conjunction with packaging tools (such as Box), or as a stand-alone
-tool for monitoring file changes.
+Mast is a commandline utility for generating MANIFEST and DIGEST lists.
+It can be useful in conjunction with packaging tools (such as Box),
+or as a stand-alone tool for monitoring file changes.
 
 
 == FEATURES
 
+* Intuitive command-line interface --simply specify what to include.
 * Self-referential header makes updating manifests easy.
-* Checksum lists can highlight changes to current files.
+* Checksum digests can highlight file changes.
 
 
-== RELEASE NOTES
+== USAGE
 
-Please see the HISTORY.rdoc file.
+Mast makes the process of generating manifests very easy, and even allows manifests
+to be updated without repeating inclusion/exclusion criteria by storing the command
+parameters in a comment line at the top of the generated output.
 
-
-== SYNOPSIS
-
-Mast is a convenient commandline tool for generating manifest and file hash lists.
-It makes the process very simple, and even allows manifests to be updated
-without repeating inclusion/exclusion criteria by storing the command parameters
-in a comment line at the top of the generated output.
-
-Lets try a simple example. Lets say we have the following folder structure:
+Lets try a simple example. Lets say we have the following folder structure, using 
+<tt>ls -R</tt> we see:
 
     $ ls -R
     .:
@@ -90,14 +86,15 @@ lets say the mint directory is extraneous and we do not want it included in the 
     demo_rtar/web/rocklobster.jpg
 
 So you can see how the commandline options carry over to the top comment line of the ouput. The advantage of
-this is that if you save the output to a standard location, ie. a file named MANIFEST or meta/manifest with
-an optional .txt prefix (case insensitive), then you can automaitcally update the file by calling +mast update+.
+this is that if you save the output to a standard location, i.e. a file named MANIFEST or meta/manifest with
+an optional .txt prefix (case insensitive), then you can automaitcally update the file by calling +mast --update+.
 
     $ mast -x mint > MANIFEST
-    $ mast update
+
+    $ mast --update
     MANIFEST updated.
 
-You can also add a checksum to the file list.
+You can also add a checksum to the file list to create a *DIGEST*.
 
     $ mast -x mint -g sha1
 
