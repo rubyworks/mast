@@ -1,9 +1,0 @@
----
-vclog:
-  service  : VClog
-  formats  : [json]
-  #layout   : rel    # gnu
-  typed    : false
-  output   : ~
-  active   : false
-
