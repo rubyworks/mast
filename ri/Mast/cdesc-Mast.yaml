@@ -8,7 +8,7 @@ constants:
 - !ruby/object:RDoc::RI::Constant 
   comment: 
   name: VERSION
-  value: "\"1.1\""
+  value: "\"1.2.0\""
 - !ruby/object:RDoc::RI::Constant 
   comment: 
   name: ARGVO

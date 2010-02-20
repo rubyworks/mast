@@ -95,17 +95,17 @@
           
             
             <li class="singleton">
-              <a href="#M000011">::open</a>
+              <a href="#M000012">::open</a>
             </li>
           
             
             <li class="method">
-              <a href="#M000014">#change_options</a>
+              <a href="#M000015">#change_options</a>
             </li>
           
             
             <li class="method">
-              <a href="#M000036">#chart</a>
+              <a href="#M000041">#chart</a>
             </li>
           
             
@@ -115,12 +115,12 @@
           
             
             <li class="method">
-              <a href="#M000032">#clean</a>
+              <a href="#M000037">#clean</a>
             </li>
           
             
             <li class="method">
-              <a href="#M000042">#cleanlist</a>
+              <a href="#M000047">#cleanlist</a>
             </li>
           
             
@@ -130,7 +130,7 @@
           
             
             <li class="method">
-              <a href="#M000022">#diff</a>
+              <a href="#M000028">#diff</a>
             </li>
           
             
@@ -145,32 +145,32 @@
           
             
             <li class="method">
-              <a href="#M000016">#file</a>
+              <a href="#M000018">#file</a>
             </li>
           
             
             <li class="method">
-              <a href="#M000040">#filechart</a>
+              <a href="#M000046">#filechart</a>
             </li>
           
             
             <li class="method">
-              <a href="#M000039">#filelist</a>
+              <a href="#M000045">#filelist</a>
             </li>
           
             
             <li class="method">
-              <a href="#M000047">#filename</a>
+              <a href="#M000051">#filename</a>
             </li>
           
             
             <li class="method">
-              <a href="#M000059">#files</a>
+              <a href="#M000064">#files</a>
             </li>
           
             
             <li class="method">
-              <a href="#M000018">#generate</a>
+              <a href="#M000025">#generate</a>
             </li>
           
             
@@ -180,17 +180,17 @@
           
             
             <li class="method">
-              <a href="#M000015">#include=</a>
+              <a href="#M000017">#include=</a>
             </li>
           
             
             <li class="method">
-              <a href="#M000063">#inclusions</a>
+              <a href="#M000065">#inclusions</a>
             </li>
           
             
             <li class="method">
-              <a href="#M000035">#list</a>
+              <a href="#M000040">#list</a>
             </li>
           
             
@@ -205,12 +205,12 @@
           
             
             <li class="method">
-              <a href="#M000050">#output</a>
+              <a href="#M000053">#output</a>
             </li>
           
             
             <li class="method">
-              <a href="#M000058">#parse_directory</a>
+              <a href="#M000063">#parse_directory</a>
             </li>
           
             
@@ -225,7 +225,7 @@
           
             
             <li class="method">
-              <a href="#M000017">#read?</a>
+              <a href="#M000022">#read?</a>
             </li>
           
             
@@ -235,17 +235,17 @@
           
             
             <li class="method">
-              <a href="#M000053">#rec_output</a>
+              <a href="#M000054">#rec_output</a>
             </li>
           
             
             <li class="method">
-              <a href="#M000020">#save</a>
+              <a href="#M000027">#save</a>
             </li>
           
             
             <li class="method">
-              <a href="#M000046">#showlist</a>
+              <a href="#M000049">#showlist</a>
             </li>
           
             
@@ -260,27 +260,27 @@
           
             
             <li class="method">
-              <a href="#M000043">#unlisted</a>
+              <a href="#M000048">#unlisted</a>
             </li>
           
             
             <li class="method">
-              <a href="#M000019">#update</a>
+              <a href="#M000026">#update</a>
             </li>
           
             
             <li class="method">
-              <a href="#M000029">#verify</a>
+              <a href="#M000036">#verify</a>
             </li>
           
             
             <li class="method">
-              <a href="#M000028">#whatsnew</a>
+              <a href="#M000034">#whatsnew</a>
             </li>
           
             
             <li class="method">
-              <a href="#M000025">#whatsold</a>
+              <a href="#M000033">#whatsold</a>
             </li>
           
         </ul>
@@ -372,7 +372,7 @@ TODO: Integrate file signing and general manifest better (?)
 TODO: Digester is in sign.rb too. Dry-up?
 </p>
 <p>
-TODO: The <a href="Manifest.html#M000022">diff</a> method is shelling out;
+TODO: The <a href="Manifest.html#M000028">diff</a> method is shelling out;
 this needs to be internalized.
 </p>
 <p>
@@ -380,7 +380,7 @@ TODO: Consider adding @include options rather then scanning entire
 directory. But this can&#8217;t be done unless we can write a routine that
 can look at @include and reduce it to non-overlapping matches. Eg. [doc,
 doc/rdoc] should reduce to just [doc]. Otherwise we will get duplicate
-entries, b/c the <a href="Manifest.html#M000050">output</a> method is
+entries, b/c the <a href="Manifest.html#M000053">output</a> method is
 written for speed and low memory footprint. This might mean @include
 can&#8217;t use file globs.
 </p>
@@ -696,7 +696,7 @@ New <a href="Manifest.html">Manifest</a> object.
 
     
       <div id="open-method" class="method-detail ">
-        <a name="M000011"></a>
+        <a name="M000012"></a>
 
         <div class="method-heading">
         
@@ -750,7 +750,7 @@ end
 
     
       <div id="change-options-method" class="method-detail ">
-        <a name="M000014"></a>
+        <a name="M000015"></a>
 
         <div class="method-heading">
         
@@ -792,7 +792,7 @@ Set options.
 
     
       <div id="chart-method" class="method-detail ">
-        <a name="M000036"></a>
+        <a name="M000041"></a>
 
         <div class="method-heading">
         
@@ -826,7 +826,7 @@ Chart of current files (name => checksum).
 
     
       <div id="clean-method" class="method-detail ">
-        <a name="M000032"></a>
+        <a name="M000037"></a>
 
         <div class="method-heading">
         
@@ -866,7 +866,7 @@ Clean non-manifest files.
 
     
       <div id="cleanlist-method" class="method-detail ">
-        <a name="M000042"></a>
+        <a name="M000047"></a>
 
         <div class="method-heading">
         
@@ -898,7 +898,7 @@ Clean non-manifest files.
 
     
       <div id="diff-method" class="method-detail ">
-        <a name="M000022"></a>
+        <a name="M000028"></a>
 
         <div class="method-heading">
         
@@ -944,7 +944,7 @@ TODO: Do not shell out for diff.
 
     
       <div id="file-method" class="method-detail ">
-        <a name="M000016"></a>
+        <a name="M000018"></a>
 
         <div class="method-heading">
         
@@ -976,7 +976,7 @@ TODO: Do not shell out for diff.
 
     
       <div id="filechart-method" class="method-detail ">
-        <a name="M000040"></a>
+        <a name="M000046"></a>
 
         <div class="method-heading">
         
@@ -1010,7 +1010,7 @@ Chart of files as given in MANIFEST file (name => checksum).
 
     
       <div id="filelist-method" class="method-detail ">
-        <a name="M000039"></a>
+        <a name="M000045"></a>
 
         <div class="method-heading">
         
@@ -1044,7 +1044,7 @@ List of files as given in MANIFEST file.
 
     
       <div id="filename-method" class="method-detail ">
-        <a name="M000047"></a>
+        <a name="M000051"></a>
 
         <div class="method-heading">
         
@@ -1078,7 +1078,7 @@ File&#8217;s basename.
 
     
       <div id="generate-method" class="method-detail ">
-        <a name="M000018"></a>
+        <a name="M000025"></a>
 
         <div class="method-heading">
         
@@ -1114,7 +1114,7 @@ Generate manifest.
 
     
       <div id="include--method" class="method-detail ">
-        <a name="M000015"></a>
+        <a name="M000017"></a>
 
         <div class="method-heading">
         
@@ -1146,7 +1146,7 @@ Generate manifest.
 
     
       <div id="list-method" class="method-detail ">
-        <a name="M000035"></a>
+        <a name="M000040"></a>
 
         <div class="method-heading">
         
@@ -1250,7 +1250,7 @@ Produce textual listing less the manifest file.
 
     
       <div id="read--method" class="method-detail ">
-        <a name="M000017"></a>
+        <a name="M000022"></a>
 
         <div class="method-heading">
         
@@ -1282,7 +1282,7 @@ Produce textual listing less the manifest file.
 
     
       <div id="save-method" class="method-detail ">
-        <a name="M000020"></a>
+        <a name="M000027"></a>
 
         <div class="method-heading">
         
@@ -1320,7 +1320,7 @@ Save as file.
 
     
       <div id="showlist-method" class="method-detail ">
-        <a name="M000046"></a>
+        <a name="M000049"></a>
 
         <div class="method-heading">
         
@@ -1385,7 +1385,7 @@ Save as file.
 
     
       <div id="unlisted-method" class="method-detail ">
-        <a name="M000043"></a>
+        <a name="M000048"></a>
 
         <div class="method-heading">
         
@@ -1423,7 +1423,7 @@ Files not listed in manifest.
 
     
       <div id="update-method" class="method-detail ">
-        <a name="M000019"></a>
+        <a name="M000026"></a>
 
         <div class="method-heading">
         
@@ -1459,7 +1459,7 @@ Update file.
 
     
       <div id="verify-method" class="method-detail ">
-        <a name="M000029"></a>
+        <a name="M000036"></a>
 
         <div class="method-heading">
         
@@ -1492,7 +1492,7 @@ Update file.
 
     
       <div id="whatsnew-method" class="method-detail ">
-        <a name="M000028"></a>
+        <a name="M000034"></a>
 
         <div class="method-heading">
         
@@ -1527,7 +1527,7 @@ Files found in file system, but not listed in the manifest file.
 
     
       <div id="whatsold-method" class="method-detail ">
-        <a name="M000025"></a>
+        <a name="M000033"></a>
 
         <div class="method-heading">
         
@@ -1762,7 +1762,7 @@ Compute exclusions.
 
     
       <div id="files-method" class="method-detail ">
-        <a name="M000059"></a>
+        <a name="M000064"></a>
 
         <div class="method-heading">
         
@@ -1845,7 +1845,7 @@ Compute ignores.
 
     
       <div id="inclusions-method" class="method-detail ">
-        <a name="M000063"></a>
+        <a name="M000065"></a>
 
         <div class="method-heading">
         
@@ -1886,7 +1886,7 @@ Compute exclusions.
 
     
       <div id="output-method" class="method-detail ">
-        <a name="M000050"></a>
+        <a name="M000053"></a>
 
         <div class="method-heading">
         
@@ -1924,7 +1924,7 @@ Compute exclusions.
 
     
       <div id="parse-directory-method" class="method-detail ">
-        <a name="M000058"></a>
+        <a name="M000063"></a>
 
         <div class="method-heading">
         
@@ -2117,7 +2117,7 @@ Read topline of MANIFEST file.
 
     
       <div id="rec-output-method" class="method-detail ">
-        <a name="M000053"></a>
+        <a name="M000054"></a>
 
         <div class="method-heading">
         

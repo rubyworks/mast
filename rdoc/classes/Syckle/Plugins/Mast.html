@@ -345,7 +345,7 @@ good idea.
           <div class="method-source-code"
             id="clean-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/plugins/syckle/mast.rb, line 75</span>
+<span class="ruby-comment cmt"># File lib/plugins/syckle/mast.rb, line 70</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">clean</span>
     <span class="ruby-keyword kw">end</span></pre>
           </div>
@@ -378,7 +378,7 @@ Generate manifest.
           <div class="method-source-code"
             id="generate-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/plugins/syckle/mast.rb, line 63</span>
+<span class="ruby-comment cmt"># File lib/plugins/syckle/mast.rb, line 58</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">generate</span>
       <span class="ruby-identifier">manifest</span>.<span class="ruby-identifier">generate</span>
       <span class="ruby-identifier">report</span> <span class="ruby-node">&quot;Updated #{output.to_s.sub(Dir.pwd+'/','')}&quot;</span>
@@ -411,7 +411,7 @@ Generate manifest.
           <div class="method-source-code"
             id="manifest-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/plugins/syckle/mast.rb, line 58</span>
+<span class="ruby-comment cmt"># File lib/plugins/syckle/mast.rb, line 53</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">manifest</span>
       <span class="ruby-ivar">@manifest</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Manifest</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">options</span>)
     <span class="ruby-keyword kw">end</span></pre>
@@ -445,7 +445,7 @@ Mark MANIFEST as out-of-date. TODO: Implement reset.
           <div class="method-source-code"
             id="reset-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/plugins/syckle/mast.rb, line 70</span>
+<span class="ruby-comment cmt"># File lib/plugins/syckle/mast.rb, line 65</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">reset</span>
     <span class="ruby-keyword kw">end</span></pre>
           </div>
@@ -482,7 +482,7 @@ Mark MANIFEST as out-of-date. TODO: Implement reset.
           <div class="method-source-code"
             id="file-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/plugins/syckle/mast.rb, line 89</span>
+<span class="ruby-comment cmt"># File lib/plugins/syckle/mast.rb, line 84</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">file</span>
       <span class="ruby-identifier">project</span>.<span class="ruby-identifier">root</span>.<span class="ruby-identifier">glob</span>(<span class="ruby-value str">&quot;MANIFEST{,.txt}&quot;</span>).<span class="ruby-identifier">first</span>
     <span class="ruby-keyword kw">end</span></pre>
@@ -514,7 +514,7 @@ Mark MANIFEST as out-of-date. TODO: Implement reset.
           <div class="method-source-code"
             id="initialize-defaults-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/plugins/syckle/mast.rb, line 81</span>
+<span class="ruby-comment cmt"># File lib/plugins/syckle/mast.rb, line 76</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize_defaults</span>
       <span class="ruby-ivar">@include</span> = <span class="ruby-constant">DEFAULT_INCLUDE</span>
       <span class="ruby-ivar">@exclude</span> = <span class="ruby-constant">DEFAULT_EXCLUDE</span>
@@ -549,7 +549,7 @@ Mark MANIFEST as out-of-date. TODO: Implement reset.
           <div class="method-source-code"
             id="options-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/plugins/syckle/mast.rb, line 94</span>
+<span class="ruby-comment cmt"># File lib/plugins/syckle/mast.rb, line 89</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">options</span>
       { <span class="ruby-identifier">:include</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">include</span>,
         <span class="ruby-identifier">:exclude</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">exclude</span>,
