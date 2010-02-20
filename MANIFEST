@@ -1,0 +1,20 @@
+#!mast -x Syckfile bin lib meta test [A-Z]*
+bin/mast
+lib/mast/cli.rb
+lib/mast/core_ext.rb
+lib/mast/manifest.rb
+lib/mast.rb
+lib/plugins/syckle/mast.rb
+meta/authors
+meta/contact
+meta/description
+meta/homepage
+meta/name
+meta/repository
+meta/ruby
+meta/sitemap
+meta/suite
+meta/version
+HISTORY.rdoc
+LICENSE
+README.rdoc
