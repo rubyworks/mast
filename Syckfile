@@ -56,6 +56,7 @@ dnote:
   service  : DNote
   loadpath : ~
   labels   : ~
+  exclude  : [work]
   output   : ~
   format   : ~
   active   : true
