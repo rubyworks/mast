@@ -1,1 +1,4 @@
-Mast is a command line tool for generating manifests.
+Mast is a command line tool for generating manifests and digests.
+Mast makes it easy to compare a manifest to a current directory structure,
+and to update the manifest with a simple command by storing the command
+option it the manifest file itself.
