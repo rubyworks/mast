@@ -32,18 +32,18 @@
 #       --dir            When creating a list include directory paths; by default
 #                        only files are listed.
 #    -s --show           Show files using the options from the manifest file.
-#    -f --file PATH      Path to manifest file. When using update command, if not
-#                        given then the file matching 'MANIFEST', case-insensitive
-#                        and with an optional '.txt' extension, will be looked for
-#                        in the current directory. If the path of the manifest file
-#                        is anything else then --file option must be specified.
-#    -g --digest TYPE    Include crytogrpahic signiture. Type can be either
+#    -f --file PATH      Path to manifest file. This applies to comparison commands.
+#                        If not given then the file matching 'MANIFEST', case-insensitive
+#                        and with an optional '.txt' extension, in the current directory
+#                        is used. If the path of the manifest file is anything else then
+#                        the --file option must be specified.
+#    -g --digest TYPE    Include crytographic signiture. Type can be either
 #                        md5, sha1, sha128, sha256, or sha512.
 #    -x --exclude PATH   Exclude a file or dir from the manifest matching against
 #                        full pathname. You can use --exclude repeatedly.
 #    -i --ignore PATH    Exclude a file or dir from the manifest matching against 
 #                        an entries basename. You can use --ignore repeatedly.
-#    -q --quiet          Suppress extraneous output.
+#    -q --quiet          Suppress any extraneous output.
 
 require 'mast'
 
@@ -406,9 +406,9 @@ module Mast
     #
     def report_verify(check)
       if check
-        report "Manifest if good."
+        report "Manifest is good."
       else
-        report "Manifest if bad!"
+        report "Manifest is bad!"
       end
     end
   end
