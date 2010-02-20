@@ -31,7 +31,7 @@
 #                        so it is possible to make complete list of all contents.
 #       --dir            When creating a list include directory paths; by default
 #                        only files are listed.
-#    -s --show           Show files using the options from the manifest file.
+#    -s --show           Show actual files using the options from the manifest file.
 #    -f --file PATH      Path to manifest file. This applies to comparison commands.
 #                        If not given then the file matching 'MANIFEST', case-insensitive
 #                        and with an optional '.txt' extension, in the current directory
