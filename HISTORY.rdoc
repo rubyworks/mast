@@ -1,12 +1,33 @@
 = RELEASE HISTORY
 
-== 1.0.0 / 2009-07-02
+== 1.2 / 2010-02-19
+
+This release adjusts the plugins directory to conform
+to the new Plugin gem and add the -i shortcut to the 
+command-line help.
+
+Changes:
+
+* Rename lib/plugin to lib/plugins.
+* Add -i to help output.
+
+
+== 1.1 / 2009-10-24
+
+This release fixes the show and clean commands and makes
+some additional adjustments under the hood.
+
+Changes:
+
+* Fix clean and show commands.
+* Change to MIT license.
+
+
+== 1.0 / 2009-07-02
 
 This is the initial release of Mast.
 
 Changes:
 
-* 1 Major Enhancement
-
-    * Happy Birthday!
+* Happy Birthday!
 
