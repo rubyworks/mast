@@ -8,13 +8,16 @@ lib/plugins/syckle/mast.rb
 meta/authors
 meta/contact
 meta/description
+meta/download
 meta/homepage
 meta/name
 meta/repository
 meta/ruby
 meta/sitemap
 meta/suite
+meta/summary
 meta/version
+meta/wiki
 HISTORY.rdoc
 LICENSE
 README.rdoc

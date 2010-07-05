@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+Dir['**/*'].sort.each do |path|
+  puts path
+end
+
