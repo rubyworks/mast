@@ -155,6 +155,15 @@ module Mast
       @read
     end
 
+    # Is the current mainfest in need of updating?
+    def changed?
+      raise NoManifestError unless file and FileTest.file?(file)
+      txt = File.read(file)
+      out = StringIO.new #('', 'w')
+      generate(out)
+      out.string != txt
+    end
+
     # Create a digest/manifest file. This saves the list of files
     # and optionally their checksum.
     #def create(options=nil)
@@ -518,10 +527,14 @@ module Mast
         a, d, x, i = false, nil, [], []
         opts.each do |opt, arg|
           case opt
-          when '-g': d = arg.downcase
-          when '-a': a = true
-          when '-x': x << arg
-          when '-i': i << arg
+          when '-g'
+            d = arg.downcase
+          when '-a'
+            a = true
+          when '-x'
+            x << arg
+          when '-i'
+            i << arg
           end
         end
 

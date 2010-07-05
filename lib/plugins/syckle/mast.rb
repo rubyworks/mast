@@ -4,12 +4,15 @@ module Syckle::Plugins
   #
   class Mast < Service
 
-    precycle :main, :package => :generate
+    # Pre-package phase.
+    precycle :main, :package do
+      generate
+    end
 
     cycle :main, :reset
     cycle :main, :clean
 
-    # not that this is necessary, but ...
+    # Not that this is necessary, but ...
     available do |project|
       begin
         require 'mast'
@@ -23,14 +26,14 @@ module Syckle::Plugins
     DEFAULT_FILENAME = 'MANIFEST'
 
     # Default files/dirs to include.
-    DEFAULT_INCLUDE = %w{ bin lib meta script test [A-Z]* }
+    DEFAULT_INCLUDE = %w{ bin data etc features lib man meta qed script spec test [A-Z]* }
 
     # Default files/dirs to exclude.
-    DEFAULT_EXCLUDE = %w{ }
+    DEFAULT_EXCLUDE = nil #%w{}
 
     # Default files/dirs to ignore. Unlike exclude, this work
-    # on files basenames, and not full pathnames.
-    DEFAULT_IGNORE = %w{ .svn }
+    # on path basenames, and not full pathnames.
+    DEFAULT_IGNORE = nil #%w{}
 
     #
     attr_accessor :include
@@ -51,13 +54,19 @@ module Syckle::Plugins
 
     #
     def manifest
-      @manifest ||= Manifest.new(options)
+      @manifest ||= ::Mast::Manifest.new(options)
     end
 
     # Generate manifest.
+    # TODO: don't overwrite if it hasn't changed
     def generate
-      manifest.generate
-      report "Updated #{output.to_s.sub(Dir.pwd+'/','')}"
+      if manifest.changed?
+        file = manifest.save #update #generate
+        report "Updated #{file.to_s.sub(Dir.pwd+'/','')}"
+        #report "Updated #{output.to_s.sub(Dir.pwd+'/','')}"
+      else
+        report "#{output.to_s.sub(Dir.pwd+'/','')} is current"
+      end
     end
 
     # Mark MANIFEST as out-of-date.
@@ -66,7 +75,7 @@ module Syckle::Plugins
     end
 
     # Remove MANIFEST.
-    # TODO: Currently a noop. Not sure removing manfest is a good idea.
+    # TODO: Currently a noop. Not sure removing manfest is ever a good idea.
     def clean
     end
 
