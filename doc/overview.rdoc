@@ -1,0 +1,5 @@
+= Mast
+
+Mast in a manifest and digest generator.
+
+to be continued...

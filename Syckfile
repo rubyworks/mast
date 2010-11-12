@@ -15,26 +15,25 @@ email:
 
 gemcutter:
   service: GemCutter
-  active: true
+  active : true
 
 box:
   service: Box
+  types  : [gem]
   active : true
-  types  : [gem, gz]
-  include: [bin, demo, lib, meta, plug, test, "[A-Z]*"]
-  exclude: ~
-  master : false
 
 ridoc:
   service: RIDoc
   include: ~
   exclude: ~
+  output : ri
   active : true
 
 rdoc:
   service: RDoc
   include: ~
   exclude: [ Syckfile ]
+  output : site/docs/api 
   active : true
 
 syntax:
