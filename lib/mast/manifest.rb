@@ -524,24 +524,27 @@ module Mast
             [ '-i', '--ignore' , GetoptLong::REQUIRED_ARGUMENT ],
             [ '-a', '--all'    , GetoptLong::NO_ARGUMENT ]
         )
-        a, d, x, i = false, nil, [], []
+        a, d, g, x, i = false, false, nil, [], []
         opts.each do |opt, arg|
           case opt
           when '-g'
-            d = arg.downcase
+            g = arg.downcase
           when '-a'
             a = true
           when '-x'
             x << arg
           when '-i'
             i << arg
+          when '-d'
+            d = true
           end
         end
 
         @all     = a
-        @digest  = d
+        @digest  = g
         @exclude = x
         @ignore  = i
+        @dir     = d
         @include = ARGV.empty? ? nil : ARGV.dup
       end
     end
@@ -573,6 +576,7 @@ module Mast
       #end
       top = []
       top << "-a" if all?
+      top << "-d" if dir?
       top << "-g #{digest.to_s.downcase}" if digest
       exclude.each do |e|
         top << "-x #{e}"
