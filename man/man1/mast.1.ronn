@@ -5,7 +5,7 @@ mast(1) - manifest generator
 
 `mast [<command>] [<options>...]`
 
-# DESCRIPTION
+## DESCRIPTION
 
 The manifest listing tool is used to list, create or update a
 manifest for a directory (eg. to define a "package"), or compare
@@ -54,8 +54,8 @@ If --file is specified, it will generate to that file instead.
     When creating a list include directory paths; by default
     only files are listed.
 
-  * `-s`, `--show`:
-    Show actual files using the options from the manifest file.
+  * `-b`, `--bang`:
+    Generate manifest using the options from the bang line of the manifest file.
 
   * `-f`, `--file PATH`:
     Path to manifest file. This applies to comparison commands.

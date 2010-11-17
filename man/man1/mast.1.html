@@ -55,6 +55,7 @@
   <div class='man-navigation' style='display:none'>
     <a href="#NAME">NAME</a>
     <a href="#SYNOPSIS">SYNOPSIS</a>
+    <a href="#DESCRIPTION">DESCRIPTION</a>
     <a href="#COMMANDS">COMMANDS</a>
     <a href="#OPTIONS">OPTIONS</a>
     <a href="#EXAMPLES">EXAMPLES</a>
@@ -76,7 +77,7 @@
 
 <p><code>mast [&lt;command>] [&lt;options>...]</code></p>
 
-<h1>DESCRIPTION</h1>
+<h2 id="DESCRIPTION">DESCRIPTION</h2>
 
 <p>The manifest listing tool is used to list, create or update a
 manifest for a directory (eg. to define a "package"), or compare
@@ -108,7 +109,7 @@ If --file is specified, it will generate to that file instead.</p>
 so it is possible to make complete list of all contents.</p></dd>
 <dt><code>-d</code>, <code>--dir</code></dt><dd><p>When creating a list include directory paths; by default
 only files are listed.</p></dd>
-<dt><code>-s</code>, <code>--show</code></dt><dd><p>Show actual files using the options from the manifest file.</p></dd>
+<dt><code>-b</code>, <code>--bang</code></dt><dd><p>Generate manifest using the options from the bang line of the manifest file.</p></dd>
 <dt><code>-f</code>, <code>--file PATH</code></dt><dd><p>Path to manifest file. This applies to comparison commands.
 If not given then the file matching 'MANIFEST', case-insensitive
 and with an optional '.txt' extension, in the current directory

@@ -7,7 +7,10 @@
 \fBmast\fR \- manifest generator
 .
 .SH "SYNOPSIS"
-\fBmast [<command>] [<options>\.\.\.]\fRThe manifest listing tool is used to list, create or update a manifest for a directory (eg\. to define a "package"), or compare a manifest to actual directory contents\. Mast is part of the ProUtils set of tools\.
+\fBmast [<command>] [<options>\.\.\.]\fR
+.
+.SH "DESCRIPTION"
+The manifest listing tool is used to list, create or update a manifest for a directory (eg\. to define a "package"), or compare a manifest to actual directory contents\. Mast is part of the ProUtils set of tools\.
 .
 .P
 When no command is given, a manifest is dumped to standard out\. If \-\-file is specified, it will generate to that file instead\.
@@ -61,8 +64,8 @@ Include all files\. This deactivates deafult exclusions so it is possible to mak
 When creating a list include directory paths; by default only files are listed\.
 .
 .TP
-\fB\-s\fR, \fB\-\-show\fR
-Show actual files using the options from the manifest file\.
+\fB\-b\fR, \fB\-\-bang\fR
+Generate manifest using the options from the bang line of the manifest file\.
 .
 .TP
 \fB\-f\fR, \fB\-\-file PATH\fR
