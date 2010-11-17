@@ -39,13 +39,14 @@
 
 <div class="nav tinted">
   <div class="menu page">
-    Documentation: &nbsp;<a href="http://wiki.github.com/proutils/mast/">User</a> &nbsp;
-    <a href="rdoc/index.html">API</a> &nbsp;|&nbsp;
-    <!-- <a href="qedoc/index.html">QEDocs</a> &nbsp;&nbsp; -->
-    <a href="http://gemcutter.org/gems/mast">Distribution</a> &nbsp;&nbsp;
-    <a href="http://googlegroups.com/group/proutils">Discussion</a> &nbsp;&nbsp;
-    <a href="http://github.com/proutils/mast/issues">Report Issue</a> &nbsp;&nbsp;
-    <a href="http://github.com/proutils/mast">Development</a> &nbsp;&nbsp;
+    Mast &nbsp;|&nbsp;
+    <a href="http://gemcutter.org/gems/mast">GEM</a> &nbsp;&nbsp;
+    <a href="http://wiki.github.com/rubyworks/mast/">WIKI</a> &nbsp;
+    <a href="docs/api/index.html">API</a> &nbsp;&nbsp;
+    <a href="docs/qed/index.html">QED</a> &nbsp;&nbsp;
+    <a href="http://googlegroups.com/group/rubyworks-mailinglist">TALK</a> &nbsp;&nbsp;
+    <a href="http://github.com/rubyworks/mast/issues">ISSUE</a> &nbsp;&nbsp;
+    <a href="http://github.com/rubyworks/mast">CODE</a> &nbsp;&nbsp;
   </div>
 </div>
 
@@ -65,10 +66,10 @@
   packaging tools (such as <a href="http://proutils.github.com/box">Box</a>), or
   as a stand-alone tool for monitoring file changes.</p>
 
-  <p>Mast is part of the <a href="http://proutils.github.com">ProUtils</a> collection of tools.</p>
+  <p>Mast is part of the <a href="http://rubyworks.github.com">RubyWorks</a> collection of Ruby libraries and tools.</p>
 
   <pre>
-  mast v1.0.0
+  mast v1.3.0
 
   Usage:
     mast [command] [options...]
@@ -81,7 +82,7 @@
     -c --create         Generate a new manifest. (default)
     -u --update         Update an existing manifest.
     -l --list           List the files given in the manifest file. (Use -f to specify an alternate file.)
-    -d --diff           Diff manifest file against actual.
+    -D --diff           Diff manifest file against actual.
     -n --new            List existant files that are not given in the manifest.
     -o --old            List files given in the manifest but are non-existent.
        --clean          Remove non-manifest files. (Will ask for confirmation first.)
@@ -91,7 +92,7 @@
   Options:
     -a --all            Include all files. This deactivates deafult exclusions
                         so it is possible to make complete list of all contents.
-       --dir            When creating a list include directory paths; by default
+    -d --dir            When creating a list include directory paths; by default
                         only files are listed.
     -s --show           Show files using the options from the manifest file.
     -f --file PATH      Path to manifest file. When using update command, if not
