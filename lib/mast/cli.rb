@@ -19,7 +19,7 @@
 #    -c --create         Generate a new manifest. (default)
 #    -u --update         Update an existing manifest.
 #    -l --list           List the files given in the manifest file. (Use -f to specify an alternate file.)
-#    -d --diff           Diff manifest file against actual.
+#    -D --diff           Diff manifest file against actual.
 #    -n --new            List existant files that are not given in the manifest.
 #    -o --old            List files given in the manifest but are non-existent.
 #       --clean          Remove non-manifest files. (Will ask for confirmation first.)
@@ -29,7 +29,7 @@
 #  Options:
 #    -a --all            Include all files. This deactivates deafult exclusions
 #                        so it is possible to make complete list of all contents.
-#       --dir            When creating a list include directory paths; by default
+#    -d --dir            When creating a list include directory paths; by default
 #                        only files are listed.
 #    -s --show           Show actual files using the options from the manifest file.
 #    -f --file PATH      Path to manifest file. This applies to comparison commands.
@@ -46,14 +46,11 @@
 #    -q --quiet          Suppress any extraneous output.
 
 require 'mast'
-
-# both of these can be replaced by using Clio instead.
-require 'getoptlong'
-require 'facets/kernel/ask'
+require 'optparse'
 
 module Mast
 
-  ARGVO = ARGV.dup
+  #ARGVO = ARGV.dup
 
   # Manifest Console Command
   #
@@ -66,31 +63,30 @@ module Mast
     DIGESTS = [:md5, :sha1, :sha128, :sha256, :sha512]
 
     attr_accessor :quiet
-    attr_accessor :file
-    attr_accessor :digest
-    attr_accessor :ignore
-    attr_accessor :include
-    attr_accessor :exclude
-    attr_accessor :all
-    attr_accessor :dir
-    attr_accessor :show
+
+    # Options for Manifest class taken from commandline arguments.
+    attr :options
 
     #
     def initialize
-      @quiet   = false
-      @all     = false
-      @file    = nil
-      @digest  = nil
-      @exclude = []
-      @include = []
-      @ignore  = []
+      @options = {}
+      @options[:all]     = false
+      @options[:file]    = nil
+      @options[:show]    = nil
+      @options[:digest]  = nil
+      @options[:exclude] = []
+      @options[:ignore]  = []
+      @options[:include] = []
+
       @command = []
+
+      @quiet = false
     end
 
     #
-    def run
+    def run(argv=nil)
       begin
-        run_command
+        run_command(argv)
       rescue => err
         raise err if $DEBUG
         report err
@@ -98,11 +94,19 @@ module Mast
     end
 
     # Run command.
-    def run_command
-      optparse
+    def run_command(argv)
+      argv = (argv || ARGV).dup
+ 
+      @original_arguments = argv.dup
+
+      option_parser.parse!(argv)
+
+      @options[:include] = argv.empty? ? nil : argv #.dup
+
       if @command.size > 1
         raise ArgumentError, "Please issue only one command."
       end
+
       case @command.first
       when :help     then help
       when :create   then generate
@@ -120,91 +124,67 @@ module Mast
     end
 
     # Parse command line options.
-    def optparse
-      opts = GetoptLong.new(
-        # options
-        [ '--file'   , '-f', GetoptLong::REQUIRED_ARGUMENT ],
-        [ '--digest' , '-g', GetoptLong::REQUIRED_ARGUMENT ],
-        [ '--exclude', '-x', GetoptLong::REQUIRED_ARGUMENT ],
-        #[ '--include', '-i', GetoptLong::REQUIRED_ARGUMENT ],
-        [ '--ignore' , '-i', GetoptLong::REQUIRED_ARGUMENT ],
-        [ '--all'    , '-a', GetoptLong::NO_ARGUMENT ],
-        [ '--dir'    ,       GetoptLong::NO_ARGUMENT ],
-        [ '--show'   , '-s', GetoptLong::NO_ARGUMENT ],
-        [ '--quiet'  , '-q', GetoptLong::NO_ARGUMENT ],
-        # commands
-        [ '--help'   , '-h', GetoptLong::NO_ARGUMENT ],
-        [ '--create' , '-c', GetoptLong::NO_ARGUMENT ],
-        [ '--update' , '-u', GetoptLong::NO_ARGUMENT ],
-        [ '--list'   , '-l', GetoptLong::NO_ARGUMENT ],
-        [ '--diff'   , '-d', GetoptLong::NO_ARGUMENT ],
-        [ '--new'    , '-n', GetoptLong::NO_ARGUMENT ],
-        [ '--old'    , '-o', GetoptLong::NO_ARGUMENT ],
-        [ '--verify' , '-v', GetoptLong::NO_ARGUMENT ],
-        [ '--clean'  ,       GetoptLong::NO_ARGUMENT ]
-      )
-
-      opts.each do |key, val|
-        case key
-        when '--help'
-          @command << :help
-        when '--create'
+    # TODO: rename --show ?
+    def option_parser
+      OptionParser.new do |opt|
+        opt.on "--file", "-f FILE" do |file|
+          @options[:file] = file
+        end
+        opt.on "--digest", "-g TYPE" do |digest|
+          @options[:digest] = digest
+        end
+        opt.on "--exclude", "-x GLOB" do |glob|
+          @options[:exclude] << glob
+        end
+        opt.on "--ignore", "-i GLOB" do |glob|
+          @options[:ignore] << glob
+        end
+        opt.on "--all", "-a" do |bool|
+          @options[:all] = true
+        end
+        opt.on "--show", "-s" do |bool|
+          @options[:show] = true
+        end
+        opt.on "--dir", "-d" do |bool|
+          @options[:dir] = bool
+        end
+        #opt.on "--quiet", "-q", "" do |bool|
+        #  @quiet = bool
+        #end
+        opt.on "--create", "-c" do
           @command << :create
-        when '--update'
+        end
+        opt.on "--update", "-u" do
           @command << :update
-        when '--list'
+        end
+        opt.on "--list", "-l" do
           @command << :list
-        #when '--show'
-        #  @command << :show
-        when '--diff'
+        end
+        opt.on "--diff", "-D" do
           @command << :diff
-        when '--new'
+        end
+        opt.on "--new", "-n" do
           @command << :new
-        when '--old'
+        end
+        opt.on "--old", "-o" do
           @command << :old
-        when '--verify'
+        end
+        opt.on "--verify", "-v" do
           @command << :verify
-        when '--clean'
+        end
+        opt.on "--clean" do
           @command << :clean
-
-        when '--file'
-          @file = val
-        when '--digest'
-          @digest = val
-        when '--exclude'
-          @exclude << val
-        #when '--include'
-        #  @include << val
-        #when '--ignore'
-        #  @ignore << val
-        when '--show'
-          @show = true
-        when '--dir'
-          @dir = true
-        when '--all'
-          @all = true
-        when '--quiet'
-          @quiet = true
+        end
+        opt.on "--help" do
+          @command << :help
+        end
+        opt.on "--debug" do
+          $DEBUG = true
         end
       end
-
-      #unless args.empty?
-      #  if File.file?(args[0])
-      #    opts[:file]      = args[0]
-      #    opts[:directory] = args[1] if args[1]
-      #  else
-      #    opts[:directory] = args[0]
-      #    opts[:file]      = args[1] if args[1]
-      #  end
-      #end
-
-      @include = ARGV.empty? ? nil : ARGV.dup
     end
 
-    #def default; generate; end
-
     # Default command -- output manifest.
-    #
     def generate
       #if file
       #  update
@@ -214,7 +194,6 @@ module Mast
     end
 
     # Update a MANIFEST file for this package.
-    #
     def update
       begin
         file = manifest.update
@@ -287,21 +266,16 @@ module Mast
 
     #
     def manifest
-      @manifest ||= Manifest.new(manifest_options)
+      @manifest ||= Manifest.new(options)
       #@manifest ||= (
       #  begin
-      #    manifest = Manifest.open(file, manifest_options)
+      #    manifest = Manifest.open(file, options)
       #    manifest
       #  rescue LoadError
       #    report_manifest_missing
       #    exit 0
       #  end
       #)
-    end
-
-    # Options for Manifest class taken from commandline arguments.
-    def manifest_options
-      { :file=>file, :digest=>digest, :exclude=>exclude, :ignore=>ignore, :all=>all, :dir=>dir, :include=>include, :show=>show }
     end
 
     # Quiet opertation?
@@ -312,13 +286,13 @@ module Mast
     # Get confirmation for clean.
     def confirm_clean(list)
       puts list.join("\n")
-      ask("The above files will be removed. Continue?", "yN")
+      ask("The above files will be removed. Continue? [yN]")
     end
 
     # Get confirmation for clobber.
     def confirm_clobber(list)
       puts list.join("\n")
-      ask("The above files will be removed. Continue?", "yN")
+      ask("The above files will be removed. Continue? [yN]")
     end
 
     #
@@ -411,94 +385,14 @@ module Mast
         report "Manifest is bad!"
       end
     end
+
+    #
+    def ask(prompt=nil)
+      $stdout << "#{prompt}"
+      $stdout.flush
+      $stdin.gets.chomp!
+    end
+
   end
 
 end
-
-=begin scrap
-
-#     # Lookup manifest.
-#
-#     def manifest(create_missing=false)
-#       @manifest ||= (
-#         file = @options[:file]
-#         #manifest = file ? Manifest.open(file) : Manifest.lookup
-#         manifest = nil
-#
-#         if file
-#           manifest = Manifest.open(file, @options)
-#         elsif create_missing
-#           manifest = Manifest.new(@options)
-#         else
-#           manifest = nil
-#         end
-#
-#         if manifest
-#           #manifest.send(:set, @options)
-#         else
-#           report_manifest_missing
-#           exit 0
-#         end
-#         manifest
-#       )
-#     end
-
-#       @manifest ||= (
-#         file = @options[:file]
-#         #manifest = file ? Manifest.open(file) : Manifest.lookup
-#         manifest = nil
-#
-#         if file
-#           manifest = Manifest.open(file)
-#         elsif create_missing
-#           manifest = Manifest.new
-#         else
-#           manifest = nil
-#         end
-#
-#         if manifest
-#           manifest.change_options(@options)
-#         else
-#           report_manifest_missing
-#           exit 0
-#         end
-#         manifest
-#       )
-#     end
-
-#     # Generate manifest. By default it is a very simple filename
-#     # list. The digest can be supplied and a checksum will
-#     # be given before each filename.
-#
-#     def create
-#       manifest = Manifest.new #lookup
-#
-#       return report_overwrite(manifest) if (
-#         manifest and manifest.location == Dir.pwd
-#       )
-#
-#       report_warn_shadowing(manifest) if manifest
-#
-#       manifest = Manifest.new(options)
-#       file = manifest.create
-#       report_created(file)
-#     end
-
-#     # Clobber non-manifest files.
-#     #--
-#     # TODO Should clobber work off the manifest file itself
-#     #++
-#
-#     def clobber
-#       ansr = confirm_clobber(manifest.toss)
-#       case ansr.downcase
-#       when 'y', 'yes'
-#         manifest.clobber
-#       else
-#         report_cancelled('Clobber')
-#         exit!
-#       end
-#     end
-
-=end
-
