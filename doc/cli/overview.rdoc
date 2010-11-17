@@ -1,4 +1,4 @@
-= Mast
+= Overview of Mast Command
 
 Mast in a manifest and digest generator.
 
@@ -118,11 +118,12 @@ And then the `-o` option will list `lib/foo.rb`:
   $ mast -o
   lib/foo.rb
 
-Using `--diff` will pass a comparision of manifest file to the current
-manifest thru the `diff` command.
+Using `--diff` will pass the content of a manifest file and the current
+manifest of the directory to `diff` command. We won't show it here becuase
+`diff` produces absolute paths.
 
-A new manifest can be displayed to stadout that is based on the critriea supplied
-in the bang line of a manifest file via the `-s`/`--show` option:
+A new manifest can be displayed to stdout that uses the options supplied
+on the bang line of a manifest file via the `-s`/`--show` option:
 
   $ mast -s
   #!mast *
