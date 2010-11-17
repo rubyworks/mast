@@ -31,7 +31,7 @@
 #                        so it is possible to make complete list of all contents.
 #    -d --dir            When creating a list include directory paths; by default
 #                        only files are listed.
-#    -s --show           Show actual files using the options from the manifest file.
+#    -b --bang           Produce new manifest but using options from the bang line of the manifest file.
 #    -f --file PATH      Path to manifest file. This applies to comparison commands.
 #                        If not given then the file matching 'MANIFEST', case-insensitive
 #                        and with an optional '.txt' extension, in the current directory
@@ -72,7 +72,7 @@ module Mast
       @options = {}
       @options[:all]     = false
       @options[:file]    = nil
-      @options[:show]    = nil
+      @options[:bang]    = nil
       @options[:digest]  = nil
       @options[:exclude] = []
       @options[:ignore]  = []
@@ -112,7 +112,6 @@ module Mast
       when :create   then generate
       when :update   then update
       when :list     then list
-      #when :show     then show
       when :diff     then diff
       when :new      then new
       when :old      then old
@@ -124,7 +123,6 @@ module Mast
     end
 
     # Parse command line options.
-    # TODO: rename --show ?
     def option_parser
       OptionParser.new do |opt|
         opt.on "--file", "-f FILE" do |file|
@@ -142,8 +140,8 @@ module Mast
         opt.on "--all", "-a" do |bool|
           @options[:all] = true
         end
-        opt.on "--show", "-s" do |bool|
-          @options[:show] = true
+        opt.on "--bang", "-b" do |bool|
+          @options[:bang] = true
         end
         opt.on "--dir", "-d" do |bool|
           @options[:dir] = bool

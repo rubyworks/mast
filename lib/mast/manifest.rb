@@ -71,9 +71,8 @@ module Mast
     # Include directories.
     attr_accessor :dir
 
-    # Show as if another manifest (eg. use files options).
-    # TODO: Change name?
-    attr_accessor :show
+    # Show as if another manifest (i.e. use file's bang options).
+    attr_accessor :bang
 
     # What files to include. Defaults to ['*'].
     # Note that Mast automatically recurses through
@@ -100,7 +99,7 @@ module Mast
     alias_method :dir?, :dir
 
     #
-    alias_method :show?, :show
+    alias_method :bang?, :bang
 
     # New Manifest object.
     #
@@ -111,7 +110,7 @@ module Mast
       @format    = 'csf'
       @all       = false
       @dir       = false
-      @show      = false
+      @bang      = false
       @digest    = nil
       @directory = Dir.pwd
 
@@ -175,7 +174,7 @@ module Mast
 
     # Generate manifest.
     def generate(out=$stdout)
-      parse_topline unless read? if show?
+      parse_topline unless read? if bang?
       out << topline_string
       output(out)
     end
@@ -442,7 +441,9 @@ module Mast
     def checksum(file, digest=nil)
       return nil unless digest
       if FileTest.directory?(file)
-        @null_string ||= digester(digest).hexdigest("")
+        #@null_string ||= digester(digest).hexdigest("")
+        listing = (Dir.entries(file) - %w{. ..}).join("\n")
+        digester(digest).hexdigest(listing)
       else
         digester(digest).hexdigest(File.read(file))
       end
