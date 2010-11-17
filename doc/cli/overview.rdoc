@@ -122,10 +122,10 @@ Using `--diff` will pass the content of a manifest file and the current
 manifest of the directory to `diff` command. We won't show it here becuase
 `diff` produces absolute paths.
 
-A new manifest can be displayed to stdout that uses the options supplied
-on the bang line of a manifest file via the `-s`/`--show` option:
+A new manifest can be generated to stdout that uses the options supplied
+on the bang line of a manifest file via the `-b`/`--bang` option:
 
-  $ mast -s
+  $ mast -b
   #!mast *
   README.txt
   lib/bar.rb
