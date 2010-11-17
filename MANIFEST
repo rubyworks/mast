@@ -1,23 +1,19 @@
-#!mast -x Syckfile bin lib meta test [A-Z]*
+#!mast -x Syckfile bin lib man meta test [A-Z]*
 bin/mast
 lib/mast/cli.rb
 lib/mast/core_ext.rb
 lib/mast/manifest.rb
+lib/mast/meta/data.rb
+lib/mast/meta/package
+lib/mast/meta/profile
 lib/mast.rb
 lib/plugins/syckle/mast.rb
-meta/authors
-meta/contact
-meta/description
-meta/download
-meta/homepage
-meta/name
-meta/repository
-meta/ruby
-meta/sitemap
-meta/suite
-meta/summary
-meta/version
-meta/wiki
+man/mast.1
+man/mast.1.html
+man/ronn/mast.1.ronn
+meta/data.rb
+meta/package
+meta/profile
 HISTORY.rdoc
 LICENSE
 README.rdoc

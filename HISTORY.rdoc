@@ -1,5 +1,23 @@
 = RELEASE HISTORY
 
+== 1.3.0 / 2010-11-17
+
+Version 1.3 primarily makes a few adjustment under-the-hood. It switches
+GetoptLong out for OptionParser, gets rid of it's dependency on Ruby Facets'
+Kernel#ask method, and changes the diff comment short name from `-d` to `-D`.
+Lowecase, `-d` is now used as a short name for the `--dir` option. In the
+process a bug was fixed where this `-d` option was not being added to the
+manifest's bang line.
+
+Changes:
+
+* Use `optparse.rb` library instead of `getoptlong.rb`.
+* Remove dependency on Ruby Facets's Kernel#ask method.
+* Rename `-d` to `-D`, short for `--diff`.
+* Add `-d` option to go with `--dir`.
+* Fix issue with `-d` option not added to bang line.
+
+
 == 1.2.0 / 2010-02-19
 
 This release adjusts the plugins directory to conform
