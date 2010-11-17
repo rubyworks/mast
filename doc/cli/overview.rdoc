@@ -1,0 +1,132 @@
+= Mast
+
+Mast in a manifest and digest generator.
+
+Let say we have a directory containing a set of files as follows:
+
+  README.txt
+  lib/foo.rb
+  lib/bar.rb
+
+When we invoke the `mast` command from within that directory, we
+will get a complete file listing:
+
+  $ mast
+  #!mast *
+  README.txt
+  lib/bar.rb
+  lib/foo.rb
+
+By default directories are not listed. Using the `-d`/`--dir` option will add
+them:
+
+  $ mast -d
+  #!mast -d *
+  README.txt
+  lib
+  lib/bar.rb
+  lib/foo.rb
+
+Mast can also be used to generate a file digest with the `-g`/`--digest` option.
+For example:
+
+  $ mast -g sha1
+  #!mast -g sha1 *
+  fda3484edf8db0684440157ce0b110d784d42704 README.txt
+  a65255d9e627f654a86f4fd6dfc253566b650b7e lib/bar.rb
+  0d6b06bd4b8b334ac3cde825d155795e3ae951cf lib/foo.rb
+
+Without arguments `mast` will include all files in the current directory
+and subdirectories. To limit the manifest to specific files, we can supply
+them as arguments on the command line. For example:
+
+  $ mast lib
+  #!mast lib
+  lib/bar.rb
+  lib/foo.rb
+
+As with any normal shell command we can use file globs:
+
+  $ mast lib/*.rb
+  #!mast lib/bar.rb lib/foo.rb
+  lib/bar.rb
+  lib/foo.rb
+
+But notice this expands the blob on to the bang line. To keep the glob intact
+put it in quotes:
+
+  $ mast 'lib/*.rb'
+  #!mast lib/*.rb
+  lib/bar.rb
+  lib/foo.rb
+
+To exclude files or directories that might be picked up a file glob,
+use the `-x`/`--exclude` option:
+
+  $ mast -x README.txt
+  #!mast -x README.txt *
+  lib/bar.rb
+  lib/foo.rb
+
+Whereas exclusion elminates exact file and directory matches, `-i`/`--ignore`
+can be used to match an file or directory basename:
+
+  $ mast -i foo.rb
+  #!mast -i foo.rb *
+  README.txt
+  lib/bar.rb
+
+If we would like to save a manifest, we can simply redirect stdout to
+a file name:
+
+  $ mast > MANIFEST.txt
+
+Once saved, `mast` has an update mode via the `-u` option:
+
+  $ mast -u
+  MANIFEST.txt updated.
+
+By default this works for any manifest file with a name matching "manifest{,.*}",
+case insensitvive. An alternate file name can be supplied using the `-f` option.
+
+Mast can also be used to compare a manifest file to the current directory. A simple
+verification that a manifest file matches the current contents of the directory
+can be had via the `-v`/`--verify` option:
+
+  $ mast -v
+  Manifest is good.
+
+To see what files are new, that is to say added to the the directory but not
+listed in the manifest file, use the `-n/--new` option. For instance, let's
+say we have a new file:
+
+  lib/baz.rb
+
+Then using the `-n` option, `lib/baz.rb` will be listed:
+
+  $ mast -n
+  lib/baz.rb
+
+To see what files are _old_, i.e. files listed in the manifest but no longer
+in the in the directory, use `-o`/`--old` option. In this case let's remove
+a file:
+
+  lib/foo.rb
+
+And then the `-o` option will list `lib/foo.rb`:
+
+  $ mast -o
+  lib/foo.rb
+
+Using `--diff` will pass a comparision of manifest file to the current
+manifest thru the `diff` command.
+
+A new manifest can be displayed to stadout that is based on the critriea supplied
+in the bang line of a manifest file via the `-s`/`--show` option:
+
+  $ mast -s
+  #!mast *
+  README.txt
+  lib/bar.rb
+  lib/baz.rb
+
