@@ -1,0 +1,89 @@
+mast(1) - manifest generator
+============================
+
+## SYNOPSIS
+
+`mast [<command>] [<options>...]`
+
+# DESCRIPTION
+
+The manifest listing tool is used to list, create or update a
+manifest for a directory (eg. to define a "package"), or compare
+a manifest to actual directory contents. Mast is part of the
+ProUtils set of tools.
+
+When no command is given, a manifest is dumped to standard out.
+If --file is specified, it will generate to that file instead.
+
+## COMMANDS
+
+  * `-c`, `--create`:
+     Generate a new manifest. (default)
+
+  * `-u`, `--update`:
+    Update an existing manifest.
+
+  * `-l`, `--list`:
+    List the files given in the manifest file. (Use -f to specify an alternate file.)
+
+  * `-D`, `--diff`:
+    Diff manifest file against actual.
+
+  * `-n`, `--new`:
+    List existant files that are not given in the manifest.
+
+  * `-o`, `--old`:
+    List files given in the manifest but are non-existent.
+
+  * `-v`, `--verify`:
+    Verify that a manifest matches actual.
+
+  * `--clean`:
+    Remove non-manifest files. (Will ask for confirmation first.)
+
+  * `-h`, `--help`:
+    Display this help message.
+
+## OPTIONS
+
+  * `-a`, `--all`:
+    Include all files. This deactivates deafult exclusions
+    so it is possible to make complete list of all contents.
+
+  * `-d`, `--dir`:
+    When creating a list include directory paths; by default
+    only files are listed.
+
+  * `-s`, `--show`:
+    Show actual files using the options from the manifest file.
+
+  * `-f`, `--file PATH`:
+    Path to manifest file. This applies to comparison commands.
+    If not given then the file matching 'MANIFEST', case-insensitive
+    and with an optional '.txt' extension, in the current directory
+    is used. If the path of the manifest file is anything else then
+    the --file option must be specified.
+
+  * `-g`, `--digest TYPE`:
+    Include crytographic signiture. Type can be either
+    md5, sha1, sha128, sha256, or sha512.
+
+  * `-x`, `--exclude PATH`:
+    Exclude a file or dir from the manifest matching against
+    full pathname. You can use --exclude repeatedly.
+
+  * `-i`, `--ignore PATH`:
+    Exclude a file or dir from the manifest matching against 
+    an entries basename. You can use --ignore repeatedly.
+
+  * `-q`, `--quiet`:
+    Suppress any extraneous output.
+
+## EXAMPLES
+
+`mast`<br>
+`mast -u -f PUBLISH`
+
+## SEE ALSO
+
+ls(1)
