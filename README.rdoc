@@ -6,9 +6,6 @@
   |           |
   '-----------'
 
-* home: http://rubyworks.github.com/mast/
-* work: http://github.com/rubyworks/mast/
-* wiki: http://wiki.github.com/rubyworks/mast/
 
 == DESCRIPTION
 
@@ -22,6 +19,13 @@ or as a stand-alone tool for monitoring file changes.
 * Intuitive command-line interface --simply specify what to include.
 * Self-referential header makes updating manifests easy.
 * Checksum digests can highlight file changes.
+
+
+== RESOURCES
+
+* home: http://rubyworks.github.com/mast/
+* work: http://github.com/rubyworks/mast/
+* wiki: http://wiki.github.com/rubyworks/mast/
 
 
 == USAGE
