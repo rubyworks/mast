@@ -1,18 +1,4 @@
 ---
-email:
-  service : Email
-  file    : ~
-  subject : ~
-  mailto  : ruby-talk@ruby-lang.org
-  from    : <%= ENV['EMAIL_ACCOUNT'] %>
-  server  : <%= ENV['EMAIL_SERVER'] %>
-  port    : <%= ENV['EMAIL_PORT'] %>
-  account : <%= ENV['EMAIL_ACCOUNT'] %>
-  domain  : <%= ENV['EMAIL_DOMAIN'] %>
-  login   : <%= ENV['EMAIL_LOGIN'] %>
-  secure  : <%= ENV['EMAIL_SECURE'] %>
-  active  : true
-
 gemcutter:
   service: GemCutter
   active : true
@@ -40,21 +26,6 @@ rdoc:
   output : site/doc/api
   active : true
 
-syntax:
-  service  : Syntax
-  loadpath : ~
-  exclude  : ~
-  active   : false
-
-testrb:
-  service  : testrb
-  tests    : ~
-  exclude  : ~
-  loadpath : ~
-  requires : ~
-  live     : false   
-  active   : false
-
 dnote:
   service  : DNote
   loadpath : ~
@@ -72,11 +43,56 @@ stats:
   output   : ~
   active   : true
 
-vclog:
-  service  : VClog
-  formats  : [json]
-  #layout   : rel    # gnu
-  typed    : false
+ronn:
+  service  : custom
+  cycle    : main
+  document : |
+    system 'ronn --manual="Mast" --organization="RubyWorks" --style="toc" ronn/*.ronn'
+    system 'mv ronn/*.1 man/man1/'
+    system 'mv ronn/*.html site/doc/man/'
+
+vclog-history:
+  service  : VCLog
+  type     : history
+  format   : atom, html
   output   : ~
+  active   : true
+
+vclog-changelog:
+  service  : VCLog
+  type     : changelog
+  format   : atom, html
+  output   : ~
+  active   : true
+
+email:
+  service : Email
+  file    : ~
+  subject : ~
+  mailto  :
+    - ruby-talk@ruby-lang.org
+    - rubyworks-mailinglist@googlegroups.com
+  from    : <%= ENV['EMAIL_ACCOUNT'] %>
+  server  : <%= ENV['EMAIL_SERVER'] %>
+  port    : <%= ENV['EMAIL_PORT'] %>
+  account : <%= ENV['EMAIL_ACCOUNT'] %>
+  domain  : <%= ENV['EMAIL_DOMAIN'] %>
+  login   : <%= ENV['EMAIL_LOGIN'] %>
+  secure  : <%= ENV['EMAIL_SECURE'] %>
+  active  : true
+
+syntax:
+  service  : Syntax
+  loadpath : ~
+  exclude  : ~
+  active   : false
+
+testrb:
+  service  : testrb
+  tests    : ~
+  exclude  : ~
+  loadpath : ~
+  requires : ~
+  live     : false   
   active   : false
 
