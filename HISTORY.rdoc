@@ -1,6 +1,6 @@
 = RELEASE HISTORY
 
-== 1.3.0 / 2010-11-22
+== 1.3.0 / 2010-11-21
 
 Version 1.3 primarily makes a few adjustment under-the-hood. It switches
 GetoptLong out for OptionParser, gets rid of it's dependency on Ruby Facets'
