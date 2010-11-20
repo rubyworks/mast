@@ -1,4 +1,4 @@
-#!mast -x Syckfile bin lib man meta test [A-Z]*
+#!mast -x Syckfile bin lib man meta qed ronn test [A-Z]*
 bin/mast
 lib/mast/cli.rb
 lib/mast/core_ext.rb
@@ -8,12 +8,12 @@ lib/mast/meta/package
 lib/mast/meta/profile
 lib/mast.rb
 lib/plugins/syckle/mast.rb
-man/mast.1
-man/mast.1.html
-man/ronn/mast.1.ronn
 meta/data.rb
 meta/package
 meta/profile
+qed/cli/applique/env.rb
+qed/cli/overview.rdoc
+ronn/mast.1.ronn
 HISTORY.rdoc
 LICENSE
 README.rdoc

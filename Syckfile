@@ -37,7 +37,7 @@ rdoc:
   service: RDoc
   include: ~
   exclude: [ Syckfile ]
-  output : site/docs/api 
+  output : site/doc/api
   active : true
 
 syntax:
