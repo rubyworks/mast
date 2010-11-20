@@ -1,14 +1,14 @@
 = RELEASE HISTORY
 
-== 1.3.0 / 2010-11-17
+== 1.3.0 / 2010-11-22
 
 Version 1.3 primarily makes a few adjustment under-the-hood. It switches
 GetoptLong out for OptionParser, gets rid of it's dependency on Ruby Facets'
 Kernel#ask method, and changes the diff comment short name from `-d` to `-D`.
-Lowecase, `-d` is now used as a short name for the `--dir` option. In the
+Lowecase `-d` is now used as a short name for the `--dir` option. In the
 process a bug was fixed where this `-d` option was not being added to the
-manifest's bang line. Speaking of which, the `-s`/`--show` option has been
-renamed to `-b`/`--bang`, which is more descriptive.
+manifest's bang line. Lastly, the `-s`/`--show` option has been enamed to
+`-b`/`--bang`, which is more descriptive.
 
 Changes:
 
