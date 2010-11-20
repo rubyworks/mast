@@ -1,7 +1,7 @@
 --- 
 title  : Mast
-suite  : proutils
-contact: proutils@googlegroups.com
+suite  : rubyworks
+contact: trans <transfire@gmail.com>
 summary: Mast is a command line tool for generating manifests and digests.
 
 authors: 
@@ -11,11 +11,14 @@ description:
   Mast is a command line tool for generating manifests and digests.
   Mast makes it easy to compare a manifest to a current directory structure,
   and to update the manifest with a simple command by storing the command
-  option it the manifest file itself.
+  options it the manifest file itself.
 
 resources:
-  homepage: http://proutils.github.com/mast
-  repository: git://github.com/proutils/mast.git
-  wiki: http://wiki.github.com/proutils/mast/
-  download: http://github.com/proutils/mast/downloads
+  home: http://rubyworks.github.com/mast/
+  code: http://github.com/rubyworks/mast/
+  wiki: http://wiki.github.com/rubyworks/mast/
+  mail: http://groups.google.com/group/rubyworks-mailinglist
+  repo: git://github.com/rubyworks/mast.git
 
+copyright: 
+  Copyright (c) 2009 Thomas Sawyer
