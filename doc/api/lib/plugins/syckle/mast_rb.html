@@ -1,0 +1,625 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+  <title>File: mast.rb [Mast]</title>
+
+  <link rel="SHORTCUT ICON" href="../../../assets/icon/file.png">
+
+  <link type="text/css" rel="stylesheet" href="../../../assets/rdoc.css" media="screen" />
+  <link type="text/css" rel="stylesheet" href="../../../assets/highlight/styles/github.css" title="GitHub" />
+
+  <script type="text/javascript" charset="utf-8" src="../../../assets/jquery.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../../../assets/highlight/highlight.pack.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../../../assets/quicksearch.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../../../assets/main.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready( function() {
+      hookHighlightSyntax();
+	    hookSourceViews();
+	    hookDebuggingToggle();
+	    hookQuickSearch();
+	    highlightLocationTarget();
+
+	    $('ul.link-list a').bind("click", highlightClickTarget);
+    });
+  </script>
+</head>
+
+<body class="file"> <!-- .file-popup is no more -->
+<div id="main">
+
+  <div class="head">
+    <h1>
+      <img src="../../../assets/icon/file.png" align="absmiddle">&nbsp;
+      <a href="../../../index.html">Mast</a>&nbsp;
+      <a href="/">mast.rb</a>
+    </h1>
+  </div>
+
+  <div id="metadata">
+    <div id="file-stats-section" class="section">
+      <h3 class="section-header">File Stats</h3>
+      <dl>
+        <dt class="modified-date">Last Modified</dt>
+        <dd class="modified-date">Mon Apr 05 13:19:51 -0400 2010</dd>
+
+        
+        <dt class="requires">Requires</dt>
+        <dd class="requires">
+          <ul>
+          
+            <li>mast</li>
+          
+          </ul>
+        </dd>
+        
+
+        
+      </dl>
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Information</h3>
+        <ul>
+        
+          <li class="file"><a href="../../../HISTORY_rdoc.html">HISTORY.rdoc</a></li>
+        
+          <li class="file"><a href="../../../LICENSE.html">LICENSE</a></li>
+        
+          <li class="file"><a href="../../../README_rdoc.html">README.rdoc</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class Index
+          <span class="search-toggle"><img src="../../../assets/icon/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li class="module"><a href="../../../Mast.html">Mast</a></li>
+        
+          <li class="class"><a href="../../../Mast/Cli.html">Mast::Cli</a></li>
+        
+          <li class="class"><a href="../../../Mast/Manifest.html">Mast::Manifest</a></li>
+        
+          <li class="module"><a href="../../../Syckle.html">Syckle</a></li>
+        
+          <li class="module"><a href="../../../Syckle/Plugins.html">Syckle::Plugins</a></li>
+        
+          <li class="class"><a href="../../../Syckle/Plugins/Mast.html">Syckle::Plugins::Mast</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      <!-- METHODS -->
+      <div id="methodindex-section" class="section project-section">
+        <h3 class="section-header">Method Index</h3>
+        <ul>
+          
+            
+            <li class="singleton" style="clear: both;">
+              <span class="method-parent-aside">Mast::Manifest</span>
+              <a href="Mast/Manifest.html#method-c-new">::new</a>
+            </li>
+          
+            
+            <li class="singleton" style="clear: both;">
+              <span class="method-parent-aside">Mast::Cli</span>
+              <a href="Mast/Cli.html#method-c-new">::new</a>
+            </li>
+          
+            
+            <li class="singleton" style="clear: both;">
+              <span class="method-parent-aside">Mast::Manifest</span>
+              <a href="Mast/Manifest.html#method-c-open">::open</a>
+            </li>
+          
+            
+            <li class="singleton" style="clear: both;">
+              <span class="method-parent-aside">Mast::Cli</span>
+              <a href="Mast/Cli.html#method-c-run">::run</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Cli</span>
+              <a href="Mast/Cli.html#method-i-ask">#ask</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Manifest</span>
+              <a href="Mast/Manifest.html#method-i-change_options">#change_options</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Manifest</span>
+              <a href="Mast/Manifest.html#method-i-changed%3F">#changed?</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Manifest</span>
+              <a href="Mast/Manifest.html#method-i-chart">#chart</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Manifest</span>
+              <a href="Mast/Manifest.html#method-i-checksum">#checksum</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Syckle::Plugins::Mast</span>
+              <a href="Syckle/Plugins/Mast.html#method-i-clean">#clean</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Manifest</span>
+              <a href="Mast/Manifest.html#method-i-clean">#clean</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Cli</span>
+              <a href="Mast/Cli.html#method-i-clean">#clean</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Manifest</span>
+              <a href="Mast/Manifest.html#method-i-cleanlist">#cleanlist</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Cli</span>
+              <a href="Mast/Cli.html#method-i-confirm_clean">#confirm_clean</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Cli</span>
+              <a href="Mast/Cli.html#method-i-confirm_clobber">#confirm_clobber</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Manifest</span>
+              <a href="Mast/Manifest.html#method-i-create_temporary_manifest">#create_temporary_manifest</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Cli</span>
+              <a href="Mast/Cli.html#method-i-diff">#diff</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Manifest</span>
+              <a href="Mast/Manifest.html#method-i-diff">#diff</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Manifest</span>
+              <a href="Mast/Manifest.html#method-i-digester">#digester</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Manifest</span>
+              <a href="Mast/Manifest.html#method-i-exclusions">#exclusions</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Syckle::Plugins::Mast</span>
+              <a href="Syckle/Plugins/Mast.html#method-i-file">#file</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Manifest</span>
+              <a href="Mast/Manifest.html#method-i-file">#file</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Manifest</span>
+              <a href="Mast/Manifest.html#method-i-filechart">#filechart</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Manifest</span>
+              <a href="Mast/Manifest.html#method-i-filelist">#filelist</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Manifest</span>
+              <a href="Mast/Manifest.html#method-i-filename">#filename</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Manifest</span>
+              <a href="Mast/Manifest.html#method-i-files">#files</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Cli</span>
+              <a href="Mast/Cli.html#method-i-generate">#generate</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Syckle::Plugins::Mast</span>
+              <a href="Syckle/Plugins/Mast.html#method-i-generate">#generate</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Manifest</span>
+              <a href="Mast/Manifest.html#method-i-generate">#generate</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Cli</span>
+              <a href="Mast/Cli.html#method-i-help">#help</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Manifest</span>
+              <a href="Mast/Manifest.html#method-i-ignores">#ignores</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Manifest</span>
+              <a href="Mast/Manifest.html#method-i-include%3D">#include=</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Manifest</span>
+              <a href="Mast/Manifest.html#method-i-inclusions">#inclusions</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Syckle::Plugins::Mast</span>
+              <a href="Syckle/Plugins/Mast.html#method-i-initialize_defaults">#initialize_defaults</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Cli</span>
+              <a href="Mast/Cli.html#method-i-list">#list</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Manifest</span>
+              <a href="Mast/Manifest.html#method-i-list">#list</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Manifest</span>
+              <a href="Mast/Manifest.html#method-i-list_without_folders">#list_without_folders</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Manifest</span>
+              <a href="Mast/Manifest.html#method-i-listing">#listing</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Cli</span>
+              <a href="Mast/Cli.html#method-i-manifest">#manifest</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Syckle::Plugins::Mast</span>
+              <a href="Syckle/Plugins/Mast.html#method-i-manifest">#manifest</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Cli</span>
+              <a href="Mast/Cli.html#method-i-new">#new</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Cli</span>
+              <a href="Mast/Cli.html#method-i-old">#old</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Cli</span>
+              <a href="Mast/Cli.html#method-i-option_parser">#option_parser</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Syckle::Plugins::Mast</span>
+              <a href="Syckle/Plugins/Mast.html#method-i-options">#options</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Manifest</span>
+              <a href="Mast/Manifest.html#method-i-output">#output</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Manifest</span>
+              <a href="Mast/Manifest.html#method-i-parse_directory">#parse_directory</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Manifest</span>
+              <a href="Mast/Manifest.html#method-i-parse_file">#parse_file</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Manifest</span>
+              <a href="Mast/Manifest.html#method-i-parse_topline">#parse_topline</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Cli</span>
+              <a href="Mast/Cli.html#method-i-quiet%3F">#quiet?</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Manifest</span>
+              <a href="Mast/Manifest.html#method-i-read%3F">#read?</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Manifest</span>
+              <a href="Mast/Manifest.html#method-i-read_topline">#read_topline</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Manifest</span>
+              <a href="Mast/Manifest.html#method-i-rec_output">#rec_output</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Cli</span>
+              <a href="Mast/Cli.html#method-i-report">#report</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Cli</span>
+              <a href="Mast/Cli.html#method-i-report_cancelled">#report_cancelled</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Cli</span>
+              <a href="Mast/Cli.html#method-i-report_created">#report_created</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Cli</span>
+              <a href="Mast/Cli.html#method-i-report_difference">#report_difference</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Cli</span>
+              <a href="Mast/Cli.html#method-i-report_help">#report_help</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Cli</span>
+              <a href="Mast/Cli.html#method-i-report_manifest_missing">#report_manifest_missing</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Cli</span>
+              <a href="Mast/Cli.html#method-i-report_overwrite">#report_overwrite</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Cli</span>
+              <a href="Mast/Cli.html#method-i-report_updated">#report_updated</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Cli</span>
+              <a href="Mast/Cli.html#method-i-report_verify">#report_verify</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Cli</span>
+              <a href="Mast/Cli.html#method-i-report_warn_shadowing">#report_warn_shadowing</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Cli</span>
+              <a href="Mast/Cli.html#method-i-report_whatsnew">#report_whatsnew</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Cli</span>
+              <a href="Mast/Cli.html#method-i-report_whatsold">#report_whatsold</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Syckle::Plugins::Mast</span>
+              <a href="Syckle/Plugins/Mast.html#method-i-reset">#reset</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Cli</span>
+              <a href="Mast/Cli.html#method-i-run">#run</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Cli</span>
+              <a href="Mast/Cli.html#method-i-run_command">#run_command</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Manifest</span>
+              <a href="Mast/Manifest.html#method-i-save">#save</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Manifest</span>
+              <a href="Mast/Manifest.html#method-i-showlist">#showlist</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Manifest</span>
+              <a href="Mast/Manifest.html#method-i-to_s">#to_s</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Manifest</span>
+              <a href="Mast/Manifest.html#method-i-topline_string">#topline_string</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Manifest</span>
+              <a href="Mast/Manifest.html#method-i-unlisted">#unlisted</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Cli</span>
+              <a href="Mast/Cli.html#method-i-up">#up</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Cli</span>
+              <a href="Mast/Cli.html#method-i-update">#update</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Manifest</span>
+              <a href="Mast/Manifest.html#method-i-update">#update</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Manifest</span>
+              <a href="Mast/Manifest.html#method-i-verify">#verify</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Cli</span>
+              <a href="Mast/Cli.html#method-i-verify">#verify</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Manifest</span>
+              <a href="Mast/Manifest.html#method-i-whatsnew">#whatsnew</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Mast::Manifest</span>
+              <a href="Mast/Manifest.html#method-i-whatsold">#whatsold</a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+
+    <div id="validator-badges">
+      
+      <div style="float: right; margin-right: 5px;">
+        <a href="http://validator.w3.org/check/referer"><img src="../../../assets/icon/check.png" alt="[Validate]" height="16" width="16" /></a>
+      </div>
+      Generated with <a href="http://rubyworks.github.com/rdazzle">RDazzle Redfish</a> 1.4.0
+      <br/><br/>
+    </div>
+  </div>
+
+  <!-- .file-popup was wrapped:
+    <div id="documentation">
+      
+      <div class="description">
+          ... file.description ...
+      </div>
+      
+    </div>
+   So maybe that css is no longer needed.
+   -->
+
+  <div id="documentation">
+    
+  </div>
+
+</div>
+</body>
+</html>
+
