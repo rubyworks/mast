@@ -7,7 +7,7 @@ GetoptLong out for OptionParser, gets rid of it's dependency on Ruby Facets'
 Kernel#ask method, and changes the diff comment short name from `-d` to `-D`.
 Lowecase `-d` is now used as a short name for the `--dir` option. In the
 process a bug was fixed where this `-d` option was not being added to the
-manifest's bang line. Lastly, the `-s`/`--show` option has been enamed to
+manifest's bang line. Lastly, the `-s`/`--show` option has been renamed to
 `-b`/`--bang`, which is more descriptive.
 
 Changes:
