@@ -8,11 +8,13 @@ lib/mast/meta/package
 lib/mast/meta/profile
 lib/mast.rb
 lib/plugins/syckle/mast.rb
+man/man1/mast.1
 meta/data.rb
 meta/package
 meta/profile
 qed/cli/applique/env.rb
 qed/cli/overview.rdoc
+ronn/index.txt
 ronn/mast.1.ronn
 HISTORY.rdoc
 LICENSE
