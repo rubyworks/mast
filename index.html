@@ -3,7 +3,7 @@
   <TITLE>Mast</TITLE>
   <link REL="SHORTCUT ICON" HREF="assets/images/logo.jpg"/>
   <style>
-    html { font-size: 12px; color: #662200; }
+    html { font-size: 12px; color: #222; }
     body {
       padding: 0; 
       margin: 0;
@@ -17,18 +17,34 @@
      ul { margin: 0 auto; list-style-type: none; width: 300px; }
      li { float: left; padding: 10px; }
     pre { font-size: 90%; background: #fff; padding: 20px 10px 10px 10px; -moz-border-radius: 10px;
-          color: #662200; font-weight: bold; font-family: courier, monospace; border: 1px solid tan; }
+          color: #222; font-weight: bold; font-family: courier, monospace; border: 1px solid #ccc; 
+          line-height: 1.1em; }
+
     code { font-family: courier, monospace; color: brown; }
 
     .page { margin: 0 auto; width: 800px; }
+
+    .paper { margin: 0 auto; width: 800px; background: white; padding: 30px 40px;
+            border: 1px solid #bbb; font-size: 1.1em; color: #222; line-height: 1.5em;
+            background: url(assets/images/corner.png) top right no-repeat #f4f4f4;
+          }
+
     .tinted { background: #f5ddb7; color: #662200; }
+
     .light { color: #662200; border-color: #662200; }
 
-    .menu { padding: 20px 40px 20px 0; text-align: center; }
+    .menu { padding: 20px 40px 20px 0; float: right; width: 450px; font-size: 12px;
+            letter-spacing: 0; }
 
-    .head { height: 250px; border-top: 2px solid tan; border-bottom: 2px solid tan; }
+    .menu a { color: #222; }
 
-    .body { border-bottom: 2px solid tan; margin: 0; padding: 20px 0 30px 0;  }
+    .head { height: 69px; border-bottom: 1px solid #999;
+            font-size: 60px; color: #222; font-family: courier;
+            padding: 40px 0 0 80px; font-weight: bold; letter-spacing: 10px;
+            background: url(assets/images/image.jpg) 0px 0px no-repeat;
+     }
+
+    .body { border-bottom: 2px solid tan; margin: 0; padding: 60px 0 30px 0;  }
     .body a { color: brown; }
 
     .foot { padding: 3em; text-align: center; }
@@ -37,37 +53,37 @@
 </HEAD>
 <BODY>
 
-<div class="nav tinted">
-  <div class="menu page">
-    Mast &nbsp;|&nbsp;
+<div class="head light">
+  <div class="menu">
     <a href="http://gemcutter.org/gems/mast">GEM</a> &nbsp;&nbsp;
-    <a href="http://wiki.github.com/rubyworks/mast/">WIKI</a> &nbsp;
     <a href="doc/qed/index.html">QED</a> &nbsp;&nbsp;
     <a href="doc/man/mast.1.html">MAN</a> &nbsp;&nbsp;
+    <a href="http://wiki.github.com/rubyworks/mast/">WIKI</a> &nbsp;
     <a href="doc/api/index.html">API</a> &nbsp;&nbsp;
     <a href="http://googlegroups.com/group/rubyworks-mailinglist">TALK</a> &nbsp;&nbsp;
     <a href="http://github.com/rubyworks/mast/issues">ISSUE</a> &nbsp;&nbsp;
     <a href="http://github.com/rubyworks/mast">CODE</a> &nbsp;&nbsp;
   </div>
-</div>
-
-<div class="head light">
-  <div class="page">
-    <img src="assets/images/logo.jpg" style="height: 250px;" align="right"/><br/>
-    <h1>MAST</h1>
-  </div>
+  MAST
 </div>
 
 <div class="body tinted">
-  <div class="page">
+  <div class="paper">
 
-  <p>Mast is a commandline utility for working with MANIFEST and DIGEST lists.
+  <h2>DESCRIPTION</h2>
+
+  <p style="width:670px; text-align:left;">
+  <b>Mast</b> is a commandline utility for working with file <i>MANIFESTS</i> and <i>DIGESTS</i>.
   Mast can be used to list, create or update recursive directory listings, or compare
   manifests to actual directory contents. It can be useful in conjunction with
   packaging tools (such as <a href="http://proutils.github.com/box">Box</a>), or
   as a stand-alone tool for monitoring file changes.</p>
 
   <p>Mast is part of the <a href="http://rubyworks.github.com">RubyWorks</a> collection of Ruby libraries and tools.</p>
+
+  <br/>
+
+  <h2>USAGE</h2>
 
   <pre>
   mast v1.3.0
