@@ -21,7 +21,7 @@ ridoc:
 
 rdoc:
   service  : RDoc
-  template : redfish
+  template : newfish
   include  : ~
   exclude  : [ Syckfile ]
   output   : site/doc/api
