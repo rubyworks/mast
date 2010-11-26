@@ -1,2 +1,2 @@
-require 'mast/meta/data'
+require 'mast/version'
 require 'mast/manifest'
