@@ -1,19 +1,14 @@
-#!mast -x Syckfile bin lib man qed ronn test [A-Z]*
+#!mast -x Syckfile -x PROFILE .ruby bin lib man spec test [A-Z]*
+.ruby
 bin/mast
 lib/mast/cli.rb
 lib/mast/core_ext.rb
 lib/mast/manifest.rb
-lib/mast/package.yml
-lib/mast/version.rb
 lib/mast.rb
+lib/mast.yml
 lib/plugins/syckle/mast.rb
 man/man1/mast.1
-qed/cli/applique/env.rb
-qed/cli/overview.rdoc
-ronn/index.txt
-ronn/mast.1.ronn
 HISTORY.rdoc
-PROFILE
-PACKAGE
 LICENSE
 README.rdoc
+VERSION

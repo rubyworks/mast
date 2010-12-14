@@ -1,11 +1,9 @@
 --- 
 title  : Mast
-suite  : rubyworks
 contact: trans <transfire@gmail.com>
 summary: Mast is a command line tool for generating manifests and digests.
-
-authors: 
-  - Thomas Sawyer
+company: RubyWorks
+created: 2009-08-17
 
 description:
   Mast is a command line tool for generating manifests and digests.
@@ -13,12 +11,19 @@ description:
   and to update the manifest with a simple command by storing the command
   options it the manifest file itself.
 
+requires:
+  - syckle (build)
+  - qed    (test)
+
 resources:
   home: http://rubyworks.github.com/mast/
   code: http://github.com/rubyworks/mast/
   wiki: http://wiki.github.com/rubyworks/mast/
   mail: http://groups.google.com/group/rubyworks-mailinglist
   repo: git://github.com/rubyworks/mast.git
+
+authors: 
+  - Thomas Sawyer
 
 copyright: 
   Copyright (c) 2009 Thomas Sawyer
