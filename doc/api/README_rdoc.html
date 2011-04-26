@@ -3,9 +3,9 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
 
-  <title>File: README.rdoc [Mast]</title>
+  <title>File: README.rdoc [&quot;Mast&quot;]</title>
 
   <link rel="SHORTCUT ICON" href="./assets/icon/file.png">
 
@@ -19,13 +19,16 @@
 
   <script type="text/javascript">
     $(document).ready( function() {
-      hookHighlightSyntax();
+      $('#documentation pre').wrapInner('<code></code>');
+      hljs.tabReplace = '    ';
+      hljs.initHighlightingOnLoad('ruby');
+
 	    hookSourceViews();
 	    hookDebuggingToggle();
 	    hookQuickSearch();
 	    highlightLocationTarget();
 
-	    $('ul.link-list a').bind("click", highlightClickTarget);
+	    $('ul.link-list a').bind( "click", highlightClickTarget );
     });
   </script>
 </head>
@@ -36,7 +39,7 @@
   <div class="head">
     <h1>
       <img src="./assets/icon/file.png" align="absmiddle">&nbsp;
-      <a href="./index.html">Mast</a>&nbsp;
+      <a href="./index.html">&quot;Mast&quot;</a>&nbsp;
       <a href="/">README.rdoc</a>
     </h1>
   </div>
@@ -61,9 +64,13 @@
         <h3 class="section-header">Information</h3>
         <ul>
         
+          <li class="file"><a href="./PROFILE.html">PROFILE</a></li>
+        
           <li class="file"><a href="./HISTORY_rdoc.html">HISTORY.rdoc</a></li>
         
           <li class="file"><a href="./LICENSE.html">LICENSE</a></li>
+        
+          <li class="file"><a href="./VERSION.html">VERSION</a></li>
         
           <li class="file"><a href="./README_rdoc.html">README.rdoc</a></li>
         
@@ -109,6 +116,18 @@
           
             
             <li class="singleton" style="clear: both;">
+              <span class="method-parent-aside">Mast</span>
+              <a href="Mast.html#method-c-const_missing">::const_missing</a>
+            </li>
+          
+            
+            <li class="singleton" style="clear: both;">
+              <span class="method-parent-aside">Mast</span>
+              <a href="Mast.html#method-c-metadata">::metadata</a>
+            </li>
+          
+            
+            <li class="singleton" style="clear: both;">
               <span class="method-parent-aside">Mast::Manifest</span>
               <a href="Mast/Manifest.html#method-c-new">::new</a>
             </li>
@@ -133,12 +152,6 @@
           
             
             <li class="method" style="clear: both;">
-              <span class="method-parent-aside">Mast::Cli</span>
-              <a href="Mast/Cli.html#method-i-ask">#ask</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
               <span class="method-parent-aside">Mast::Manifest</span>
               <a href="Mast/Manifest.html#method-i-change_options">#change_options</a>
             </li>
@@ -146,31 +159,13 @@
             
             <li class="method" style="clear: both;">
               <span class="method-parent-aside">Mast::Manifest</span>
-              <a href="Mast/Manifest.html#method-i-changed%3F">#changed?</a>
+              <a href="Mast/Manifest.html#method-i-changed-3F">#changed?</a>
             </li>
           
             
             <li class="method" style="clear: both;">
               <span class="method-parent-aside">Mast::Manifest</span>
               <a href="Mast/Manifest.html#method-i-chart">#chart</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">Mast::Manifest</span>
-              <a href="Mast/Manifest.html#method-i-checksum">#checksum</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">Syckle::Plugins::Mast</span>
-              <a href="Syckle/Plugins/Mast.html#method-i-clean">#clean</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">Mast::Manifest</span>
-              <a href="Mast/Manifest.html#method-i-clean">#clean</a>
             </li>
           
             
@@ -182,25 +177,19 @@
             
             <li class="method" style="clear: both;">
               <span class="method-parent-aside">Mast::Manifest</span>
-              <a href="Mast/Manifest.html#method-i-cleanlist">#cleanlist</a>
+              <a href="Mast/Manifest.html#method-i-clean">#clean</a>
             </li>
           
             
             <li class="method" style="clear: both;">
-              <span class="method-parent-aside">Mast::Cli</span>
-              <a href="Mast/Cli.html#method-i-confirm_clean">#confirm_clean</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">Mast::Cli</span>
-              <a href="Mast/Cli.html#method-i-confirm_clobber">#confirm_clobber</a>
+              <span class="method-parent-aside">Syckle::Plugins::Mast</span>
+              <a href="Syckle/Plugins/Mast.html#method-i-clean">#clean</a>
             </li>
           
             
             <li class="method" style="clear: both;">
               <span class="method-parent-aside">Mast::Manifest</span>
-              <a href="Mast/Manifest.html#method-i-create_temporary_manifest">#create_temporary_manifest</a>
+              <a href="Mast/Manifest.html#method-i-cleanlist">#cleanlist</a>
             </li>
           
             
@@ -213,30 +202,6 @@
             <li class="method" style="clear: both;">
               <span class="method-parent-aside">Mast::Manifest</span>
               <a href="Mast/Manifest.html#method-i-diff">#diff</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">Mast::Manifest</span>
-              <a href="Mast/Manifest.html#method-i-digester">#digester</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">Mast::Manifest</span>
-              <a href="Mast/Manifest.html#method-i-exclusions">#exclusions</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">Syckle::Plugins::Mast</span>
-              <a href="Syckle/Plugins/Mast.html#method-i-file">#file</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">Mast::Manifest</span>
-              <a href="Mast/Manifest.html#method-i-file">#file</a>
             </li>
           
             
@@ -259,20 +224,14 @@
           
             
             <li class="method" style="clear: both;">
-              <span class="method-parent-aside">Mast::Manifest</span>
-              <a href="Mast/Manifest.html#method-i-files">#files</a>
+              <span class="method-parent-aside">Syckle::Plugins::Mast</span>
+              <a href="Syckle/Plugins/Mast.html#method-i-generate">#generate</a>
             </li>
           
             
             <li class="method" style="clear: both;">
               <span class="method-parent-aside">Mast::Cli</span>
               <a href="Mast/Cli.html#method-i-generate">#generate</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">Syckle::Plugins::Mast</span>
-              <a href="Syckle/Plugins/Mast.html#method-i-generate">#generate</a>
             </li>
           
             
@@ -285,30 +244,6 @@
             <li class="method" style="clear: both;">
               <span class="method-parent-aside">Mast::Cli</span>
               <a href="Mast/Cli.html#method-i-help">#help</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">Mast::Manifest</span>
-              <a href="Mast/Manifest.html#method-i-ignores">#ignores</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">Mast::Manifest</span>
-              <a href="Mast/Manifest.html#method-i-include%3D">#include=</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">Mast::Manifest</span>
-              <a href="Mast/Manifest.html#method-i-inclusions">#inclusions</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">Syckle::Plugins::Mast</span>
-              <a href="Syckle/Plugins/Mast.html#method-i-initialize_defaults">#initialize_defaults</a>
             </li>
           
             
@@ -337,12 +272,6 @@
           
             
             <li class="method" style="clear: both;">
-              <span class="method-parent-aside">Mast::Cli</span>
-              <a href="Mast/Cli.html#method-i-manifest">#manifest</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
               <span class="method-parent-aside">Syckle::Plugins::Mast</span>
               <a href="Syckle/Plugins/Mast.html#method-i-manifest">#manifest</a>
             </li>
@@ -367,128 +296,8 @@
           
             
             <li class="method" style="clear: both;">
-              <span class="method-parent-aside">Syckle::Plugins::Mast</span>
-              <a href="Syckle/Plugins/Mast.html#method-i-options">#options</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
               <span class="method-parent-aside">Mast::Manifest</span>
-              <a href="Mast/Manifest.html#method-i-output">#output</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">Mast::Manifest</span>
-              <a href="Mast/Manifest.html#method-i-parse_directory">#parse_directory</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">Mast::Manifest</span>
-              <a href="Mast/Manifest.html#method-i-parse_file">#parse_file</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">Mast::Manifest</span>
-              <a href="Mast/Manifest.html#method-i-parse_topline">#parse_topline</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">Mast::Cli</span>
-              <a href="Mast/Cli.html#method-i-quiet%3F">#quiet?</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">Mast::Manifest</span>
-              <a href="Mast/Manifest.html#method-i-read%3F">#read?</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">Mast::Manifest</span>
-              <a href="Mast/Manifest.html#method-i-read_topline">#read_topline</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">Mast::Manifest</span>
-              <a href="Mast/Manifest.html#method-i-rec_output">#rec_output</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">Mast::Cli</span>
-              <a href="Mast/Cli.html#method-i-report">#report</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">Mast::Cli</span>
-              <a href="Mast/Cli.html#method-i-report_cancelled">#report_cancelled</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">Mast::Cli</span>
-              <a href="Mast/Cli.html#method-i-report_created">#report_created</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">Mast::Cli</span>
-              <a href="Mast/Cli.html#method-i-report_difference">#report_difference</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">Mast::Cli</span>
-              <a href="Mast/Cli.html#method-i-report_help">#report_help</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">Mast::Cli</span>
-              <a href="Mast/Cli.html#method-i-report_manifest_missing">#report_manifest_missing</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">Mast::Cli</span>
-              <a href="Mast/Cli.html#method-i-report_overwrite">#report_overwrite</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">Mast::Cli</span>
-              <a href="Mast/Cli.html#method-i-report_updated">#report_updated</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">Mast::Cli</span>
-              <a href="Mast/Cli.html#method-i-report_verify">#report_verify</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">Mast::Cli</span>
-              <a href="Mast/Cli.html#method-i-report_warn_shadowing">#report_warn_shadowing</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">Mast::Cli</span>
-              <a href="Mast/Cli.html#method-i-report_whatsnew">#report_whatsnew</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">Mast::Cli</span>
-              <a href="Mast/Cli.html#method-i-report_whatsold">#report_whatsold</a>
+              <a href="Mast/Manifest.html#method-i-read-3F">#read?</a>
             </li>
           
             
@@ -530,12 +339,6 @@
             
             <li class="method" style="clear: both;">
               <span class="method-parent-aside">Mast::Manifest</span>
-              <a href="Mast/Manifest.html#method-i-topline_string">#topline_string</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">Mast::Manifest</span>
               <a href="Mast/Manifest.html#method-i-unlisted">#unlisted</a>
             </li>
           
@@ -547,14 +350,14 @@
           
             
             <li class="method" style="clear: both;">
-              <span class="method-parent-aside">Mast::Cli</span>
-              <a href="Mast/Cli.html#method-i-update">#update</a>
+              <span class="method-parent-aside">Mast::Manifest</span>
+              <a href="Mast/Manifest.html#method-i-update">#update</a>
             </li>
           
             
             <li class="method" style="clear: both;">
-              <span class="method-parent-aside">Mast::Manifest</span>
-              <a href="Mast/Manifest.html#method-i-update">#update</a>
+              <span class="method-parent-aside">Mast::Cli</span>
+              <a href="Mast/Cli.html#method-i-update">#update</a>
             </li>
           
             
@@ -590,7 +393,7 @@
       <div style="float: right; margin-right: 5px;">
         <a href="http://validator.w3.org/check/referer"><img src="./assets/icon/check.png" alt="[Validate]" height="16" width="16" /></a>
       </div>
-      Generated with <a href="http://rubyworks.github.com/rdazzle">RDazzle Redfish</a> 1.4.0
+      Generated with <a href="http://rubyworks.github.com/newfish">Newfish</a> 0.2.0
       <br/><br/>
     </div>
   </div>
@@ -607,192 +410,162 @@
    -->
 
   <div id="documentation">
-    <h1><a href="Mast.html">Mast</a></h1>
-<pre>
-         ___
-  .-----'---'-.
-  |           |
-  |           |
-  |           |
-  '-----------'
-</pre>
+    
+<h1><a href="Mast.html">Mast</a></h1>
+
+<pre>       ___
+.-----'---'-.
+|           |
+|           |
+|           |
+'-----------'</pre>
+
 <h2>DESCRIPTION</h2>
-<p>
-<a href="Mast.html">Mast</a> is a commandline utility for generating
+
+<p><a href="Mast.html">Mast</a> is a commandline utility for generating
 MANIFEST and DIGEST lists. It can be useful in conjunction with packaging
-tools (such as Box), or as a stand-alone tool for monitoring file changes.
-</p>
+tools (such as Box), or as a stand-alone tool for monitoring file changes.</p>
+
 <h2>FEATURES</h2>
-<ul>
-<li><p>
-Intuitive command-line interface &#8212;simply specify what to include.
-</p>
-</li>
-<li><p>
-Self-referential header makes updating manifests easy.
-</p>
-</li>
-<li><p>
-Checksum digests can highlight file changes.
-</p>
-</li>
-</ul>
+<ul><li>
+<p>Intuitive command-line interface –simply specify what to include.</p>
+</li><li>
+<p>Self-referential header makes updating manifests easy.</p>
+</li><li>
+<p>Checksum digests can highlight file changes.</p>
+</li></ul>
+
 <h2>RESOURCES</h2>
-<ul>
-<li><p>
-home: <a
-href="http://rubyworks.github.com/mast/">rubyworks.github.com/mast/</a>
-</p>
-</li>
-<li><p>
-work: <a
-href="http://github.com/rubyworks/mast/">github.com/rubyworks/mast/</a>
-</p>
-</li>
-<li><p>
-wiki: <a
-href="http://wiki.github.com/rubyworks/mast/">wiki.github.com/rubyworks/mast/</a>
-</p>
-</li>
-</ul>
+<ul><li>
+<p>home: <a
+href="http://rubyworks.github.com/mast/">rubyworks.github.com/mast/</a></p>
+</li><li>
+<p>work: <a
+href="http://github.com/rubyworks/mast/">github.com/rubyworks/mast/</a></p>
+</li><li>
+<p>wiki: <a
+href="http://wiki.github.com/rubyworks/mast/">wiki.github.com/rubyworks/mast/</a></p>
+</li></ul>
+
 <h2>USAGE</h2>
-<p>
-<a href="Mast.html">Mast</a> makes the process of generating manifests very
+
+<p><a href="Mast.html">Mast</a> makes the process of generating manifests very
 easy, and even allows manifests to be updated without repeating
 inclusion/exclusion criteria by storing the command parameters in a comment
-line at the top of the generated output.
-</p>
-<p>
-Lets try a simple example. Lets say we have the following folder structure,
-using <tt>ls -R</tt> we see:
-</p>
-<pre>
-    $ ls -R
-    .:
-    demo_rtar  mint
+line at the top of the generated output.</p>
 
-    ./demo_rtar:
-    Lorem_ipsum.txt  lib  meta  web
+<p>Lets try a simple example. Lets say we have the following folder structure,
+using <tt>ls -R</tt> we see:</p>
 
-    ./demo_rtar/lib:
-    demo_rock
+<pre>$ ls -R
+.:
+demo_rtar  mint
 
-    ./demo_rtar/lib/demo_rock:
-    tryme.rb
+./demo_rtar:
+Lorem_ipsum.txt  lib  meta  web
 
-    ./demo_rtar/meta:
-    data
+./demo_rtar/lib:
+demo_rock
 
-    ./demo_rtar/web:
-    index.html  rocklobster.jpg
+./demo_rtar/lib/demo_rock:
+tryme.rb
 
-    ./mint:
-    loremipsum.txt  tryme.rb
-</pre>
-<p>
-Now lets look at the same folder via &#8216;mast&#8217;.
-</p>
-<pre>
-    $ mast
-    #!mast
-    demo_rtar
-    demo_rtar/Lorem_ipsum.txt
-    demo_rtar/lib
-    demo_rtar/lib/demo_rock
-    demo_rtar/lib/demo_rock/tryme.rb
-    demo_rtar/meta
-    demo_rtar/meta/data
-    demo_rtar/web
-    demo_rtar/web/index.html
-    demo_rtar/web/rocklobster.jpg
-    mint
-    mint/loremipsum.txt
-    mint/tryme.rb
-</pre>
-<p>
-As you can see it has listed all the files contained in the current folder.
-Notice also the first line is empty except for the &#8217;#&#8217;
-character. This is a standard shell comment mark. We can specify special
-criteria to the mast command and these options will be reflected on this
-line. For example, lets say the mint directory is extraneous and we do not
-want it included in the list of files.
-</p>
-<pre>
-    $ mast -x mint
-    #!mast -x mint
-    demo_rtar
-    demo_rtar/Lorem_ipsum.txt
-    demo_rtar/lib
-    demo_rtar/lib/demo_rock
-    demo_rtar/lib/demo_rock/tryme.rb
-    demo_rtar/meta
-    demo_rtar/meta/data
-    demo_rtar/web
-    demo_rtar/web/index.html
-    demo_rtar/web/rocklobster.jpg
-</pre>
-<p>
-So you can see how the commandline options carry over to the top comment
+./demo_rtar/meta:
+data
+
+./demo_rtar/web:
+index.html  rocklobster.jpg
+
+./mint:
+loremipsum.txt  tryme.rb</pre>
+
+<p>Now lets look at the same folder via ‘mast’.</p>
+
+<pre>$ mast
+#!mast
+demo_rtar
+demo_rtar/Lorem_ipsum.txt
+demo_rtar/lib
+demo_rtar/lib/demo_rock
+demo_rtar/lib/demo_rock/tryme.rb
+demo_rtar/meta
+demo_rtar/meta/data
+demo_rtar/web
+demo_rtar/web/index.html
+demo_rtar/web/rocklobster.jpg
+mint
+mint/loremipsum.txt
+mint/tryme.rb</pre>
+
+<p>As you can see it has listed all the files contained in the current folder.
+Notice also the first line is empty except for the ‘#’ character. This
+is a standard shell comment mark. We can specify special criteria to the
+mast command and these options will be reflected on this line. For example,
+lets say the mint directory is extraneous and we do not want it included in
+the list of files.</p>
+
+<pre>$ mast -x mint
+#!mast -x mint
+demo_rtar
+demo_rtar/Lorem_ipsum.txt
+demo_rtar/lib
+demo_rtar/lib/demo_rock
+demo_rtar/lib/demo_rock/tryme.rb
+demo_rtar/meta
+demo_rtar/meta/data
+demo_rtar/web
+demo_rtar/web/index.html
+demo_rtar/web/rocklobster.jpg</pre>
+
+<p>So you can see how the commandline options carry over to the top comment
 line of the ouput. The advantage of this is that if you save the output to
 a standard location, i.e. a file named MANIFEST or meta/manifest with an
 optional `.txt` prefix (case insensitive), then you can automaitcally
-update the file by calling <tt>mast --update</tt>.
-</p>
-<pre>
-    $ mast -x mint &gt; MANIFEST
+update the file by calling <tt>mast --update</tt>.</p>
 
-    $ mast --update
-    MANIFEST updated.
-</pre>
-<p>
-You can also add a checksum to the file list to create a <b>DIGEST</b>.
-</p>
-<pre>
-    $ mast -x mint -g sha1
-</pre>
-<p>
-<a href="Mast.html">Mast</a> also provides options for ignoring files based
+<pre>$ mast -x mint &gt; MANIFEST
+
+$ mast --update
+MANIFEST updated.</pre>
+
+<p>You can also add a checksum to the file list to create a <b>DIGEST</b>.</p>
+
+<pre>$ mast -x mint -g sha1</pre>
+
+<p><a href="Mast.html">Mast</a> also provides options for ignoring files based
 on their basename, as well as omitting default excludes and ignores so that
-all files are lists. Use the &#8212;help option for more details.
-</p>
+all files are lists. Use the –help option for more details.</p>
+
 <h2>HOW TO INSTALL</h2>
-<p>
-To install with RubyGems simply open a console and type:
-</p>
-<pre>
-  $ gem install mast
-</pre>
-<p>
-For a traditional site installation use Ruby Setup (gem install setup).
-</p>
-<pre>
-  $ tar -xvzf mast-1.3.0.tar.gz
-  $ cd mast-1.3.0.tar.gz
-  $ sudo setup.rb
-</pre>
-<p>
-See <a href="http://rubyworks.github.com/setup">Ruby Setup</a> for more
-information.
-</p>
+
+<p>To install with RubyGems simply open a console and type:</p>
+
+<pre>$ gem install mast</pre>
+
+<p>For a traditional site installation use Ruby Setup (gem install setup).</p>
+
+<pre>$ tar -xvzf mast-1.3.0.tar.gz
+$ cd mast-1.3.0.tar.gz
+$ sudo setup.rb</pre>
+
+<p>See <a href="http://rubyworks.github.com/setup">Ruby Setup</a> for more
+information.</p>
+
 <h2>COPYRIGHT</h2>
-<p>
-Copyright &#169; 2009 Thomas Sawyer
-</p>
-<p>
-Licensed under the Apache License, Version 2.0 (the &#8220;License&#8221;);
-you may not use this file except in compliance with the License. You may
-obtain a copy of the License at
-</p>
-<pre>
-   http://www.apache.org/licenses/LICENSE-2.0
-</pre>
-<p>
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an &#8220;AS IS&#8221;
-BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
-implied. See the License for the specific language governing permissions
-and limitations under the License.
-</p>
+
+<p>Copyright © 2009 Thomas Sawyer</p>
+
+<p>Licensed under the Apache License, Version 2.0 (the “License”); you may
+not use this file except in compliance with the License. You may obtain a
+copy of the License at</p>
+
+<pre>http://www.apache.org/licenses/LICENSE-2.0</pre>
+
+<p>Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an “AS IS” BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.</p>
 
   </div>
 

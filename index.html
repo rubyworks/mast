@@ -10,6 +10,7 @@
       font: 1em sans-serif;
       text-align: justify;
     }
+    img { border: none; }
     p { font-size: 100%; font-weight: normal; text-align: justify; margin: 0; padding: 1em 0; }
     a { text-decoration: none; font-size: 10pt; color: #662200; font-weight: bold; text-align: justify; }
     a:hover { text-decoration: underline; }
@@ -26,7 +27,9 @@
 
     .paper { margin: 0 auto; width: 800px; background: white; padding: 30px 40px;
             border: 1px solid #bbb; font-size: 1.1em; color: #222; line-height: 1.5em;
-            background: url(assets/images/corner.png) top right no-repeat #f4f4f4;
+            -moz-box-shadow: 10px 10px 5px #888;
+            -webkit-box-shadow: 10px 10px 5px #888;
+            box-shadow: 10px 10px 5px #888;
           }
 
     .tinted { background: #f5ddb7; color: #662200; }
@@ -40,11 +43,13 @@
 
     .head { height: 69px; border-bottom: 1px solid #999;
             font-size: 60px; color: #222; font-family: courier;
-            padding: 40px 0 0 80px; font-weight: bold; letter-spacing: 10px;
+            padding: 40px 0 0 80px; font-weight: bold; letter-spacing: 9px;
             background: url(assets/images/image.jpg) 0px 0px no-repeat;
      }
 
-    .body { border-bottom: 2px solid tan; margin: 0; padding: 60px 0 30px 0;  }
+    .rw { font-size: 10px; letter-spacing: 6px; }
+
+    .body { border-bottom: 2px solid tan; margin: 0; padding: 60px 0 60px 0;  }
     .body a { color: brown; }
 
     .foot { padding: 3em; text-align: center; }
@@ -52,6 +57,10 @@
   </style>
 </HEAD>
 <BODY>
+
+<div style="position: absolute; top: 110px; right: 0;">
+  <a href="http://github.com/rubyworks/mast"><img src="assets/images/fork-me.png" /></a>
+</div>
 
 <div class="head light">
   <div class="menu">
@@ -64,22 +73,19 @@
     <a href="http://github.com/rubyworks/mast/issues">ISSUE</a> &nbsp;&nbsp;
     <a href="http://github.com/rubyworks/mast">CODE</a> &nbsp;&nbsp;
   </div>
-  MAST
+  MAST<span class="rw"> (<a href="http://rubyworks.github.com">Rubyworks</a>) </span>
 </div>
 
 <div class="body tinted">
   <div class="paper">
 
-  <h2>DESCRIPTION</h2>
+  <h2>MANIFEST ASSISTANCE TOOL</h2>
 
-  <p style="width:670px; text-align:left;">
-  <b>Mast</b> is a commandline utility for working with file <i>MANIFESTS</i> and <i>DIGESTS</i>.
-  Mast can be used to list, create or update recursive directory listings, or compare
-  manifests to actual directory contents. It can be useful in conjunction with
+  <p><b>Mast</b> is a command-line utility for working with file MANIFESTS and DIGESTS.
+  Mast can be used to <i>create</i> or <i>update</i> recursive directory
+  listings, or <i>compare</i> manifests to actual directory contents. It can be useful in conjunction with
   packaging tools (such as <a href="http://proutils.github.com/box">Box</a>), or
   as a stand-alone tool for monitoring file changes.</p>
-
-  <p>Mast is part of the <a href="http://rubyworks.github.com">RubyWorks</a> collection of Ruby libraries and tools.</p>
 
   <br/>
 
@@ -100,29 +106,29 @@
     -u --update         Update an existing manifest.
     -l --list           List the files given in the manifest file. (Use -f to specify an alternate file.)
     -D --diff           Diff manifest file against actual.
-    -n --new            List existant files that are not given in the manifest.
+    -n --new            List existent files that are not given in the manifest.
     -o --old            List files given in the manifest but are non-existent.
        --clean          Remove non-manifest files. (Will ask for confirmation first.)
     -v --verify         Verify that a manifest matches actual.
     -h --help           Display this help message.
 
   Options:
-    -a --all            Include all files. This deactivates deafult exclusions
+    -a --all            Include all files. This deactivates default exclusions
                         so it is possible to make complete list of all contents.
     -d --dir            When creating a list include directory paths; by default
                         only files are listed.
-    -s --show           Show files using the options from the manifest file.
+    -s --show           Show files using the options header in the manifest file.
     -f --file PATH      Path to manifest file. When using update command, if not
                         given then the file matching 'MANIFEST', case-insensitive
                         and with an optional '.txt' extension, will be looked for
                         in the current directory. If the path of the manifest file
                         is anything else then --file option must be specified.
-    -g --digest TYPE    Include crytogrpahic signiture. Type can be either
+    -g --digest TYPE    Include cryptographic signature. Type can be either
                         md5, sha1, sha128, sha256, or sha512.
     -x --exclude PATH   Exclude a file or dir from the manifest matching against
                         full pathname. You can use --exclude repeatedly.
     -i --ignore PATH    Exclude a file or dir from the manifest matching against
-                        an entries basename. You can use --ignore repeatedly.
+                        an entry's basename. You can use --ignore repeatedly.
     -q --quiet          Suppress extraneous output.
   </pre>
 
@@ -161,8 +167,8 @@
   <p>When creating a manifest the <code>--file</code> option can also be used to write the
   output to a file instead of stdout. In the update example, mast automatically sets the
   <code>--file</code> option if a file in the working directory has a name matching "MANIFEST"
-  case-insensitive with optional <code>.txt</code> extensiond; otherwise you can use the
-  <code>--file</code> option to specify at alternate.</p>
+  case-insensitive with optional <code>.txt</code> extension; otherwise you can use the
+  <code>--file</code> option to specify an alternate.</p>
 
   <p>To create a DIGEST, rather than a MANIFEST, use the <code>--digest</code> or <code>-g</code>
   option.</p> 
@@ -191,7 +197,7 @@
   b325b103b3e51a52d78aa72eb6050160fe56ecfe README.rdoc
   </pre>
 
-  <p>As you can see from the commandline help, <code>mast</code> has a number of additional
+  <p>As you can see from the command-line help, <code>mast</code> has a number of additional
   commands and options. Try them out.</p>
 
   <p><b>IMPORTANT!</b> Be cautious with the <code>--clean</code> command. This mode of operation will

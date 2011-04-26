@@ -3,7 +3,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
 
   <title>Class: Syckle::Plugins::Mast</title>
 
@@ -21,13 +21,16 @@
 
   <script type="text/javascript">
     $(document).ready( function() {
-      hookHighlightSyntax();
+      $('#documentation pre').wrapInner('<code></code>');
+      hljs.tabReplace = '    ';
+      hljs.initHighlightingOnLoad('ruby');
+
 	    hookSourceViews();
 	    hookDebuggingToggle();
 	    hookQuickSearch();
 	    highlightLocationTarget();
 
-	    $('ul.link-list a').bind("click", highlightClickTarget);
+	    $('ul.link-list a').bind( "click", highlightClickTarget );
     });
   </script>
 </head>
@@ -39,7 +42,7 @@
       
         <img src="../../assets/icon/class.png" align="absmiddle">&nbsp;
       
-      <a href="../../index.html">Mast</a>&nbsp;
+      <a href="../../index.html">&quot;Mast&quot;</a>&nbsp;
       <a href="/">Syckle::Plugins::Mast</a>
     </h1>
   </div>
@@ -73,7 +76,9 @@
         <h3 class="section-header">Parent</h3>
         <ul>
           
-          <li class="class">Service</li>
+            
+              <li class="class">Service</li>
+            
           
         </ul>
       </div>
@@ -95,27 +100,12 @@
           
             
             <li class="method">
-              <a href="#method-i-file">#file</a>
-            </li>
-          
-            
-            <li class="method">
               <a href="#method-i-generate">#generate</a>
             </li>
           
             
             <li class="method">
-              <a href="#method-i-initialize_defaults">#initialize_defaults</a>
-            </li>
-          
-            
-            <li class="method">
               <a href="#method-i-manifest">#manifest</a>
-            </li>
-          
-            
-            <li class="method">
-              <a href="#method-i-options">#options</a>
             </li>
           
             
@@ -138,9 +128,13 @@
         <h3 class="section-header">Information</h3>
         <ul>
         
+          <li class="file"><a href="../../PROFILE.html">PROFILE</a></li>
+        
           <li class="file"><a href="../../HISTORY_rdoc.html">HISTORY.rdoc</a></li>
         
           <li class="file"><a href="../../LICENSE.html">LICENSE</a></li>
+        
+          <li class="file"><a href="../../VERSION.html">VERSION</a></li>
         
           <li class="file"><a href="../../README_rdoc.html">README.rdoc</a></li>
         
@@ -186,7 +180,7 @@
       <div style="float: right; margin-right: 5px;">
         <a href="http://validator.w3.org/check/referer"><img src="../../assets/icon/check.png" alt="[Validate]" height="16" width="16" /></a>
       </div>
-      Generated with <a href="http://rubyworks.github.com/rdazzle">RDazzle Redfish</a> 1.4.0
+      Generated with <a href="http://rubyworks.github.com/newfish">Newfish</a> 0.2.0
       <br/><br/>
     </div>
   </div>
@@ -196,7 +190,8 @@
     <div id="description">
       
 
-      <h1><a href="Mast.html">Mast</a> Manifest Plugin</h1>
+      
+<h1><a href="Mast.html">Mast</a> Manifest Plugin</h1>
 
     </div>
 
@@ -208,31 +203,23 @@
       
         <dt><a name="DEFAULT_FILENAME">DEFAULT_FILENAME</a></dt>
         
-        <dd class="description"><p>
-Default MANIFEST filename.
-</p></dd>
+        <dd class="description"><p>Default MANIFEST filename.</p></dd>
         
       
         <dt><a name="DEFAULT_INCLUDE">DEFAULT_INCLUDE</a></dt>
         
-        <dd class="description"><p>
-Default files/dirs to include.
-</p></dd>
+        <dd class="description"><p>Default files/dirs to include.</p></dd>
         
       
         <dt><a name="DEFAULT_EXCLUDE">DEFAULT_EXCLUDE</a></dt>
         
-        <dd class="description"><p>
-Default files/dirs to exclude.
-</p></dd>
+        <dd class="description"><p>Default files/dirs to exclude.</p></dd>
         
       
         <dt><a name="DEFAULT_IGNORE">DEFAULT_IGNORE</a></dt>
         
-        <dd class="description"><p>
-Default files/dirs to ignore. Unlike exclude, this work on path basenames,
-and not full pathnames.
-</p></dd>
+        <dd class="description"><p>Default files/dirs to ignore. Unlike exclude, this work on path basenames,
+and not full pathnames.</p></dd>
         
       
       </dl>
@@ -335,19 +322,17 @@ and not full pathnames.
 
         <div class="method-description">
           
-          <p>
-Remove MANIFEST. TODO: Currently a noop. Not sure removing manfest is ever
-a good idea.
-</p>
+          <p>Remove MANIFEST. TODO: Currently a noop. Not sure removing manfest is ever
+a good idea.</p>
           
 
           
           <div class="method-source-code"
             id="clean-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/plugins/syckle/mast.rb, line 79</span>
-79:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">clean</span>
-80:     <span class="ruby-keyword kw">end</span></pre>
+<span class="ruby-comment"># File lib/plugins/syckle/mast.rb, line 79</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">clean</span>
+<span class="ruby-keyword">end</span></pre>
           </div>
           
         </div>
@@ -369,25 +354,23 @@ a good idea.
 
         <div class="method-description">
           
-          <p>
-Generate manifest. TODO: don&#8217;t overwrite if it hasn&#8217;t changed
-</p>
+          <p>Generate manifest. TODO: don’t overwrite if it hasn’t changed</p>
           
 
           
           <div class="method-source-code"
             id="generate-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/plugins/syckle/mast.rb, line 62</span>
-62:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">generate</span>
-63:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">manifest</span>.<span class="ruby-identifier">changed?</span>
-64:         <span class="ruby-identifier">file</span> = <span class="ruby-identifier">manifest</span>.<span class="ruby-identifier">save</span> <span class="ruby-comment cmt">#update #generate</span>
-65:         <span class="ruby-identifier">report</span> <span class="ruby-node">&quot;Updated #{file.to_s.sub(Dir.pwd+'/','')}&quot;</span>
-66:         <span class="ruby-comment cmt">#report &quot;Updated #{output.to_s.sub(Dir.pwd+'/','')}&quot;</span>
-67:       <span class="ruby-keyword kw">else</span>
-68:         <span class="ruby-identifier">report</span> <span class="ruby-node">&quot;#{output.to_s.sub(Dir.pwd+'/','')} is current&quot;</span>
-69:       <span class="ruby-keyword kw">end</span>
-70:     <span class="ruby-keyword kw">end</span></pre>
+<span class="ruby-comment"># File lib/plugins/syckle/mast.rb, line 62</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">generate</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">manifest</span>.<span class="ruby-identifier">changed?</span>
+    <span class="ruby-identifier">file</span> = <span class="ruby-identifier">manifest</span>.<span class="ruby-identifier">save</span> <span class="ruby-comment">#update #generate</span>
+    <span class="ruby-identifier">report</span> <span class="ruby-node">&quot;Updated #{file.to_s.sub(Dir.pwd+'/','')}&quot;</span>
+    <span class="ruby-comment">#report &quot;Updated #{output.to_s.sub(Dir.pwd+'/','')}&quot;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">report</span> <span class="ruby-node">&quot;#{output.to_s.sub(Dir.pwd+'/','')} is current&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
           </div>
           
         </div>
@@ -416,10 +399,10 @@ Generate manifest. TODO: don&#8217;t overwrite if it hasn&#8217;t changed
           <div class="method-source-code"
             id="manifest-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/plugins/syckle/mast.rb, line 56</span>
-56:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">manifest</span>
-57:       <span class="ruby-ivar">@manifest</span> <span class="ruby-operator">||=</span> <span class="ruby-operator">::</span><span class="ruby-constant">Mast</span><span class="ruby-operator">::</span><span class="ruby-constant">Manifest</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">options</span>)
-58:     <span class="ruby-keyword kw">end</span></pre>
+<span class="ruby-comment"># File lib/plugins/syckle/mast.rb, line 56</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">manifest</span>
+  <span class="ruby-ivar">@manifest</span> <span class="ruby-operator">||=</span> <span class="ruby-operator">::</span><span class="ruby-constant">Mast</span><span class="ruby-operator">::</span><span class="ruby-constant">Manifest</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
           </div>
           
         </div>
@@ -441,127 +424,16 @@ Generate manifest. TODO: don&#8217;t overwrite if it hasn&#8217;t changed
 
         <div class="method-description">
           
-          <p>
-Mark MANIFEST as out-of-date. TODO: Implement reset.
-</p>
+          <p>Mark MANIFEST as out-of-date. TODO: Implement reset.</p>
           
 
           
           <div class="method-source-code"
             id="reset-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/plugins/syckle/mast.rb, line 74</span>
-74:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">reset</span>
-75:     <span class="ruby-keyword kw">end</span></pre>
-          </div>
-          
-        </div>
-
-        
-      </div>
-
-    
-    </div>
-  
-    <div id="private-instance-method-details" class="method-section section">
-      <h3 class="section-header">Private Instance Methods</h3>
-
-    
-      <div id="file-method" class="method-detail ">
-        <a name="method-i-file"></a>
-
-        <div class="method-heading">
-        
-          <span class="method-name">file</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        
-        </div>
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code"
-            id="file-source">
-<pre>
-    <span class="ruby-comment cmt"># File lib/plugins/syckle/mast.rb, line 93</span>
-93:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">file</span>
-94:       <span class="ruby-identifier">project</span>.<span class="ruby-identifier">root</span>.<span class="ruby-identifier">glob</span>(<span class="ruby-value str">&quot;MANIFEST{,.txt}&quot;</span>).<span class="ruby-identifier">first</span>
-95:     <span class="ruby-keyword kw">end</span></pre>
-          </div>
-          
-        </div>
-
-        
-      </div>
-
-    
-      <div id="initialize-defaults-method" class="method-detail ">
-        <a name="method-i-initialize_defaults"></a>
-
-        <div class="method-heading">
-        
-          <span class="method-name">initialize_defaults</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        
-        </div>
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code"
-            id="initialize-defaults-source">
-<pre>
-    <span class="ruby-comment cmt"># File lib/plugins/syckle/mast.rb, line 85</span>
-85:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize_defaults</span>
-86:       <span class="ruby-ivar">@include</span> = <span class="ruby-constant">DEFAULT_INCLUDE</span>
-87:       <span class="ruby-ivar">@exclude</span> = <span class="ruby-constant">DEFAULT_EXCLUDE</span>
-88:       <span class="ruby-ivar">@ignore</span>  = <span class="ruby-constant">DEFAULT_IGNORE</span>
-89:       <span class="ruby-ivar">@output</span>  = (<span class="ruby-identifier">file</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">project</span>.<span class="ruby-identifier">root</span> <span class="ruby-operator">+</span> <span class="ruby-constant">DEFAULT_FILENAME</span>).<span class="ruby-identifier">to_s</span>
-90:     <span class="ruby-keyword kw">end</span></pre>
-          </div>
-          
-        </div>
-
-        
-      </div>
-
-    
-      <div id="options-method" class="method-detail ">
-        <a name="method-i-options"></a>
-
-        <div class="method-heading">
-        
-          <span class="method-name">options</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        
-        </div>
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code"
-            id="options-source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/plugins/syckle/mast.rb, line 98</span>
- 98:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">options</span>
- 99:       { <span class="ruby-value">:include</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">include</span>,
-100:         <span class="ruby-value">:exclude</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">exclude</span>,
-101:         <span class="ruby-value">:ignore</span>  =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">ignore</span>,
-102:         <span class="ruby-value">:file</span>    =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">output</span>
-103:       }
-104:     <span class="ruby-keyword kw">end</span></pre>
+<span class="ruby-comment"># File lib/plugins/syckle/mast.rb, line 74</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">reset</span>
+<span class="ruby-keyword">end</span></pre>
           </div>
           
         </div>
