@@ -15,6 +15,7 @@ ProUtils set of tools.
 When no command is given, a manifest is dumped to standard out.
 If --file is specified, it will generate to that file instead.
 
+
 ## COMMANDS
 
   * `-c`, `--create`:
@@ -38,11 +39,15 @@ If --file is specified, it will generate to that file instead.
   * `-v`, `--verify`:
     Verify that a manifest matches actual.
 
+  * `-r`, `--recent`:
+    Verify that a manifest is more recent than actual.
+
   * `--clean`:
     Remove non-manifest files. (Will ask for confirmation first.)
 
   * `-h`, `--help`:
     Display this help message.
+
 
 ## OPTIONS
 
@@ -76,13 +81,18 @@ If --file is specified, it will generate to that file instead.
     Exclude a file or dir from the manifest matching against 
     an entries basename. You can use --ignore repeatedly.
 
-  * `-q`, `--quiet`:
-    Suppress any extraneous output.
+  * `--no-head`:
+    Suppress mast header from output.
+
+  * `--debug`:
+    Run command with Ruby's $DEBUG flag set to `true`.
+
 
 ## EXAMPLES
 
 `mast`<br>
 `mast -u -f PUBLISH`
+
 
 ## SEE ALSO
 

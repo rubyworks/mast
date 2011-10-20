@@ -29,7 +29,9 @@ module Mast
 
     # No Manifest File Error.
     #
-    NoManifestError = Class.new(LoadError)
+    NoManifestError = Class.new(LoadError) do
+      def message; "ERROR: no manifest file"; end
+    end
 
     # By default mast will exclude any pathname matching
     # 'CVS', '_darcs', '.git*' or '.config'.
@@ -74,6 +76,9 @@ module Mast
     # Show as if another manifest (i.e. use file's bang options).
     attr_accessor :bang
 
+    # Omit mast header from manifest output.
+    attr_accessor :headless
+
     # What files to include. Defaults to ['*'].
     # Note that Mast automatically recurses through
     # directory entries, so using '**/*' would simply
@@ -100,6 +105,10 @@ module Mast
 
     #
     alias_method :bang?, :bang
+
+    #
+    alias_method :headless?, :headless
+
 
     # New Manifest object.
     #
@@ -175,7 +184,7 @@ module Mast
     # Generate manifest.
     def generate(out=$stdout)
       parse_topline unless read? if bang?
-      out << topline_string
+      out << topline_string unless headless?
       output(out)
     end
 

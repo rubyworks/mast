@@ -1,8 +1,9 @@
 .cache
+doc
+docs
 log
 pkg
-man
 ri
 tmp
-site/doc
 work/sandbox
+man/man1/*.html

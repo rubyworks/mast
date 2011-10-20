@@ -1,50 +1,3 @@
-#  mast v1.0.0
-#
-#  Usage:
-#    mast [command] [options...]
-#
-#  The manifest listing tool is used to list, create or update a
-#  manifest for a directory (eg. to define a "package"), or compare
-#  a manifest to actual directory contents. Mast is part of the
-#  ProUtils set of tools.
-#
-#  When no command is given, a manifest is dumped to standard out.
-#  If --file is specified, it will generate to that file instead.
-#
-#  Examples:
-#    mast
-#    mast -u -f PUBLISH
-#
-#  Commands:
-#    -c --create         Generate a new manifest. (default)
-#    -u --update         Update an existing manifest.
-#    -l --list           List the files given in the manifest file. (Use -f to specify an alternate file.)
-#    -D --diff           Diff manifest file against actual.
-#    -n --new            List existant files that are not given in the manifest.
-#    -o --old            List files given in the manifest but are non-existent.
-#       --clean          Remove non-manifest files. (Will ask for confirmation first.)
-#    -v --verify         Verify that a manifest matches actual.
-#    -h --help           Display this help message.
-#
-#  Options:
-#    -a --all            Include all files. This deactivates deafult exclusions
-#                        so it is possible to make complete list of all contents.
-#    -d --dir            When creating a list include directory paths; by default
-#                        only files are listed.
-#    -b --bang           Produce new manifest but using options from the bang line of the manifest file.
-#    -f --file PATH      Path to manifest file. This applies to comparison commands.
-#                        If not given then the file matching 'MANIFEST', case-insensitive
-#                        and with an optional '.txt' extension, in the current directory
-#                        is used. If the path of the manifest file is anything else then
-#                        the --file option must be specified.
-#    -g --digest TYPE    Include crytographic signiture. Type can be either
-#                        md5, sha1, sha128, sha256, or sha512.
-#    -x --exclude PATH   Exclude a file or dir from the manifest matching against
-#                        full pathname. You can use --exclude repeatedly.
-#    -i --ignore PATH    Exclude a file or dir from the manifest matching against 
-#                        an entries basename. You can use --ignore repeatedly.
-#    -q --quiet          Suppress any extraneous output.
-
 require 'mast'
 require 'optparse'
 
@@ -117,6 +70,7 @@ module Mast
       when :old      then old
       when :verify   then verify
       when :clean    then clean
+      when :recent   then recent
       else
         generate
       end
@@ -146,9 +100,9 @@ module Mast
         opt.on "--dir", "-d" do |bool|
           @options[:dir] = bool
         end
-        #opt.on "--quiet", "-q", "" do |bool|
-        #  @quiet = bool
-        #end
+        opt.on "--[no-]head" do |bool|
+          @options[:headless] = !bool
+        end
         opt.on "--create", "-c" do
           @command << :create
         end
@@ -173,6 +127,9 @@ module Mast
         opt.on "--clean" do
           @command << :clean
         end
+        opt.on "--recent", "-r" do
+          @command << :recent
+        end
         opt.on "--help" do
           @command << :help
         end
@@ -195,7 +152,7 @@ module Mast
     def update
       begin
         file = manifest.update
-      rescue NoManifestError => e
+      rescue Manifest::NoManifestError => e
         puts e.message
         exit -1
       end
@@ -252,6 +209,20 @@ module Mast
       else
         report_cancelled('Clean')
         exit!
+      end
+    end
+
+    # Verify manifest, then check to see that it is not older than files
+    # it lists.
+    def recent
+      check = manifest.verify
+      if !check
+        report_verify(check)
+        exit -1 
+      end
+      if !FileUtils.uptodate?(manifest.file, manifest.filelist)
+        report_outofdate
+        exit -1
       end
     end
 
@@ -345,13 +316,12 @@ module Mast
     # Show help.
     def report_help
       doc = false
-      File.readlines(__FILE__).each do |line|
-        line = line.strip
-        break if doc && line.empty?
-        next if line =~ /^#!/
-        next if line.empty?
-        puts line[1..-1].sub(/^\ \ /,'')
-        doc = true
+      man_page  = File.dirname(__FILE__) + '/../../man/man1/mast.1'
+      ronn_file = File.dirname(__FILE__) + '/../../man/man1/mast.1.ronn'
+      if File.exist?(man_page)
+        system "man #{man_page}" || puts(File.read(ronn_file))
+      else
+        puts option_parser
       end
     end
 
@@ -382,6 +352,11 @@ module Mast
       else
         report "Manifest is bad!"
       end
+    end
+
+    #
+    def report_outofdate
+      report "Manifest is older than listed file(s)."
     end
 
     #
