@@ -6,6 +6,8 @@
   |           |
   '-----------'
 
+{<img src="http://travis-ci.org/rubyworks/mast.png" />}[http://travis-ci.org/rubyworks/mast]
+
 
 == DESCRIPTION
 

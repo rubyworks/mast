@@ -1,7 +1,7 @@
 .\" generated with Ronn/v0.7.3
 .\" http://github.com/rtomayko/ronn/tree/0.7.3
 .
-.TH "MAST" "1" "November 2010" "RubyWorks" "Mast"
+.TH "MAST" "1" "October 2011" "RubyWorks" "Mast"
 .
 .SH "NAME"
 \fBmast\fR \- manifest generator
@@ -46,6 +46,10 @@ List files given in the manifest but are non\-existent\.
 Verify that a manifest matches actual\.
 .
 .TP
+\fB\-r\fR, \fB\-\-recent\fR
+Verify that a manifest is more recent than actual\.
+.
+.TP
 \fB\-\-clean\fR
 Remove non\-manifest files\. (Will ask for confirmation first\.)
 .
@@ -84,8 +88,12 @@ Exclude a file or dir from the manifest matching against full pathname\. You can
 Exclude a file or dir from the manifest matching against an entries basename\. You can use \-\-ignore repeatedly\.
 .
 .TP
-\fB\-q\fR, \fB\-\-quiet\fR
-Suppress any extraneous output\.
+\fB\-\-no\-head\fR
+Suppress mast header from output\.
+.
+.TP
+\fB\-\-debug\fR
+Run command with Ruby\'s $DEBUG flag set to \fBtrue\fR\.
 .
 .SH "EXAMPLES"
 \fBmast\fR

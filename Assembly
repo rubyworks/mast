@@ -22,9 +22,7 @@ ronn:
   service  : custom
   cycle    : main
   document : |
-    system 'ronn --manual="Mast" --organization="RubyWorks" --style="toc" ronn/*.ronn'
-    system 'mv ronn/*.1 man/man1/'
-    system 'mv ronn/*.html site/doc/man/'
+    system 'ronn --manual="Mast" --organization="RubyWorks" --style="toc" man/man1/*.ronn'
 
 vclog:
   output:

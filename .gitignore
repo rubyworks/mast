@@ -2,8 +2,10 @@
 doc
 docs
 log
+pages
 pkg
 ri
 tmp
 work/sandbox
 man/man1/*.html
+QED.rdoc
