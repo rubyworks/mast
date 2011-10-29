@@ -10,7 +10,8 @@ def assert_bash(text)
 
   stdin, stdout, stderr = Open3.popen3(bash)
 
-  output = (stderr.read + stdout.read).strip
+  #output = (stderr.read + stdout.read).strip
+  output = stdout.read.strip
 
   result.assert == output
 end
