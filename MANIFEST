@@ -1,4 +1,4 @@
-#!mast -x Syckfile -x PROFILE .ruby bin lib man spec test [A-Z]*
+#!mast .ruby .yardopts bin lib man spec test [A-Z]*.*
 .ruby
 bin/mast
 lib/mast/cli.rb
@@ -7,8 +7,9 @@ lib/mast/manifest.rb
 lib/mast.rb
 lib/mast.yml
 lib/plugins/syckle/mast.rb
+man/man1/index.txt
 man/man1/mast.1
+man/man1/mast.1.ronn
 HISTORY.rdoc
-LICENSE
 README.rdoc
-VERSION
+COPYING.rdoc

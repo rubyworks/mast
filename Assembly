@@ -1,0 +1,38 @@
+---
+gem:
+  active: true
+
+github:
+  active: true
+
+dnote:
+  output: log/NOTES.rdoc
+
+#locat:
+#  output   : ~
+#  active   : true
+
+qedoc:
+  files: qed/
+  title: Mast Demonstrandum
+  output: QED.rdoc
+
+# todo: use ronn service when available
+ronn:
+  service  : custom
+  cycle    : main
+  document : |
+    system 'ronn --manual="Mast" --organization="RubyWorks" --style="toc" ronn/*.ronn'
+    system 'mv ronn/*.1 man/man1/'
+    system 'mv ronn/*.html site/doc/man/'
+
+vclog:
+  output:
+    - log/History.rdoc
+    - log/Changes.rdoc
+
+email:
+  mailto:
+    - ruby-talk@ruby-lang.org
+    - rubyworks-mailinglist@googlegroups.com
+
