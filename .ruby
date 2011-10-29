@@ -1,42 +1,50 @@
---- 
-name: mast
-company: RubyWorks
-title: Mast
-contact: trans <transfire@gmail.com>
-requires: 
-- group: 
+---
+source:
+- meta
+authors:
+- name: 7rans
+  email: transfire@gmail.com
+copyrights:
+- holder: Thomas Sawyer
+  year: '2009'
+replacements: []
+alternatives: []
+requirements:
+- name: detroit
+  groups:
   - build
-  name: syckle
-  version: 0+
-- group: 
+  development: true
+- name: qed
+  groups:
   - test
-  name: qed
-  version: 0+
-resources: 
-  repo: git://github.com/rubyworks/mast.git
-  code: http://github.com/rubyworks/mast/
-  mail: http://groups.google.com/group/rubyworks-mailinglist
+  development: true
+dependencies: []
+conflicts: []
+repositories:
+- uri: git://github.com/rubyworks/mast.git
+  scm: git
+  name: upstream
+resources:
   home: http://rubyworks.github.com/mast/
+  code: http://github.com/rubyworks/mast/
   wiki: http://wiki.github.com/rubyworks/mast/
-pom_verison: 1.0.0
-manifest: 
-- .ruby
-- bin/mast
-- lib/mast/cli.rb
-- lib/mast/core_ext.rb
-- lib/mast/manifest.rb
-- lib/mast.rb
-- lib/mast.yml
-- lib/plugins/syckle/mast.rb
-- man/man1/mast.1
-- HISTORY.rdoc
-- LICENSE
-- README.rdoc
-- VERSION
-version: 1.3.0
-copyright: Copyright (c) 2009 Thomas Sawyer
-description: Mast is a command line tool for generating manifests and digests. Mast makes it easy to compare a manifest to a current directory structure, and to update the manifest with a simple command by storing the command options it the manifest file itself.
+  mail: http://groups.google.com/group/rubyworks-mailinglist
+extra: {}
+load_path:
+- lib
+revision: 0
+created: '2009-08-17'
 summary: Mast is a command line tool for generating manifests and digests.
-authors: 
-- Thomas Sawyer
-created: 2009-08-17
+title: Mast
+version: 1.3.0
+name: mast
+description: ! 'Mast is a command line tool for generating manifests and digests.
+  Mast makes
+
+  it easy to compare a manifest to a current directory structure, and to update
+
+  the manifest with a simple command by storing the command options it the
+
+  manifest file itself.'
+organization: rubyworks
+date: '2011-10-29'
