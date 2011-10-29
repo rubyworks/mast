@@ -4,10 +4,6 @@ module Mast
   require 'shellwords'
   require 'mast/core_ext'
 
-  # Manifest stores a list of package files, and optionally checksums.
-  #
-  # The class can be used to create and compare package manifests and digests.
-  #
   # TODO: Integrate file signing and general manifest better (?)
   #
   # TODO: Digester is in sign.rb too. Dry-up?
@@ -20,6 +16,13 @@ module Mast
   # to just [doc]. Otherwise we will get duplicate entries, b/c the #output
   # method is written for speed and low memory footprint. This might mean @include
   # can't use file globs.
+
+  # Manifest stores a list of package files, and optionally checksums.
+  #
+  # The class can be used to create and compare package manifests and digests.
+  #
+  # Note that the #diff method currently shells out. Eventually this will be
+  # internalized.
   #
   class Manifest
 
@@ -97,6 +100,9 @@ module Mast
     # Files and checksums listed in file.
     #attr_reader :list
 
+    # An IO object to output manifest. Default is `$stdout`.
+    attr_accessor :io
+
     #
     alias_method :all?, :all
 
@@ -122,6 +128,7 @@ module Mast
       @bang      = false
       @digest    = nil
       @directory = Dir.pwd
+      @io        = $stdout
 
       change_options(options)
 
@@ -182,7 +189,8 @@ module Mast
     #end
 
     # Generate manifest.
-    def generate(out=$stdout)
+    def generate(out=nil)
+      out ||= self.io
       parse_topline unless read? if bang?
       out << topline_string unless headless?
       output(out)
@@ -313,7 +321,8 @@ module Mast
   private
 
     #
-    def output(out=$stdout)
+    def output(out=nil)
+      out ||= self.io
       Dir.chdir(directory) do
         exclusions  # seed exclusions
         #rec_output('*', out)
@@ -324,7 +333,8 @@ module Mast
     end
 
     # Generate listing on the fly.
-    def rec_output(match, out=$stdout)
+    def rec_output(match, out=nil)
+      out ||= self.io
       out.flush unless Array === out
       #match = (location == dir ? '*' : File.join(dir,'*'))
       files = Dir.glob(match, File::FNM_DOTMATCH) - exclusions

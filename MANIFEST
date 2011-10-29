@@ -9,7 +9,9 @@ lib/mast.yml
 lib/plugins/syckle/mast.rb
 man/man1/index.txt
 man/man1/mast.1
+man/man1/mast.1.html
 man/man1/mast.1.ronn
 HISTORY.rdoc
 README.rdoc
+QED.rdoc
 COPYING.rdoc

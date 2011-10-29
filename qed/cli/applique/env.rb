@@ -13,6 +13,9 @@ def assert_bash(text)
   #output = (stderr.read + stdout.read).strip
   output = stdout.read.strip
 
+  result = result.split("\n").sort
+  output = output.split("\n").sort
+
   result.assert == output
 end
 
@@ -24,7 +27,7 @@ Before :demo do
   end
 end
 
-When "Let say we have a directory containing a set of files as follows" do |text|
+When "Lets say we have a directory containing a set of files as follows" do |text|
   text.lines.each do |line|
     file = line.strip
     FileUtils.mkdir_p(File.dirname(file))

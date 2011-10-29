@@ -1,0 +1,24 @@
+== Manifest Generation
+
+Lets say we have a directory containing a set of files as follows:
+
+  README.txt
+  lib/foo.rb
+  lib/bar.rb
+
+We can crate a new Manifest object, utilizing a StringIO object to catch
+the output.
+
+  out = ''
+
+  manifest = Mast::Manifest.new(:io=>StringIO.new(out))
+
+If we call the generate method, then the output should list the 
+above file along with a generic shebang header.
+
+  manifest.generate
+
+  list = out.split("\n").sort
+
+  list.assert == ['#!mast *','README.txt','lib/bar.rb','lib/foo.rb']
+

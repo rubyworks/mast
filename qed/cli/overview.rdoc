@@ -2,7 +2,7 @@
 
 Mast in a manifest and digest generator.
 
-Let say we have a directory containing a set of files as follows:
+Lets say we have a directory containing a set of files as follows:
 
   README.txt
   lib/foo.rb
@@ -84,7 +84,6 @@ a file name:
 Once saved, `mast` has an update mode via the `-u` option:
 
   $ mast -u
-  MANIFEST.txt updated.
 
 By default this works for any manifest file with a name matching "manifest{,.*}",
 case insensitvive. An alternate file name can be supplied using the `-f` option.
@@ -94,7 +93,6 @@ verification that a manifest file matches the current contents of the directory
 can be had via the `-v`/`--verify` option:
 
   $ mast -v
-  Manifest is good.
 
 To see what files are new, that is to say added to the the directory but not
 listed in the manifest file, use the `-n/--new` option. For instance, let's

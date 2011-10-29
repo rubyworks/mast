@@ -150,13 +150,18 @@ module Mast
 
     # Update a MANIFEST file for this package.
     def update
-      begin
-        file = manifest.update
-      rescue Manifest::NoManifestError => e
-        puts e.message
-        exit -1
+      if manifest.verify  
+      else
+        begin
+          diff = manifest.diff
+          file = manifest.update
+        rescue Manifest::NoManifestError => e
+          puts e.message
+          exit -1
+        end
+        report_difference(diff)
+        #report_updated(file)
       end
-      report_updated(file)
     end
 
     alias_method :up, :update
