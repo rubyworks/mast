@@ -103,6 +103,7 @@ If --file is specified, it will generate to that file instead.</p>
 <dt><code>-n</code>, <code>--new</code></dt><dd><p>List existant files that are not given in the manifest.</p></dd>
 <dt><code>-o</code>, <code>--old</code></dt><dd><p>List files given in the manifest but are non-existent.</p></dd>
 <dt><code>-v</code>, <code>--verify</code></dt><dd><p>Verify that a manifest matches actual.</p></dd>
+<dt><code>-r</code>, <code>--recent</code></dt><dd><p>Verify that a manifest is more recent than actual.</p></dd>
 <dt class="flush"><code>--clean</code></dt><dd><p>Remove non-manifest files. (Will ask for confirmation first.)</p></dd>
 <dt><code>-h</code>, <code>--help</code></dt><dd><p>Display this help message.</p></dd>
 </dl>
@@ -127,7 +128,8 @@ md5, sha1, sha128, sha256, or sha512.</p></dd>
 full pathname. You can use --exclude repeatedly.</p></dd>
 <dt><code>-i</code>, <code>--ignore PATH</code></dt><dd><p>Exclude a file or dir from the manifest matching against
 an entries basename. You can use --ignore repeatedly.</p></dd>
-<dt><code>-q</code>, <code>--quiet</code></dt><dd><p>Suppress any extraneous output.</p></dd>
+<dt><code>--no-head</code></dt><dd><p>Suppress mast header from output.</p></dd>
+<dt class="flush"><code>--debug</code></dt><dd><p>Run command with Ruby's $DEBUG flag set to <code>true</code>.</p></dd>
 </dl>
 
 
@@ -143,7 +145,7 @@ an entries basename. You can use --ignore repeatedly.</p></dd>
 
   <ol class='man-decor man-foot man foot'>
     <li class='tl'>RubyWorks</li>
-    <li class='tc'>November 2010</li>
+    <li class='tc'>October 2011</li>
     <li class='tr'>mast(1)</li>
   </ol>
 
