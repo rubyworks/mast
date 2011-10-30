@@ -27,7 +27,6 @@ repositories:
 resources:
   home: http://rubyworks.github.com/mast/
   code: http://github.com/rubyworks/mast/
-  wiki: http://wiki.github.com/rubyworks/mast/
   mail: http://groups.google.com/group/rubyworks-mailinglist
 extra: {}
 load_path:
