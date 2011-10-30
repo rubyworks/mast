@@ -7,8 +7,8 @@
   '-----------'
 
 
-{Homepage}[http://rubyworks.github.com/mast/]
-{Source Code}[http://github.com/rubyworks/mast/]
+{Homepage}[http://rubyworks.github.com/mast/] |
+{Source Code}[http://github.com/rubyworks/mast/] |
 {User Docs}[http://wiki.github.com/rubyworks/mast/]
 
 
