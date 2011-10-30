@@ -8,8 +8,7 @@
 
 
 {Homepage}[http://rubyworks.github.com/mast/] |
-{Source Code}[http://github.com/rubyworks/mast/] |
-{User Docs}[http://wiki.github.com/rubyworks/mast/]
+{Source Code}[http://github.com/rubyworks/mast/] | #rubyworks
 
 
 {<img src="http://travis-ci.org/rubyworks/mast.png" />}[http://travis-ci.org/rubyworks/mast]
