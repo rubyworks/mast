@@ -110,6 +110,7 @@
     -o --old            List files given in the manifest but are non-existent.
        --clean          Remove non-manifest files. (Will ask for confirmation first.)
     -v --verify         Verify that a manifest matches actual.
+    -r --recent         Verify that a manifest is more recent than actual.
     -h --help           Display this help message.
 
   Options:
@@ -129,7 +130,9 @@
                         full pathname. You can use --exclude repeatedly.
     -i --ignore PATH    Exclude a file or dir from the manifest matching against
                         an entry's basename. You can use --ignore repeatedly.
+    --no-head           Suppress mast header from output.
     -q --quiet          Suppress extraneous output.
+    --debug             Run in debug mode.
   </pre>
 
   <p>Here is an example of a <code>mast</code> generated MANIFEST file.</p>
@@ -225,10 +228,6 @@
 
   <p>Copyright (c) 2009 Thomas Sawyer</p>
   </div>
-</div>
-
-<div style="position: absolute; top: 0; right: 0;">
-  <a href="http://github.com/rubyworks/mast"><img src="http://rubyworks.github.com/assets/images/fork-me.png" /></a>
 </div>
 
 <div id="rubyworks" style="position: fixed; bottom: 5px; right: 10px; padding: 0; opacity: 0.3;">
