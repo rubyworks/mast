@@ -18,8 +18,8 @@
 == DESCRIPTION
 
 Mast is a commandline utility for generating MANIFEST and DIGEST lists.
-It can be useful in conjunction with packaging tools (such as Box),
-or as a stand-alone tool for monitoring file changes.
+It can be useful in conjunction with packaging tools, or as a stand-alone
+tool for monitoring file changes.
 
 
 == FEATURES

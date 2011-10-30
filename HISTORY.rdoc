@@ -2,11 +2,15 @@
 
 == 1.3.0 / 2011-10-30
 
-This release changes the license to BSD-2-Clause and modernizes
-the build configuration. Nothing about Mast's functionality has changed.
+This release adds a few additional features, see changes list below. It also 
+changes the license to BSD-2-Clause and modernizes the build configuration.
 
 Changes:
 
+* Add `--recent` command to check if up to date.
+* Add `--no-head` option to suppress header.
+* Improve help system with man-page.
+* Update output shows diff if file changed.
 * Modernize build configuration.
 * Switch to BSD-2-Cluase license.
 

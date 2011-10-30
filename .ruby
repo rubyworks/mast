@@ -2,7 +2,7 @@
 source:
 - meta
 authors:
-- name: 7rans
+- name: Trans
   email: transfire@gmail.com
 copyrights:
 - holder: Thomas Sawyer
@@ -36,7 +36,7 @@ revision: 0
 created: '2009-08-17'
 summary: Mast is a command line tool for generating manifests and digests.
 title: Mast
-version: 1.3.0
+version: 1.4.0
 name: mast
 description: ! 'Mast is a command line tool for generating manifests and digests.
   Mast makes
@@ -47,4 +47,4 @@ description: ! 'Mast is a command line tool for generating manifests and digests
 
   manifest file itself.'
 organization: rubyworks
-date: '2011-10-29'
+date: '2011-10-30'
