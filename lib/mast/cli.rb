@@ -79,61 +79,68 @@ module Mast
     # Parse command line options.
     def option_parser
       OptionParser.new do |opt|
-        opt.on "--file", "-f FILE" do |file|
+        opt.on "-f", "--file FILE", "Path to manifest file. Looks for file matching /MANIFEST(|.txt)/i by default." do |file|
           @options[:file] = file
         end
-        opt.on "--digest", "-g TYPE" do |digest|
+        opt.on "-g", "--digest TYPE", "Include cryptographic signature. Type can be either md5, sha1, sha128, sha256, or sha512." do |digest|
           @options[:digest] = digest
         end
-        opt.on "--exclude", "-x GLOB" do |glob|
+        opt.on "-x", "--exclude GLOB", "Exclude file or dir from the manifest matching against full pathname. Can be used repeatedly." do |glob|
           @options[:exclude] << glob
         end
-        opt.on "--ignore", "-i GLOB" do |glob|
+        opt.on "-i", "--ignore GLOB",
+               "Exclude file or dir from manifest matching against an entry's basename. Can be used repeatedly." do |glob|
           @options[:ignore] << glob
         end
-        opt.on "--all", "-a" do |bool|
+        opt.on "-a", "--all", "Include all files. This deactivates default exclusions so it is possible to make complete list of all contents." do |bool|
           @options[:all] = true
         end
-        opt.on "--bang", "-b" do |bool|
+        opt.on "--bang", "-b", "Generate manifest using the options from the bang line of the manifest file." do |bool|
           @options[:bang] = true
         end
-        opt.on "--dir", "-d" do |bool|
+        opt.on "--dir", "-d", "When creating a list include directory paths; by default only files are listed." do |bool|
           @options[:dir] = bool
         end
-        opt.on "--[no-]head" do |bool|
+        opt.on "--[no-]head", "Suppress mast header from output." do |bool|
           @options[:headless] = !bool
         end
-        opt.on "--create", "-c" do
+        opt.on "-c", "--create", "Generate a new manifest. (default)" do
           @command << :create
         end
-        opt.on "--update", "-u" do
+        opt.on "-u", "--update", "Update an existing manifest." do
           @command << :update
         end
-        opt.on "--list", "-l" do
+        opt.on "-l", "--list", "List the files given in the manifest file. (Use -f to specify an alternate file.)" do
           @command << :list
         end
-        opt.on "--diff", "-D" do
+        opt.on "-D", "--diff", "Diff manifest file against actual." do
           @command << :diff
         end
-        opt.on "--new", "-n" do
+        opt.on "-n", "--new", "List existent files that are not given in the manifest." do
           @command << :new
         end
-        opt.on "--old", "-o" do
+        opt.on "-o", "--old", "List files given in the manifest but are non-existent." do
           @command << :old
         end
-        opt.on "--verify", "-v" do
+        opt.on "-v", "--verify", "Verify that a manifest matches actual." do
           @command << :verify
         end
-        opt.on "--clean" do
+        opt.on "--clean", "Remove non-manifest files. (Will ask for confirmation first.)" do
           @command << :clean
         end
-        opt.on "--recent", "-r" do
+        opt.on "-r", "--recent", "Verify that a manifest is more recent than actual." do
           @command << :recent
         end
-        opt.on "--help" do
+        opt.on "-h", "--help", "Display this help message." do
           @command << :help
         end
-        opt.on "--debug" do
+        opt.on "-H" do
+          puts opt; exit
+        end
+        opt.on "-q", "--quiet", "Suppress all extraneous output." do
+          @quiet = true
+        end
+        opt.on "--debug", "Run in debug mode." do
           $DEBUG = true
         end
       end
