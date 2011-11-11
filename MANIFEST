@@ -6,7 +6,6 @@ lib/mast/core_ext.rb
 lib/mast/manifest.rb
 lib/mast.rb
 lib/mast.yml
-lib/plugins/syckle/mast.rb
 man/man1/index.txt
 man/man1/mast.1
 man/man1/mast.1.html
