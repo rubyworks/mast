@@ -1,6 +1,6 @@
 ---
 source:
-- meta
+- var
 authors:
 - name: Trans
   email: transfire@gmail.com
@@ -46,4 +46,4 @@ description: ! 'Mast is a command line tool for generating manifests and digests
 
   manifest file itself.'
 organization: rubyworks
-date: '2011-10-30'
+date: '2011-11-11'
