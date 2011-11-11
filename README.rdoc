@@ -11,7 +11,7 @@
 {Source Code}[http://github.com/rubyworks/mast/] |
 {Report Issue}[http://github.com/rubyworks/mast/issues] |
 {Mailing List}[http://googlegroups.com/group.rubyworks-mailinglist] |
-{IRC}[irc://irc.freenode.net/rubyworks]
+{IRC Channel}[irc://irc.freenode.net/rubyworks]
 
 {<img src="http://travis-ci.org/rubyworks/mast.png" />}[http://travis-ci.org/rubyworks/mast]
 
