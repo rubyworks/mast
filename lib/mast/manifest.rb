@@ -170,9 +170,14 @@ module Mast
       @read
     end
 
+    #
+    def exist?
+      file and FileTest.file?(file)
+    end
+
     # Is the current mainfest in need of updating?
     def changed?
-      raise NoManifestError unless file and FileTest.file?(file)
+      raise NoManifestError unless exist? #file and FileTest.file?(file)
       txt = File.read(file)
       out = StringIO.new #('', 'w')
       generate(out)
@@ -203,11 +208,16 @@ module Mast
       save
     end
 
+    #
+    def touch
+      FileUtils.touch(file) if File.exist?(file)
+    end
+
     # Save as file.
     def save
-      File.open(file, 'w') do |file|
-        file << topline_string
-        output(file)
+      File.open(file, 'w') do |f|
+        f << topline_string
+        output(f)
       end
       return file
     end

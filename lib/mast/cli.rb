@@ -157,7 +157,8 @@ module Mast
 
     # Update a MANIFEST file for this package.
     def update
-      if manifest.verify  
+      if manifest.verify
+        manifest.touch
       else
         begin
           diff = manifest.diff
