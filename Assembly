@@ -6,17 +6,20 @@ github:
   gh_pages: web
 
 dnote:
-  title: Developer's Notes
-  output: log/NOTES.rdoc
+  title: Source Notes
+  output: log/notes.html
 
 #locat:
 #  output   : ~
 #  active   : true
 
+qed:
+  files: demo/
+
 qedoc:
-  files: qed/
-  title: Mast Demonstrandum
-  output: QED.rdoc
+  files: demo/
+  title: Mast Demonstration
+  output: DEMO.rdoc
 
 # todo: use ronn service when available
 ronn:
@@ -27,8 +30,8 @@ ronn:
 
 vclog:
   output:
-    - log/History.rdoc
-    - log/Changes.rdoc
+    - log/history.html
+    - log/changes.html
 
 email:
   mailto:

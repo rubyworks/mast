@@ -1,6 +1,10 @@
-#!mast .ruby .yardopts bin lib man spec test [A-Z]*.*
+#!mast .ruby .yardopts bin demo lib man spec test [A-Z]*.*
 .ruby
 bin/mast
+demo/cli/applique/env.rb
+demo/cli/overview.rdoc
+demo/functional/02_manifest.rdoc
+demo/functional/applique/rules.rb
 lib/mast/cli.rb
 lib/mast/core_ext.rb
 lib/mast/manifest.rb
@@ -11,6 +15,6 @@ man/man1/mast.1
 man/man1/mast.1.html
 man/man1/mast.1.ronn
 HISTORY.rdoc
+DEMO.rdoc
 README.rdoc
-QED.rdoc
 COPYING.rdoc
