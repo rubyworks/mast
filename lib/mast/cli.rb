@@ -131,10 +131,10 @@ module Mast
         opt.on "-r", "--recent", "Verify that a manifest is more recent than actual." do
           @command << :recent
         end
-        opt.on "-h", "--help", "Display this help message." do
+        opt.on "-h", "--help", "Display help manual." do
           @command << :help
         end
-        opt.on "-H" do
+        opt.on "-H", "Display help summary." do
           puts opt; exit
         end
         opt.on "-q", "--quiet", "Suppress all extraneous output." do
